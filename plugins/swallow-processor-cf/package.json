@@ -1,6 +1,6 @@
 {
   "name": "swallow-processor-cf",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Gets an output from cloudformation and returns the value",
   "main": "lib/index.js",
   "author": "Ben Force",
@@ -9,6 +9,6 @@
     "typescript": "^3.6.2"
   },
   "dependencies": {
-    "swallow-plugins": "^1.0.4"
+    "swallow-plugins": "^1.0.5"
   }
 }
