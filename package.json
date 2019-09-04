@@ -7,6 +7,7 @@
   },
   "scripts": {
     "test": "echo \"Should probably do something...\"",
-    "lerna:publish": "lerna publish"
+    "lerna:publish": "lerna publish",
+    "postversion": "git push --follow-tags"
   }
 }
