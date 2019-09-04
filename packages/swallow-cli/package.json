@@ -1,7 +1,7 @@
 {
   "name": "swallow-cli",
   "description": "A migration utility for AWS resources",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Ben Force",
   "bin": {
     "swallow": "./bin/run"
@@ -12,8 +12,8 @@
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
     "js-yaml": "^3.13.1",
-    "tslib": "^1",
-    "swallow-plugins": "^1"
+    "swallow-plugins": "^1.0.2",
+    "tslib": "^1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",

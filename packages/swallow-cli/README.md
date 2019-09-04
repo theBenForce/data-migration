@@ -20,7 +20,7 @@ $ npm install -g swallow-cli
 $ swallow COMMAND
 running command...
 $ swallow (-v|--version|version)
-swallow-cli/1.0.1 darwin-x64 node-v10.16.0
+swallow-cli/1.0.2 darwin-x64 node-v10.16.0
 $ swallow --help [COMMAND]
 USAGE
   $ swallow COMMAND
@@ -61,5 +61,5 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.2/src/commands/init.ts)_
 <!-- commandsstop -->
