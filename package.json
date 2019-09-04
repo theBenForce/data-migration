@@ -6,7 +6,7 @@
   },
   "scripts": {
     "test": "echo \"Should probably do something...\"",
-    "lerna:publish": "lerna publish",
+    "lerna:publish": "lerna publish --force-publish",
     "version:patch": "lerna version patch --yes",
     "build": "lerna run build"
   }
