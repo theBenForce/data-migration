@@ -20,7 +20,7 @@ $ npm install -g swallow-cli
 $ swallow COMMAND
 running command...
 $ swallow (-v|--version|version)
-swallow-cli/1.0.0 darwin-x64 node-v10.16.0
+swallow-cli/1.0.1 darwin-x64 node-v10.16.0
 $ swallow --help [COMMAND]
 USAGE
   $ swallow COMMAND
@@ -50,7 +50,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.1/src/commands/hello.ts)_
 
 ## `swallow help [COMMAND]`
 
