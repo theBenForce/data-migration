@@ -10,14 +10,14 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s
   - export PATH="$HOME/.yarn/bin:$PATH"
 before_script:
-  - yarn run lerna run prepublish
+  - yarn lerna run prepublish
 script:
   - yarn test
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
   provider: script
-  script: "yarn run lerna:publish"
+  script: "yarn lerna:publish"
   skip_cleanup: true
   on:
     tags: true
