@@ -1,0 +1,15 @@
+{
+  "name": "swallow-plugins",
+  "version": "1.0.0",
+  "description": "Interfaces to create new drivers/processors for swallow-migration",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Ben Force",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.6.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

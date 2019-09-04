@@ -29,28 +29,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`swallow hello [FILE]`](#swallow-hello-file)
 * [`swallow help [COMMAND]`](#swallow-help-command)
-
-## `swallow hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ swallow hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ swallow hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.1/src/commands/hello.ts)_
+* [`swallow init`](#swallow-init)
 
 ## `swallow help [COMMAND]`
 
@@ -68,4 +48,18 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
+
+## `swallow init`
+
+Creates a basic configuration in the current directory
+
+```
+USAGE
+  $ swallow init
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.1/src/commands/init.ts)_
 <!-- commandsstop -->

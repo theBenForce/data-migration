@@ -1,0 +1,1 @@
+{"version":"1.0.1","commands":{"init":{"id":"init","description":"Creates a basic configuration in the current directory","pluginName":"swallow-cli","pluginType":"core","aliases":[],"flags":{"help":{"name":"help","type":"boolean","char":"h","description":"show CLI help","allowNo":false}},"args":[]}}}

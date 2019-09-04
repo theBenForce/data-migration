@@ -1,0 +1,14 @@
+{
+  "name": "swallow-processor-cf",
+  "version": "1.0.0",
+  "description": "Gets an output from cloudformation and returns the value",
+  "main": "lib/index.js",
+  "author": "Ben Force",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "swallow-plugins": "^1"
+  }
+}
