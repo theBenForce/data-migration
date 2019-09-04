@@ -1,21 +1,23 @@
 import { Processor } from "swallow-plugins";
 import * as AWS from "aws-sdk";
+import { checkParameters } from "swallow-plugins/lib/Utils";
+
 async function getStackOutput(
-  ctx: IFlagsContext
+  params: Map<string, string>
 ): Promise<Array<AWS.CloudFormation.Output>> {
   const cloudformation = new AWS.CloudFormation({
     apiVersion: "2010-05-15",
-    region: ctx.flags.region
+    region: params.get("region")
   });
 
   const data = await cloudformation
     .describeStacks({
-      StackName: ctx.flags.stack
+      StackName: params.get("stack")
     })
     .promise();
 
   if (!data || !data.Stacks)
-    throw Error(`Error getting data for stack ${ctx.flags.stack}`);
+    throw Error(`Error getting data for stack ${params.get("stack")}`);
 
   return data.Stacks.reduce(
     (
@@ -31,7 +33,27 @@ async function getStackOutput(
 }
 
 const processor: Processor = async (params: Map<string, string>) => {
-  return "Some value";
+  checkParameters(
+    "swallow-processor-cf",
+    ["region", "stack", "output"],
+    params
+  );
+
+  const outputs = await getStackOutput(params);
+  const outputName = params.get("output");
+  const stack = params.get("stack");
+
+  const output = outputs.find(
+    (x: AWS.CloudFormation.Output) => x.OutputKey === outputName
+  );
+
+  if (!output)
+    throw new Error(`Could not find output ${outputName} in ${stack}`);
+
+  if (!output.OutputValue)
+    throw new Error(`No value set for ${outputName} in ${stack}`);
+
+  return output;
 };
 
 exports = processor;
