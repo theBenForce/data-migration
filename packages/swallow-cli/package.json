@@ -1,7 +1,7 @@
 {
   "name": "swallow-cli",
   "description": "A migration utility for AWS resources",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Ben Force",
   "bin": {
     "swallow": "./bin/run"
@@ -16,7 +16,7 @@
     "@types/node": "^10",
     "date-fns": "^2.0.1",
     "listr": "^0.14.3",
-    "swallow-migration": "^1.0.8",
+    "swallow-migration": "^1.0.9",
     "tslib": "^1",
     "zen-observable": "^0.8.14"
   },
@@ -71,6 +71,7 @@
     "test": "__tests__"
   },
   "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  }
+    "registry": "https://registry.npmjs.org"
+  },
+  "gitHead": "4872112b2c1bdf88ca6bd9a2901abf39f42906ce"
 }

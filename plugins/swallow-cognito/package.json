@@ -1,11 +1,11 @@
 {
   "name": "swallow-cognito",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "swallow-migration": "^1.0.8"
+    "swallow-migration": "^1.0.9"
   },
   "scripts": {
     "build": "tsc"
@@ -15,5 +15,6 @@
   },
   "files": [
     "/lib"
-  ]
+  ],
+  "gitHead": "4872112b2c1bdf88ca6bd9a2901abf39f42906ce"
 }
