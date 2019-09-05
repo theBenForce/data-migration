@@ -6,7 +6,9 @@
   "bin": {
     "swallow": "./bin/run"
   },
-  "bugs": "https://github.com/drg-adaptive/swallow-migration/issues",
+  "bugs": {
+    "url": "https://github.com/drg-adaptive/swallow-migration/issues"
+  },
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -51,7 +53,10 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "drg-adaptive/swallow-migration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drg-adaptive/swallow-migration.git"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
@@ -60,5 +65,12 @@
     "version": "oclif-dev readme && git add README.md",
     "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  }
 }
