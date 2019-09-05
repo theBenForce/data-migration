@@ -17,4 +17,4 @@ jobs:
           yarn install
           yarn run init
           yarn build
-          yarn lerna publish --yes --no-git-reset
+          yarn lerna publish from-package --yes --no-git-reset
