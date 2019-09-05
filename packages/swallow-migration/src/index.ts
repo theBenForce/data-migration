@@ -24,7 +24,10 @@ export interface LoadConfigParameters<T> {
 }
 
 export default {
-  up(migrationScript: MigrationScript) {},
+  getUpScripts(
+    drivers: LoadConfigParameters<string | ProcessorParams>,
+    observer?: ZenObservable.Observer<any>
+  ) {},
 
   /**
    * Runs all processors on the given parameters
