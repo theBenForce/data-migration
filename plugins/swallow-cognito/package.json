@@ -1,6 +1,6 @@
 {
   "name": "swallow-cognito",
-  "version": "1.0.0",
+  "version": null,
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",

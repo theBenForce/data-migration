@@ -1,5 +1,8 @@
 {
-  "packages": ["packages/*", "plugins/*"],
-  "version": "individual",
+  "packages": [
+    "packages/*",
+    "plugins/*"
+  ],
+  "version": null,
   "npmClient": "yarn"
 }
