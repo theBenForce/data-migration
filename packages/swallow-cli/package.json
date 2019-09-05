@@ -1,7 +1,7 @@
 {
   "name": "swallow-cli",
   "description": "A migration utility for AWS resources",
-  "version": null,
+  "version": "1.0.6",
   "author": "Ben Force",
   "bin": {
     "swallow": "./bin/run"
