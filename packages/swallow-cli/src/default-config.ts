@@ -8,10 +8,12 @@ export default `module.exports = {
           processor: require("swallow-processor-cf"),
           params: {
             stack: "some-stack-name",
-            output: "SomeOutputName"
+            output: "SomeOutputName",
+            region: "us-east-1"
           }
         }
       }
     }
   }
-}`;
+}
+`;

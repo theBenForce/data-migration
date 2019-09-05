@@ -1,5 +1,5 @@
 {
-  "name": "swallow-plugins",
+  "name": "swallow-migration",
   "version": "1.0.5",
   "description": "Interfaces to create new drivers/processors for swallow-migration",
   "main": "lib/index.js",
@@ -7,9 +7,19 @@
   "author": "Ben Force",
   "license": "MIT",
   "devDependencies": {
+    "@types/lodash": "^4.14.138",
+    "@types/zen-observable": "^0.8.0",
     "typescript": "^3.6.2"
   },
   "scripts": {
     "build": "tsc"
-  }
+  },
+  "dependencies": {
+    "@types/node": "^12.7.4",
+    "lodash": "^4.17.15",
+    "zen-observable": "^0.8.14"
+  },
+  "files": [
+    "/lib"
+  ]
 }

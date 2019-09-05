@@ -1,0 +1,19 @@
+{
+  "name": "swallow-cognito",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "swallow-migration": "^1"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.2"
+  },
+  "files": [
+    "/lib"
+  ]
+}

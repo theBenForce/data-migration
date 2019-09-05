@@ -6,8 +6,10 @@
   },
   "scripts": {
     "test": "echo \"Should probably do something...\"",
-    "lerna:publish": "lerna publish --force-publish",
+    "lerna:publish": "lerna publish",
+    "lerna:publish:force": "lerna publish --force-publish",
     "version:patch": "lerna version patch --yes",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "init": "lerna bootstrap"
   }
 }

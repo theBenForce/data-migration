@@ -31,6 +31,8 @@ USAGE
 <!-- commands -->
 * [`swallow help [COMMAND]`](#swallow-help-command)
 * [`swallow init`](#swallow-init)
+* [`swallow new NAME`](#swallow-new-name)
+* [`swallow up [CONFIG]`](#swallow-up-config)
 
 ## `swallow help [COMMAND]`
 
@@ -62,4 +64,33 @@ OPTIONS
 ```
 
 _See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.5/src/commands/init.ts)_
+
+## `swallow new NAME`
+
+describe the command here
+
+```
+USAGE
+  $ swallow new NAME
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/new.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.5/src/commands/new.ts)_
+
+## `swallow up [CONFIG]`
+
+describe the command here
+
+```
+USAGE
+  $ swallow up [CONFIG]
+
+OPTIONS
+  -h, --help     show CLI help
+  --stage=stage  Stage that will be used when loading config values
+```
+
+_See code: [src/commands/up.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.5/src/commands/up.ts)_
 <!-- commandsstop -->

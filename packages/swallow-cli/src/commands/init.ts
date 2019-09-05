@@ -1,7 +1,7 @@
 import { Command, flags } from "@oclif/command";
 import * as fs from "fs";
-import YAML from "js-yaml";
 import * as path from "path";
+import * as Listr from "listr";
 
 import defaultConfig from "../default-config";
 
@@ -13,6 +13,15 @@ export default class Init extends Command {
   };
 
   async run() {
-    fs.writeFileSync(path.resolve(".swallow.js"), defaultConfig);
+    const tasks = new Listr([
+      {
+        title: "Creating config",
+        task() {
+          fs.writeFileSync("./.swallow.js", defaultConfig);
+        }
+      }
+    ]);
+
+    await tasks.run();
   }
 }

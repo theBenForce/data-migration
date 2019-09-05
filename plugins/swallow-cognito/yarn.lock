@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+swallow-plugins@^1:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/swallow-plugins/-/swallow-plugins-1.0.5.tgz#c0634d68e272452229352045e31468b048e58978"
+  integrity sha512-gO/2Y8lknzmCYZBpSkaK2DA7PwwfE2iDHaKi5C8Tp0tgNJdUGlMAYhTtDWPAMiei1EUS8EnquY+STpRqds/aqQ==
+
 typescript@^3.6.2:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.2.tgz#105b0f1934119dde543ac8eb71af3a91009efe54"
