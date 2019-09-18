@@ -4,7 +4,7 @@ import * as path from "path";
 import * as fs from "fs";
 
 export default class New extends Command {
-  static description = "describe the command here";
+  static description = "Create a new migration script";
 
   static flags = {
     help: flags.help({ char: "h" })
@@ -26,44 +26,42 @@ export default class New extends Command {
       args.name.replace(/\s+/g, "_")
     ].join("-");
 
-    let name = path.join(prefix, `${scriptName}.js`);
+    let name = path.join(prefix, `${scriptName}.ts`);
 
     fs.writeFileSync(
       name,
       `
 /**
- * @typedef {import('swallow-migration').MigrationDrivers} MigrationDrivers
+ * @typedef {import('swallow-migration').ScriptContext} ScriptContext
  */
 
 module.exports = {
+import { ScriptContext } from "swallow-migration";
+
+export default {
   name: "${args.name}",
   /**
    * Run the acutal migration
-   * @param {MigrationDrivers} drivers
-   * @param {(message: string) => void} log
    */
-  async up(drivers, log) {
+  async up(context: ScriptContext, log: (message: string) => void) {
     log("Running up migration ${scriptName}");
   },
 
   /**
    * Revert all changes in the up script
-   * @param {MigrationDrivers} drivers
-   * @param {(message: string) => void} log
    */
-  async down(drivers, log) {
+  async down(context: ScriptContext, log: (message: string) => void) {
     log("Running down migration ${scriptName}");
   },
 
   /**
    * Determines if this script has already been executed
-   * @param {MigrationDrivers} drivers
-   * @param {(message: string) => void} log
    */
-  async hasRun(drivers, log) {
+  async hasRun(context: ScriptContext, log: (message: string) => void) {
     return false;
   }
 };
+
 
     `
     );

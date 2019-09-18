@@ -27,7 +27,7 @@
     "@types/listr": "^0.14.2",
     "@types/zen-observable": "^0.8.0",
     "globby": "^10",
-    "ts-node": "^8.3.0",
+    "ts-node": "^8.4.1",
     "tslint": "^5",
     "typescript": "^3.3"
   },

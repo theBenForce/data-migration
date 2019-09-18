@@ -5,6 +5,8 @@
   "types": "lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.530.0",
+    "cuid": "^2.1.6",
     "swallow-migration": "^1.0.9"
   },
   "scripts": {

@@ -31,8 +31,8 @@ USAGE
 <!-- commands -->
 * [`swallow help [COMMAND]`](#swallow-help-command)
 * [`swallow init`](#swallow-init)
+* [`swallow migrate [CONFIG]`](#swallow-migrate-config)
 * [`swallow new NAME`](#swallow-new-name)
-* [`swallow up [CONFIG]`](#swallow-up-config)
 
 ## `swallow help [COMMAND]`
 
@@ -65,9 +65,24 @@ OPTIONS
 
 _See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.9/src/commands/init.ts)_
 
-## `swallow new NAME`
+## `swallow migrate [CONFIG]`
 
 describe the command here
+
+```
+USAGE
+  $ swallow migrate [CONFIG]
+
+OPTIONS
+  -h, --help     show CLI help
+  --stage=stage  Stage that will be used when loading config values
+```
+
+_See code: [src/commands/migrate.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.9/src/commands/migrate.ts)_
+
+## `swallow new NAME`
+
+Create a new migration script
 
 ```
 USAGE
@@ -78,19 +93,4 @@ OPTIONS
 ```
 
 _See code: [src/commands/new.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.9/src/commands/new.ts)_
-
-## `swallow up [CONFIG]`
-
-describe the command here
-
-```
-USAGE
-  $ swallow up [CONFIG]
-
-OPTIONS
-  -h, --help     show CLI help
-  --stage=stage  Stage that will be used when loading config values
-```
-
-_See code: [src/commands/up.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.9/src/commands/up.ts)_
 <!-- commandsstop -->

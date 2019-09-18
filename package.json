@@ -2,7 +2,10 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.16.4"
+    "commitizen": "^4.0.3",
+    "cz-lerna-changelog": "^2.0.2",
+    "lerna": "^3.16.4",
+    "lerna-semantic-release": "^9.1.0"
   },
   "scripts": {
     "test": "echo \"Should probably do something...\"",
@@ -11,5 +14,10 @@
     "version:patch": "lerna version patch --yes",
     "build": "lerna run build",
     "init": "lerna bootstrap"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
   }
 }

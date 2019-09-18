@@ -1,11 +1,12 @@
-import Driver from "./DriverTypes";
+import { Driver } from "./DriverTypes";
 
-export type MigrationDrivers = {
-  getDriver: <T>(name: string) => T;
+export type ScriptContext = {
+  getDriver: <T extends Driver>(name: string) => Promise<T>;
+  getDriversUsed: () => Array<string>;
 };
 
 export type MigrationExecutor<T> = (
-  drivers: MigrationDrivers,
+  context: ScriptContext,
   log: (message: string) => void
 ) => Promise<T>;
 

@@ -1,23 +1,40 @@
 import { Processor } from "swallow-migration";
 import * as AWS from "aws-sdk";
 import { checkParameters, createLogger } from "swallow-migration/lib/Utils";
+import { DescribeStacksOutput } from "aws-sdk/clients/cloudformation";
+
+const cache: { [key: string]: { [key: string]: DescribeStacksOutput } } = {};
 
 async function getStackOutput(params: {
   [key: string]: string;
 }): Promise<Array<AWS.CloudFormation.Output>> {
-  const cloudformation = new AWS.CloudFormation({
-    apiVersion: "2010-05-15",
-    region: params["region"]
-  });
+  const region = params["region"];
+  const stackName = params["stack"];
+  let data;
 
-  const data = await cloudformation
-    .describeStacks({
-      StackName: params["stack"]
-    })
-    .promise();
+  if (!cache[region]) {
+    cache[region] = {};
+  }
+
+  data = cache[region][stackName];
+
+  if (!data) {
+    const cloudformation = new AWS.CloudFormation({
+      apiVersion: "2010-05-15",
+      region
+    });
+
+    data = await cloudformation
+      .describeStacks({
+        StackName: stackName
+      })
+      .promise();
+
+    cache[region][stackName] = data;
+  }
 
   if (!data || !data.Stacks)
-    throw Error(`Error getting data for stack ${params["stack"]}`);
+    throw Error(`Error getting data for stack ${stackName}`);
 
   return data.Stacks.reduce(
     (
@@ -34,7 +51,7 @@ async function getStackOutput(params: {
 
 const processor: Processor = async (
   params: { [key: string]: string },
-  observer?: ZenObservable.Observer<string>
+  log: (message: string) => void
 ) => {
   checkParameters(
     "swallow-processor-cf",
@@ -42,7 +59,6 @@ const processor: Processor = async (
     params
   );
   const stack = params["stack"];
-  const log = createLogger(observer);
 
   log(`Getting details for stack ${stack}`);
   const outputs = await getStackOutput(params);
@@ -60,6 +76,7 @@ const processor: Processor = async (
     throw new Error(`No value set for ${outputName} in ${stack}`);
   }
 
+  log(`Found "${outputName}" value of "${output.OutputValue}"`);
   return output.OutputValue;
 };
 

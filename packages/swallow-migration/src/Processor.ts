@@ -5,7 +5,7 @@ export interface ProcessorParams {
 
 type Processor = (
   params: { [key: string]: string },
-  observer?: ZenObservable.Observer<string>
+  log: (message: string) => void
 ) => Promise<string>;
 
 export default Processor;

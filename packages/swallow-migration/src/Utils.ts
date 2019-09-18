@@ -1,4 +1,5 @@
 import { MissingParameters } from "./Errors";
+import * as babel from "@babel/core";
 
 export function checkParameters(
   label: string,
@@ -29,4 +30,22 @@ export function createErrorLogger(observer?: ZenObservable.Observer<any>) {
       console.error(message);
     }
   };
+}
+
+export async function loadScript<T>(filename: string): Promise<T> {
+  const transformResult = await babel.transformFileAsync(filename, {
+    presets: [
+      "@babel/preset-typescript",
+      ["@babel/preset-env", { targets: { node: true } }]
+    ],
+    cwd: process.cwd()
+  });
+
+  let script: T;
+  if (transformResult && transformResult.code) {
+    script = eval(transformResult.code);
+  }
+
+  // @ts-ignore
+  return script;
 }

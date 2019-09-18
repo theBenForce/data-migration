@@ -1,5 +1,2 @@
-import UserPoolDriver from "./UserPool";
-
-type Driver = UserPoolDriver;
-
-export default Driver;
+export { default as Driver } from "./Driver";
+export { default as UserPoolDriver } from "./UserPool";
