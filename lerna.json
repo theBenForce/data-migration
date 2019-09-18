@@ -1,9 +1,7 @@
 {
-  "packages": [
-    "packages/*",
-    "plugins/*"
-  ],
+  "packages": ["packages/*", "plugins/*"],
   "version": "1.0.12",
+  "npmClient": "yarn",
   "command": {
     "publish": {
       "allowBranch": "master",
