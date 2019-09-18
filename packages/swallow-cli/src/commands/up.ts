@@ -10,8 +10,8 @@ import {
   ScriptContext
 } from "swallow-migration/lib/MigrationScript";
 
-export default class Migrate extends Command {
-  static description = "describe the command here";
+export default class Up extends Command {
+  static description = "run all migration scripts";
 
   static flags = {
     help: flags.help({ char: "h" }),
@@ -23,7 +23,7 @@ export default class Migrate extends Command {
   static args = [{ name: "config", default: path.resolve("./.swallow.js") }];
 
   async run() {
-    const { args, flags } = this.parse(Migrate);
+    const { args, flags } = this.parse(Up);
     let config: Configuration = require(args.config);
 
     let stage = flags.stage || config.defaultStage || "prod";
