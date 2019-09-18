@@ -17,30 +17,30 @@ A migration utility for AWS resources
 <!-- usage -->
 ```sh-session
 $ npm install -g swallow-cli
-$ swallow COMMAND
+$ migrate COMMAND
 running command...
-$ swallow (-v|--version|version)
-swallow-cli/1.0.12 darwin-x64 node-v10.16.0
-$ swallow --help [COMMAND]
+$ migrate (-v|--version|version)
+swallow-cli/1.0.13 darwin-x64 node-v10.16.0
+$ migrate --help [COMMAND]
 USAGE
-  $ swallow COMMAND
+  $ migrate COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`swallow help [COMMAND]`](#swallow-help-command)
-* [`swallow init`](#swallow-init)
-* [`swallow new NAME`](#swallow-new-name)
-* [`swallow up [CONFIG]`](#swallow-up-config)
+* [`migrate help [COMMAND]`](#migrate-help-command)
+* [`migrate init`](#migrate-init)
+* [`migrate new NAME`](#migrate-new-name)
+* [`migrate up [CONFIG]`](#migrate-up-config)
 
-## `swallow help [COMMAND]`
+## `migrate help [COMMAND]`
 
-display help for swallow
+display help for migrate
 
 ```
 USAGE
-  $ swallow help [COMMAND]
+  $ migrate help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -51,46 +51,46 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
 
-## `swallow init`
+## `migrate init`
 
 Creates a basic configuration in the current directory
 
 ```
 USAGE
-  $ swallow init
+  $ migrate init
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.12/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.13/src/commands/init.ts)_
 
-## `swallow new NAME`
+## `migrate new NAME`
 
 Create a new migration script
 
 ```
 USAGE
-  $ swallow new NAME
+  $ migrate new NAME
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/new.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.12/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.13/src/commands/new.ts)_
 
-## `swallow up [CONFIG]`
+## `migrate up [CONFIG]`
 
 run all migration scripts
 
 ```
 USAGE
-  $ swallow up [CONFIG]
+  $ migrate up [CONFIG]
 
 OPTIONS
   -h, --help     show CLI help
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/up.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.12/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.13/src/commands/up.ts)_
 <!-- commandsstop -->
