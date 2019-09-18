@@ -16,5 +16,8 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
           yarn install
           yarn run init
-          git update-index --assume-unchanged ./**/yarn.lock
+          rm packages/swallow-cli/yarn.lock
+          rm packages/swallow-migration/yarn.lock
+          rm plugins/swallow-cognito/yarn.lock
+          rm plugins/swallow-processor-cf/yarn.lock
           yarn lerna publish from-package --yes --no-git-reset
