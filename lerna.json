@@ -1,4 +1,10 @@
 {
   "packages": ["packages/*", "plugins/*"],
-  "version": "1.0.10"
+  "version": "1.0.10",
+  "command": {
+    "publish": {
+      "allowBranch": "master",
+      "message": "chore(release): publish %s"
+    }
+  }
 }

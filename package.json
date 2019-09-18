@@ -7,12 +7,14 @@
     "lerna": "^3.16.4"
   },
   "scripts": {
-    "test": "echo \"Should probably do something...\"",
-    "lerna:publish": "lerna publish",
-    "lerna:publish:force": "lerna publish --force-publish",
-    "version:patch": "lerna version patch --yes",
-    "prepublishOnly": "lerna run build",
-    "init": "lerna bootstrap"
+    "test": "exit 0",
+    "lerna": "lerna",
+    "bootstrap": "lerna bootstrap",
+    "dev": "lerna run build --stream --parallel",
+    "lerna:version": "lerna version prerelease --preid beta && yarn run lerna:postversion",
+    "lerna:postversion": "chan release --group-changes $(node -p -e \"require('./lerna.json').version\") && git add CHANGELOG.md && git commit -m \"Update: changelog\" && git push --follow-tags",
+    "prepublish": "lerna run prepublish",
+    "lerna:publish": "lerna publish from-git --yes --npm-client yarn --npm-tag beta"
   },
   "config": {
     "commitizen": {
