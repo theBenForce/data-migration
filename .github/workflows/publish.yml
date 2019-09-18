@@ -13,8 +13,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: lerna publishing
         run: |
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
           yarn install
           yarn run init
           git update-index --assume-unchanged packages/swallow-cli/yarn.lock packages/swallow-migration/yarn.lock plugins/swallow-cognito/yarn.lock plugins/swallow-processor-cf/yarn.lock
-          yarn lerna publish from-package --yes
+          yarn lerna publish patch --yes
