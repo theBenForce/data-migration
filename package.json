@@ -22,5 +22,9 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "workspaces": [
+    "packages/*",
+    "plugins/*"
+  ]
 }

@@ -2,6 +2,7 @@
   "packages": ["packages/*", "plugins/*"],
   "version": "1.0.12",
   "npmClient": "yarn",
+  "useWorkspaces": true,
   "command": {
     "publish": {
       "allowBranch": "master",
