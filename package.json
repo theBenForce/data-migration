@@ -11,7 +11,7 @@
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "dev": "lerna run build --stream --parallel",
-    "lerna:version": "lerna version prerelease --preid beta && yarn run lerna:postversion",
+    "lerna:version": "lerna version patch && yarn run lerna:postversion",
     "lerna:postversion": "chan release --group-changes $(node -p -e \"require('./lerna.json').version\") && git add CHANGELOG.md && git commit -m \"Update: changelog\" && git push --follow-tags",
     "prepublish": "lerna run prepublish",
     "lerna:publish": "lerna publish from-git --yes --npm-client yarn --npm-tag beta"
