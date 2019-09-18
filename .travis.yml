@@ -18,6 +18,6 @@ deploy:
   provider: script
   script: "yarn run lerna:publish"
   skip_cleanup: true
-  on:
-    node: "10"
-    tags: true
+  branches:
+    only:
+      - master
