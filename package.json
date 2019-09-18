@@ -2,7 +2,6 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "@geut/chan": "^2.1.1",
     "commitizen": "^4.0.3",
     "cz-lerna-changelog": "^2.0.2",
     "lerna": "^3.16.4"
@@ -13,7 +12,7 @@
     "bootstrap": "lerna bootstrap",
     "dev": "lerna run build --stream --parallel",
     "lerna:version": "lerna version patch && yarn run lerna:postversion",
-    "lerna:postversion": "chan release --group-changes $(node -p -e \"require('./lerna.json').version\") && git add CHANGELOG.md && git commit -m \"Update: changelog\" && git push --follow-tags",
+    "lerna:postversion": "git push --follow-tags",
     "prepublish": "lerna run prepublish",
     "lerna:publish": "lerna publish from-package --yes"
   },
