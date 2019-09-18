@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "@geut/chan": "^2.1.1",
     "commitizen": "^4.0.3",
     "cz-lerna-changelog": "^2.0.2",
     "lerna": "^3.16.4"
