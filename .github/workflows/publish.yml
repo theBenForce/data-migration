@@ -16,5 +16,4 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
           yarn install
           yarn run init
-          yarn build
           yarn lerna publish from-package --yes --no-git-reset
