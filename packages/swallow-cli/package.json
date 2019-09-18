@@ -48,7 +48,7 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "swallow",
+    "bin": "migrate",
     "plugins": [
       "@oclif/plugin-help"
     ]
