@@ -20,7 +20,7 @@ $ npm install -g swallow-cli
 $ swallow COMMAND
 running command...
 $ swallow (-v|--version|version)
-swallow-cli/1.0.10 darwin-x64 node-v10.16.0
+swallow-cli/1.0.11 darwin-x64 node-v10.16.0
 $ swallow --help [COMMAND]
 USAGE
   $ swallow COMMAND
@@ -63,7 +63,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.10/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.11/src/commands/init.ts)_
 
 ## `swallow migrate [CONFIG]`
 
@@ -78,7 +78,7 @@ OPTIONS
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/migrate.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.10/src/commands/migrate.ts)_
+_See code: [src/commands/migrate.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.11/src/commands/migrate.ts)_
 
 ## `swallow new NAME`
 
@@ -92,5 +92,5 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/new.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.10/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.11/src/commands/new.ts)_
 <!-- commandsstop -->
