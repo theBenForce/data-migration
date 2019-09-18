@@ -11,9 +11,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: semantic-release puglishing
+      - name: lerna publishing
         run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
           yarn install
-          yarn lerna-semantic-release pre
-          yarn lerna-semantic-release perform
-          yarn lerna-semantic-release post
+          yarn run init
+          yarn build
+          yarn lerna publish from-package --yes --no-git-reset
