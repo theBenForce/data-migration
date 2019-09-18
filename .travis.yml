@@ -23,7 +23,6 @@ jobs:
         - yarn test
       before_deploy:
         - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-        - git commit -am "Pipeline Update"
       deploy:
         provider: script
         script: "yarn run lerna:publish"
