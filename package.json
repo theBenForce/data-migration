@@ -4,7 +4,8 @@
   "devDependencies": {
     "commitizen": "^4.0.3",
     "cz-lerna-changelog": "^2.0.2",
-    "lerna": "^3.16.4"
+    "lerna": "^3.16.4",
+    "lerna-wizard": "^1.1.1"
   },
   "scripts": {
     "test": "exit 0",
@@ -20,5 +21,10 @@
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
-  }
+  },
+  "dependencies": {},
+  "workspaces": [
+    "packages/*",
+    "plugins/*"
+  ]
 }

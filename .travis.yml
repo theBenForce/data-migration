@@ -17,8 +17,8 @@ jobs:
         - curl -o- -L https://yarnpkg.com/install.sh | bash -s
         - export PATH="$HOME/.yarn/bin:$PATH"
       before_script:
+        - yarn bootstrap
         - yarn run lerna run prepublish
-        - yarn global add typescript
       script:
         - yarn test
       before_deploy:
