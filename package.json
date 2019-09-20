@@ -23,9 +23,14 @@
     }
   },
   "dependencies": {},
-  "workspaces": [
-    "packages/*",
-    "plugins/drivers/*",
-    "plugins/processors/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "plugins/drivers/*",
+      "plugins/processors/*"
+    ],
+    "nohoist": [
+      "swallow-migration"
+    ]
+  }
 }
