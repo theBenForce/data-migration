@@ -2,13 +2,12 @@ import { Command, flags } from "@oclif/command";
 import { appendFileSync } from "fs";
 import Listr = require("listr");
 import * as path from "path";
-import SwallowMigration from "swallow-migration";
-import Configuration from "swallow-migration/lib/Config";
-import { Driver } from "swallow-migration/lib/DriverTypes";
-import {
+import SwallowMigration, {
+  Configuration,
+  Driver,
   MigrationExecutor,
   ScriptContext
-} from "swallow-migration/lib/MigrationScript";
+} from "swallow-migration";
 
 import createLogger, { logFile } from "../utils/createLogger";
 export default class Down extends Command {
@@ -71,7 +70,7 @@ export default class Down extends Command {
               async task() {
                 const log = createLogger(["SCRIPT", script.name]);
 
-                await script.down(context, log).catch(ex => {
+                await script.down(context, log).catch((ex: any) => {
                   createLogger(["ERROR", script.name, "CATCH"])(ex.message);
                 });
               }
@@ -84,7 +83,7 @@ export default class Down extends Command {
         task: () => {
           const logger = createLogger(["Cleanup"]);
           return new Listr(
-            context.getDriversUsed().map(driverName => ({
+            context.getDriversUsed().map((driverName: string) => ({
               title: driverName,
               async task() {
                 logger(`Cleaning up driver ${driverName}`);
