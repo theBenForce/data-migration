@@ -25,6 +25,7 @@
   "dependencies": {},
   "workspaces": [
     "packages/*",
-    "plugins/*"
+    "plugins/drivers/*",
+    "plugins/processors/*"
   ]
 }

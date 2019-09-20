@@ -1,5 +1,11 @@
-import { MissingParameters } from "./Errors";
 import * as babel from "@babel/core";
+import * as fs from "fs";
+import * as path from "path";
+
+import { MigrationScript } from ".";
+import { MissingParameters } from "./Errors";
+import { getMigrationsPath } from "./methods";
+import Configuration from "./Config";
 
 export function checkParameters(
   label: string,
@@ -48,4 +54,27 @@ export async function loadScript<T>(filename: string): Promise<T> {
 
   // @ts-ignore
   return script;
+}
+
+export async function getAllScripts(
+  config: Configuration,
+  log: (message: string) => void
+): Promise<Map<string, MigrationScript>> {
+  let scripts = new Map<string, MigrationScript>();
+  let scriptFiles = fs
+    .readdirSync(getMigrationsPath(config))
+    .filter((fname: string) => /\.(t|j)s$/gi.test(fname));
+
+  for (const fname of scriptFiles) {
+    try {
+      const filename = path.join(getMigrationsPath(config), fname);
+      const script = await loadScript<MigrationScript>(filename);
+
+      scripts.set(fname, script);
+    } catch (ex) {
+      log(ex.message);
+    }
+  }
+
+  return scripts;
 }

@@ -6,12 +6,12 @@ import Configuration from "../Config";
 import MigrationScript, { MigrationExecutor } from "../MigrationScript";
 import createScriptContext from "./CreateScriptContext";
 
-export default async function getUpScripts(
+export default async function getDownScripts(
   config: Configuration,
   drivers: Map<string, Driver>,
   log: (message: string) => void
-): Promise<Array<{ name: string; up: MigrationExecutor<void> }>> {
-  let result = new Array<{ name: string; up: MigrationExecutor<void> }>();
+): Promise<Array<{ name: string; down: MigrationExecutor<void> }>> {
+  let result = new Array<{ name: string; down: MigrationExecutor<void> }>();
 
   let scripts = await getAllScripts(config, log);
 
@@ -26,10 +26,10 @@ export default async function getUpScripts(
       hasRun = await script.hasRun(context, log);
     }
 
-    if (!hasRun) {
+    if (hasRun && script.down) {
       result.push({
         name: fname,
-        up: script.up
+        down: script.down
       });
     }
   }

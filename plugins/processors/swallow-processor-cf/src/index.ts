@@ -1,7 +1,7 @@
-import { Processor } from "swallow-migration";
 import * as AWS from "aws-sdk";
-import { checkParameters, createLogger } from "swallow-migration/lib/Utils";
 import { DescribeStacksOutput } from "aws-sdk/clients/cloudformation";
+import { Processor } from "swallow-migration";
+import { checkParameters } from "swallow-migration/lib/Utils";
 
 const cache: { [key: string]: { [key: string]: DescribeStacksOutput } } = {};
 

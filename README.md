@@ -11,7 +11,7 @@
 ## Install
 
 ```sh
-yarn add swallow-cli
+yarn add --dev swallow-cli
 ```
 
 ## Author

@@ -29,10 +29,26 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`migrate down [CONFIG]`](#migrate-down-config)
 * [`migrate help [COMMAND]`](#migrate-help-command)
 * [`migrate init`](#migrate-init)
 * [`migrate new NAME`](#migrate-new-name)
 * [`migrate up [CONFIG]`](#migrate-up-config)
+
+## `migrate down [CONFIG]`
+
+run all down migration scripts
+
+```
+USAGE
+  $ migrate down [CONFIG]
+
+OPTIONS
+  -h, --help     show CLI help
+  --stage=stage  Stage that will be used when loading config values
+```
+
+_See code: [src/commands/down.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.13/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 

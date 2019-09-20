@@ -8,8 +8,6 @@ import * as AWS from "aws-sdk";
 import { AdminCreateUserRequest } from "aws-sdk/clients/cognitoidentityserviceprovider";
 import CognitoIdentityServiceProvider = require("aws-sdk/clients/cognitoidentityserviceprovider");
 
-import * as cuid from "cuid";
-
 function convertToStandardUser(
   input: CognitoIdentityServiceProvider.UserType
 ): User {
