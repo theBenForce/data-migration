@@ -1,6 +1,6 @@
 {
   "name": "swallow-migration",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Interfaces to create new drivers/processors for swallow-migration",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
