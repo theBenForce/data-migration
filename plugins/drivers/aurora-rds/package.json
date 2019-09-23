@@ -1,0 +1,19 @@
+{
+  "name": "swallow-aurora-rds",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.530.0",
+    "swallow-migration": "^1.0.15"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.2"
+  },
+  "files": [
+    "/lib"
+  ]
+}
