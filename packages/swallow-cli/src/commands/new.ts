@@ -31,11 +31,6 @@ export default class New extends Command {
     fs.writeFileSync(
       name,
       `
-/**
- * @typedef {import('swallow-migration').ScriptContext} ScriptContext
- */
-
-module.exports = {
 import { ScriptContext } from "swallow-migration";
 
 export default {
