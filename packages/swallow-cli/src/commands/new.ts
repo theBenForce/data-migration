@@ -1,13 +1,15 @@
 import { Command, flags } from "@oclif/command";
 import { format } from "date-fns";
-import * as path from "path";
 import * as fs from "fs";
+import * as path from "path";
+import SwallowMigration, { Configuration } from "swallow-migration";
 
 export default class New extends Command {
   static description = "Create a new migration script";
 
   static flags = {
-    help: flags.help({ char: "h" })
+    help: flags.help({ char: "h" }),
+    config: flags.string({ default: path.resolve("./.swallow.js") })
   };
 
   static args = [{ name: "name", required: true }];
@@ -15,7 +17,8 @@ export default class New extends Command {
   async run() {
     const { args, flags } = this.parse(New);
 
-    const prefix = path.resolve("./migrations");
+    let config: Configuration = require(flags.config);
+    const prefix = SwallowMigration.getMigrationsPath(config);
 
     if (!fs.existsSync(prefix)) {
       fs.mkdirSync(prefix);
