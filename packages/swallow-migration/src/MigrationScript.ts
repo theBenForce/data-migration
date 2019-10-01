@@ -3,6 +3,7 @@ import { Driver } from "./DriverTypes";
 export type ScriptContext = {
   getDriver: <T extends Driver>(name: string) => Promise<T>;
   getDriversUsed: () => Array<string>;
+  getConfigValue: (key: string) => string;
 };
 
 export type MigrationExecutor<T> = (

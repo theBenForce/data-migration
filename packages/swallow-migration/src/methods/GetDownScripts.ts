@@ -1,21 +1,18 @@
-import { Driver } from "../DriverTypes";
-
-import { getAllScripts } from "../Utils";
-
 import Configuration from "../Config";
-import MigrationScript, { MigrationExecutor } from "../MigrationScript";
-import createScriptContext from "./CreateScriptContext";
+import MigrationScript, {
+  MigrationExecutor,
+  ScriptContext
+} from "../MigrationScript";
+import { getAllScripts } from "../Utils";
 
 export default async function getDownScripts(
   config: Configuration,
-  drivers: Map<string, Driver>,
+  context: ScriptContext,
   log: (message: string) => void
 ): Promise<Array<{ name: string; down: MigrationExecutor<void> }>> {
   let result = new Array<{ name: string; down: MigrationExecutor<void> }>();
 
   let scripts = await getAllScripts(config, log);
-
-  const context = createScriptContext(drivers);
 
   for (const fname of scripts.keys()) {
     const script = scripts.get(fname) as MigrationScript;

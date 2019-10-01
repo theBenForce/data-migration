@@ -49,13 +49,18 @@ export default class Down extends Command {
             (driverName: string) => createLogger(["DRIVER", driverName])
           );
 
+          const stageParams = await SwallowMigration.processParams(
+            config.stages[stage].params || {},
+            logger
+          );
+
           logger("Creating script context");
-          context = SwallowMigration.createScriptContext(drivers);
+          context = SwallowMigration.createScriptContext(drivers, stageParams);
 
           logger("Finding up scripts");
           scripts = await SwallowMigration.getDownScripts(
             config,
-            drivers,
+            context,
             logger
           );
           logger(`Found ${scripts.length} up scripts`);
