@@ -1,9 +1,10 @@
 import { Driver } from "../DriverTypes";
 
-import { ScriptContext } from "..";
+import { ScriptContext, Configuration } from "..";
 
 export default function createScriptContext(
-  drivers: Map<string, Driver>
+  drivers: Map<string, Driver>,
+  config: { [key: string]: string }
 ): ScriptContext {
   const driversUsed: Array<string> = [];
   return {
@@ -21,6 +22,8 @@ export default function createScriptContext(
 
       return result;
     },
+
+    getConfigValue: (key: string) => config[key],
 
     getDriversUsed: () => driversUsed
   };
