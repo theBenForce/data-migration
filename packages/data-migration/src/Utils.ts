@@ -3,9 +3,10 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { MigrationScript } from "../src";
+
+import Configuration from "./Config";
 import { MissingParameters } from "./Errors";
 import { getMigrationsPath } from "./methods";
-import Configuration from "./Config";
 
 export function checkParameters(
   label: string,
@@ -19,10 +20,11 @@ export function checkParameters(
 }
 
 export function createLogger(observer?: ZenObservable.Observer<any>) {
-  return function log(message: string) {
+  return function(message: string) {
     if (observer && observer.next) {
       observer.next(message);
     } else {
+      // tslint:disable-next-line:no-console
       console.log(message);
     }
   };
@@ -33,6 +35,7 @@ export function createErrorLogger(observer?: ZenObservable.Observer<any>) {
     if (observer && observer.error) {
       observer.error(message);
     } else {
+      // tslint:disable-next-line:no-console
       console.error(message);
     }
   };
@@ -49,6 +52,7 @@ export async function loadScript<T>(filename: string): Promise<T> {
 
   let script: T;
   if (transformResult && transformResult.code) {
+    // tslint:disable-next-line:no-eval
     script = eval(transformResult.code);
   }
 

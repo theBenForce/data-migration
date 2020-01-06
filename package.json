@@ -28,9 +28,6 @@
       "packages/*",
       "plugins/drivers/*",
       "plugins/processors/*"
-    ],
-    "nohoist": [
-      "data-migration"
     ]
   }
 }

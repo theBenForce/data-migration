@@ -1,13 +1,13 @@
 import { Command, flags } from "@oclif/command";
-import { appendFileSync } from "fs";
-import Listr = require("listr");
-import * as path from "path";
 import SwallowMigration, {
   Configuration,
   Driver,
   MigrationExecutor,
   ScriptContext
-} from "../../../data-migration/lib";
+} from "data-migration/lib";
+import { appendFileSync } from "fs";
+import Listr = require("listr");
+import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
 export default class Down extends Command {

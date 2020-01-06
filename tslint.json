@@ -1,5 +1,8 @@
 {
   "extends": "@oclif/tslint",
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts"]
+  },
   "rules": {
     "quotemark": { "options": "avoid-escape" },
     "object-curly-spacing": true,

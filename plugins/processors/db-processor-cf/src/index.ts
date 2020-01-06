@@ -3,13 +3,19 @@ import { DescribeStacksOutput } from "aws-sdk/clients/cloudformation";
 import { Processor } from "data-migration";
 import { checkParameters } from "data-migration/lib/Utils";
 
+import { name as pkgName } from "../package.json";
+
 const cache: { [key: string]: { [key: string]: DescribeStacksOutput } } = {};
+
+const REGION_KEY = "region";
+const STACK_KEY = "stack";
+const OUTPUT_KEY = "output";
 
 async function getStackOutput(params: {
   [key: string]: string;
 }): Promise<Array<AWS.CloudFormation.Output>> {
-  const region = params["region"];
-  const stackName = params["stack"];
+  const region = params[REGION_KEY];
+  const stackName = params[STACK_KEY];
   let data;
 
   if (!cache[region]) {
@@ -53,16 +59,12 @@ const processor: Processor = async (
   params: { [key: string]: string },
   log: (message: string) => void
 ) => {
-  checkParameters(
-    "swallow-processor-cf",
-    ["region", "stack", "output"],
-    params
-  );
-  const stack = params["stack"];
+  checkParameters(pkgName, [REGION_KEY, STACK_KEY, OUTPUT_KEY], params);
+  const stack = params[STACK_KEY];
 
   log(`Getting details for stack ${stack}`);
   const outputs = await getStackOutput(params);
-  const outputName = params["output"];
+  const outputName = params[OUTPUT_KEY];
 
   const output = outputs.find(
     (x: AWS.CloudFormation.Output) => x.OutputKey === outputName

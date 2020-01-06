@@ -1,10 +1,9 @@
-import { DriverBuilder } from "data-migration/lib";
-import UserPoolDriver, { User } from "data-migration/lib/DriverTypes/UserPool";
-import { Driver } from "data-migration/lib/DriverTypes";
-
 import * as AWS from "aws-sdk";
 import { AdminCreateUserRequest } from "aws-sdk/clients/cognitoidentityserviceprovider";
 import CognitoIdentityServiceProvider = require("aws-sdk/clients/cognitoidentityserviceprovider");
+import { DriverBuilder } from "data-migration/lib";
+import { Driver } from "data-migration/lib/DriverTypes";
+import UserPoolDriver, { User } from "data-migration/lib/DriverTypes/UserPool";
 
 function convertToStandardUser(
   input: CognitoIdentityServiceProvider.UserType
@@ -12,7 +11,7 @@ function convertToStandardUser(
   const Attributes: { [key: string]: string } = {};
 
   if (input.Attributes) {
-    input.Attributes.filter(attr => attr.Name !== undefined).forEach(
+    input.Attributes.forEach(
       // @ts-ignore
       attr => (Attributes[attr.Name] = attr.Value)
     );

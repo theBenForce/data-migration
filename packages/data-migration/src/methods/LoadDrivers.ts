@@ -1,15 +1,13 @@
-import { ProcessorParams, LoadConfigParameters } from "../../src";
+import * as _ from "lodash";
 
+import { LoadConfigParameters, ProcessorParams } from "../../src";
 import { Driver } from "../DriverTypes";
 
-import { createLogger, createErrorLogger } from "../Utils";
-import * as _ from "lodash";
 import ProcessParams from "./ProcessParams";
 
 /**
  * Runs all processors on the given parameters
  * @param params The parameter object
- * @param observer
  */
 export default async function loadDrivers(
   drivers: LoadConfigParameters<string | ProcessorParams>,
