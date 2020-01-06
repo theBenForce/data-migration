@@ -5,15 +5,15 @@
   "types": "lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.530.0",
-    "cuid": "^2.1.6",
+    "aws-sdk": "^2.598.0",
+    "cuid": "^2.1.8",
     "data-migration": "^1.0.18"
   },
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
-    "typescript": "^3.6.2"
+    "typescript": "^3.7.4"
   },
   "files": [
     "/lib"

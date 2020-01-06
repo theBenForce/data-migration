@@ -4,7 +4,8 @@
   "devDependencies": {
     "commitizen": "^4.0.3",
     "cz-lerna-changelog": "^2.0.2",
-    "lerna": "^3.16.4",
+    "lerna": "^3.20.2",
+    "lerna-semantic-release": "^9.1.0",
     "lerna-wizard": "^1.1.1"
   },
   "scripts": {

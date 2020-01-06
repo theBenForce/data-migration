@@ -25,7 +25,9 @@ jobs:
         - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
       deploy:
         provider: script
-        script: "yarn run lerna:publish"
+        before_script:
+          - yarn lerna-semantic-release pre
+        script: yarn lerna-semantic-release perform
         skip_cleanup: true
         on:
           branch: master
