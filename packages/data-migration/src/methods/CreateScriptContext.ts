@@ -1,6 +1,6 @@
 import { Driver } from "../DriverTypes";
 
-import { ScriptContext, Configuration } from "..";
+import { ScriptContext, Configuration } from "../../src";
 
 export default function createScriptContext(
   drivers: Map<string, Driver>,

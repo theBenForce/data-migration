@@ -1,18 +1,17 @@
 import { Command, flags } from "@oclif/command";
 import { appendFileSync } from "fs";
-import * as Listr from "listr";
+import Listr = require("listr");
 import * as path from "path";
 import SwallowMigration, {
   Configuration,
   Driver,
   MigrationExecutor,
   ScriptContext
-} from "swallow-migration";
+} from "../../../data-migration/lib";
 
 import createLogger, { logFile } from "../utils/createLogger";
-
-export default class Up extends Command {
-  static description = "run all migration scripts";
+export default class Down extends Command {
+  static description = "run all down migration scripts";
 
   static flags = {
     help: flags.help({ char: "h" }),
@@ -24,11 +23,11 @@ export default class Up extends Command {
   static args = [{ name: "config", default: path.resolve("./.swallow.js") }];
 
   async run() {
-    const { args, flags } = this.parse(Up);
+    const { args, flags } = this.parse(Down);
     let config: Configuration = require(args.config);
 
     let stage = flags.stage || config.defaultStage || "prod";
-    let scripts: Array<{ name: string; up: MigrationExecutor<void> }>;
+    let scripts: Array<{ name: string; down: MigrationExecutor<void> }>;
     let drivers: Map<string, Driver>;
     let context: ScriptContext;
 
@@ -50,15 +49,16 @@ export default class Up extends Command {
             (driverName: string) => createLogger(["DRIVER", driverName])
           );
 
-          logger("Creating script context");
           const stageParams = await SwallowMigration.processParams(
             config.stages[stage].params || {},
             logger
           );
+
+          logger("Creating script context");
           context = SwallowMigration.createScriptContext(drivers, stageParams);
 
           logger("Finding up scripts");
-          scripts = await SwallowMigration.getUpScripts(
+          scripts = await SwallowMigration.getDownScripts(
             config,
             context,
             logger
@@ -75,7 +75,7 @@ export default class Up extends Command {
               async task() {
                 const log = createLogger(["SCRIPT", script.name]);
 
-                await script.up(context, log).catch((ex: any) => {
+                await script.down(context, log).catch((ex: any) => {
                   createLogger(["ERROR", script.name, "CATCH"])(ex.message);
                 });
               }

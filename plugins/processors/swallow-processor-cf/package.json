@@ -1,5 +1,5 @@
 {
-  "name": "swallow-processor-cf",
+  "name": "dm-processor-cf",
   "version": "1.0.18",
   "description": "Gets an output from cloudformation and returns the value",
   "main": "lib/index.js",
@@ -13,7 +13,7 @@
   "dependencies": {
     "aws-sdk": "^2.523.0",
     "listr": "^0.14.3",
-    "swallow-migration": "^1.0.18",
+    "data-migration": "^1.0.18",
     "zen-observable": "^0.8.14"
   },
   "scripts": {

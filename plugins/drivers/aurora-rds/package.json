@@ -1,11 +1,11 @@
 {
-  "name": "swallow-aurora-rds",
+  "name": "dm-aurora-rds",
   "version": "1.0.18",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.530.0",
-    "swallow-migration": "^1.0.18"
+    "data-migration": "^1.0.18"
   },
   "scripts": {
     "build": "tsc"

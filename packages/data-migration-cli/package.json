@@ -1,5 +1,5 @@
 {
-  "name": "swallow-cli",
+  "name": "data-migration-cli",
   "description": "A migration utility for AWS resources",
   "version": "1.0.18",
   "author": "Ben Force",
@@ -7,7 +7,7 @@
     "migrate": "./bin/run"
   },
   "bugs": {
-    "url": "https://github.com/drg-adaptive/swallow-migration/issues"
+    "url": "https://github.com/drg-adaptive/data-migration/issues"
   },
   "dependencies": {
     "@oclif/command": "^1",
@@ -16,7 +16,7 @@
     "@types/node": "^10",
     "date-fns": "^2.0.1",
     "listr": "^0.14.3",
-    "swallow-migration": "^1.0.18",
+    "data-migration": "^1.0.18",
     "tslib": "^1",
     "zen-observable": "^0.8.14"
   },
@@ -40,7 +40,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/drg-adaptive/swallow-migration",
+  "homepage": "https://github.com/drg-adaptive/data-migration",
   "keywords": [
     "oclif"
   ],
@@ -55,7 +55,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drg-adaptive/swallow-migration.git"
+    "url": "git+https://github.com/drg-adaptive/data-migration.git"
   },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",

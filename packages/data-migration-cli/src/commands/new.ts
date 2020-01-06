@@ -2,7 +2,7 @@ import { Command, flags } from "@oclif/command";
 import { format } from "date-fns";
 import * as fs from "fs";
 import * as path from "path";
-import SwallowMigration, { Configuration } from "swallow-migration";
+import SwallowMigration, { Configuration } from "../../../data-migration/lib";
 
 export default class New extends Command {
   static description = "Create a new migration script";

@@ -1,4 +1,4 @@
-import { ProcessorParams, LoadConfigParameters } from "..";
+import { ProcessorParams, LoadConfigParameters } from "../../src";
 
 import { Driver } from "../DriverTypes";
 

@@ -1,7 +1,7 @@
 {
-  "name": "swallow-migration",
+  "name": "data-migration",
   "version": "1.0.18",
-  "description": "Interfaces to create new drivers/processors for swallow-migration",
+  "description": "Interfaces to create new drivers/processors for data-migration",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Ben Force",
