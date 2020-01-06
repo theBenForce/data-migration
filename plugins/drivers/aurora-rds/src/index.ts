@@ -5,8 +5,8 @@ import {
   ColumnMetadata,
   ExecuteStatementRequest
 } from "aws-sdk/clients/rdsdataservice";
-import { DriverBuilder } from "swallow-migration/lib";
-import RDSDriver from "swallow-migration/lib/DriverTypes/RDS";
+import { DriverBuilder } from "data-migration/lib";
+import RDSDriver from "data-migration/lib/DriverTypes/RDS";
 
 function convertResultsToObject<T>(
   metadata?: AWS.RDSDataService.ColumnMetadata[]

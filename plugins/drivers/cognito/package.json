@@ -1,5 +1,5 @@
 {
-  "name": "swallow-cognito",
+  "name": "dm-driver-cognito",
   "version": "1.0.18",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -7,7 +7,7 @@
   "dependencies": {
     "aws-sdk": "^2.530.0",
     "cuid": "^2.1.6",
-    "swallow-migration": "^1.0.18"
+    "data-migration": "^1.0.18"
   },
   "scripts": {
     "build": "tsc"

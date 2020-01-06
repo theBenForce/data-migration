@@ -1,8 +1,6 @@
-import { DriverBuilder } from "swallow-migration/lib";
-import UserPoolDriver, {
-  User
-} from "swallow-migration/lib/DriverTypes/UserPool";
-import { Driver } from "swallow-migration/lib/DriverTypes";
+import { DriverBuilder } from "data-migration/lib";
+import UserPoolDriver, { User } from "data-migration/lib/DriverTypes/UserPool";
+import { Driver } from "data-migration/lib/DriverTypes";
 
 import * as AWS from "aws-sdk";
 import { AdminCreateUserRequest } from "aws-sdk/clients/cognitoidentityserviceprovider";

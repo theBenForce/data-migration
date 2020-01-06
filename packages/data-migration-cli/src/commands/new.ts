@@ -2,7 +2,8 @@ import { Command, flags } from "@oclif/command";
 import { format } from "date-fns";
 import * as fs from "fs";
 import * as path from "path";
-import SwallowMigration, { Configuration } from "../../../data-migration/lib";
+
+import SwallowMigration, { Configuration } from "data-migration/lib";
 
 export default class New extends Command {
   static description = "Create a new migration script";
@@ -34,7 +35,7 @@ export default class New extends Command {
     fs.writeFileSync(
       name,
       `
-import { ScriptContext } from "swallow-migration";
+import { ScriptContext } from "data-migration";
 
 export default {
   name: "${args.name}",

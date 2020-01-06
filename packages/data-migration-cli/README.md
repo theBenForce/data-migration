@@ -1,20 +1,23 @@
-swallow-cli
-===========
+# swallow-cli
 
 A migration utility for AWS resources
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/swallow-cli.svg)](https://npmjs.org/package/swallow-cli)
-[![Codecov](https://codecov.io/gh/drg-adaptive/swallow-migration/branch/master/graph/badge.svg)](https://codecov.io/gh/drg-adaptive/swallow-migration)
-[![Downloads/week](https://img.shields.io/npm/dw/swallow-cli.svg)](https://npmjs.org/package/swallow-cli)
-[![License](https://img.shields.io/npm/l/swallow-cli.svg)](https://github.com/drg-adaptive/swallow-migration/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/data-cli.svg)](https://npmjs.org/package/data-cli)
+[![Codecov](https://codecov.io/gh/drg-adaptive/data-migration/branch/master/graph/badge.svg)](https://codecov.io/gh/drg-adaptive/data-migration)
+[![Downloads/week](https://img.shields.io/npm/dw/data-cli.svg)](https://npmjs.org/package/data-cli)
+[![License](https://img.shields.io/npm/l/data-cli.svg)](https://github.com/drg-adaptive/data-migration/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
+
+- [Usage](#usage)
+- [Commands](#commands)
+  <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g swallow-cli
 $ migrate COMMAND
@@ -26,14 +29,21 @@ USAGE
   $ migrate COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`migrate down [CONFIG]`](#migrate-down-config)
-* [`migrate help [COMMAND]`](#migrate-help-command)
-* [`migrate init`](#migrate-init)
-* [`migrate new NAME`](#migrate-new-name)
-* [`migrate up [CONFIG]`](#migrate-up-config)
+
+- [swallow-cli](#swallow-cli)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [migrate down [CONFIG]](#migrate-down-config)
+  - [migrate help [COMMAND]](#migrate-help-command)
+  - [migrate init](#migrate-init)
+  - [migrate new NAME](#migrate-new-name)
+  - [migrate up [CONFIG]](#migrate-up-config)
 
 ## `migrate down [CONFIG]`
 
@@ -48,7 +58,7 @@ OPTIONS
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/down.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.18/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/drg-adaptive/data-migration/blob/v1.0.18/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -110,4 +120,5 @@ OPTIONS
 ```
 
 _See code: [src/commands/up.ts](https://github.com/drg-adaptive/swallow-migration/blob/v1.0.18/src/commands/up.ts)_
+
 <!-- commandsstop -->

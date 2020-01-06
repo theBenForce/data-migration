@@ -30,7 +30,7 @@
       "plugins/processors/*"
     ],
     "nohoist": [
-      "swallow-migration"
+      "data-migration"
     ]
   }
 }
