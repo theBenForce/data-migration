@@ -4,7 +4,7 @@
   "devDependencies": {
     "commitizen": "^4.0.3",
     "cz-lerna-changelog": "^2.0.2",
-    "lerna": "2.0.0-beta.34",
+    "lerna": "latest",
     "lerna-semantic-release": "^9.1.0",
     "lerna-wizard": "^1.1.1"
   },
@@ -23,7 +23,6 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
-  "dependencies": {},
   "workspaces": {
     "packages": [
       "packages/*",
