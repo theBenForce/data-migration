@@ -9,41 +9,35 @@ A migration utility for AWS resources
 [![License](https://img.shields.io/npm/l/data-migration-cli.svg)](https://github.com/drg-adaptive/data-migration/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
-  <!-- tocstop -->
+* [data-migration-cli](#data-migration-cli)
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/1.0.18 darwin-x64 node-v10.16.0
+data-migration-cli/1.0.18 darwin-x64 node-v12.13.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [data-migration-cli](#data-migration-cli)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [migrate down [CONFIG]](#migrate-down-config)
-  - [migrate help [COMMAND]](#migrate-help-command)
-  - [migrate init](#migrate-init)
-  - [migrate new NAME](#migrate-new-name)
-  - [migrate up [CONFIG]](#migrate-up-config)
+* [`migrate down [CONFIG]`](#migrate-down-config)
+* [`migrate help [COMMAND]`](#migrate-help-command)
+* [`migrate init`](#migrate-init)
+* [`migrate new NAME`](#migrate-new-name)
+* [`migrate up [CONFIG]`](#migrate-up-config)
 
 ## `migrate down [CONFIG]`
 
@@ -75,7 +69,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 
 ## `migrate init`
 
@@ -120,5 +114,4 @@ OPTIONS
 ```
 
 _See code: [src/commands/up.ts](https://github.com/drg-adaptive/data-migration/blob/v1.0.18/src/commands/up.ts)_
-
 <!-- commandsstop -->

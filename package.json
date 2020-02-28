@@ -4,19 +4,20 @@
   "devDependencies": {
     "commitizen": "^4.0.3",
     "cz-lerna-changelog": "^2.0.2",
-    "lerna": "latest",
+    "lerna": "2.0.0-beta.34",
     "lerna-semantic-release": "^9.1.0",
     "lerna-wizard": "^1.1.1"
   },
   "scripts": {
     "test": "exit 0",
     "lerna": "lerna",
-    "bootstrap": "lerna bootstrap",
+    "postinstall": "lerna bootstrap",
     "dev": "lerna run build --stream --parallel",
     "lerna:version": "lerna version patch && yarn run lerna:postversion",
     "lerna:postversion": "git push --follow-tags",
     "prepublish": "lerna run prepublish",
-    "lerna:publish": "lerna publish from-package --yes"
+    "lerna:publish": "lerna publish from-package --yes",
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform"
   },
   "config": {
     "commitizen": {
