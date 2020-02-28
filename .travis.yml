@@ -5,11 +5,6 @@ branches:
   only:
     - master
 
-cache:
-  yarn: true
-  directories:
-    - "node_modules"
-
 jobs:
   include:
     - stage: publish
