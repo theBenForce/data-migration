@@ -5,22 +5,19 @@ branches:
   only:
     - master
 
+cache:
+  directories:
+    - node_modules
+
 jobs:
   include:
     - stage: publish
-      before_install:
-        - curl -o- -L https://yarnpkg.com/install.sh | bash -s
-        - export PATH="$HOME/.yarn/bin:$PATH"
-      install: yarn install
+      before_install: .travis/before_install.sh
       script:
         - yarn test
-      before_deploy:
-        - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
       deploy:
         provider: script
-        before_script:
-          - yarn lerna-semantic-release pre
-        script: yarn lerna-semantic-release perform
+        script: yarn semantic-release
         skip_cleanup: true
         on:
           branch: master
