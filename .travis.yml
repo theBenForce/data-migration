@@ -19,16 +19,13 @@ jobs:
         - provider: script
           script:
             - git update-index --assume-unchanged packages/data-migration-cli/README.md
-            - git update-index --assume-unchanged .npmrc
             - yarn release
           skip_cleanup: true
           on:
             branch: master
 
         - provider: script
-          script:
-            - git update-index --assume-unchanged .npmrc
-            - yarn npm:publish
+          script: yarn npm:publish
           skip_cleanup: true
           on:
             branch: master
