@@ -60,8 +60,8 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
-    "prepublish": "yarn prepack",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepublish": "yarn build",
+    "prepack": "yarn build",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
     "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
