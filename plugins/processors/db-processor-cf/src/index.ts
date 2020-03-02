@@ -3,7 +3,7 @@ import { DescribeStacksOutput } from "aws-sdk/clients/cloudformation";
 import { Processor } from "data-migration";
 import { checkParameters } from "data-migration/lib/Utils";
 
-import { name as pkgName } from "../package.json";
+const { name: pkgName } = require("../package.json");
 
 const cache: { [key: string]: { [key: string]: DescribeStacksOutput } } = {};
 
