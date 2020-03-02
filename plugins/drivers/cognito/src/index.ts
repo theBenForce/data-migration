@@ -1,7 +1,7 @@
 import * as AWS from "aws-sdk";
 import { AdminCreateUserRequest } from "aws-sdk/clients/cognitoidentityserviceprovider";
 import CognitoIdentityServiceProvider = require("aws-sdk/clients/cognitoidentityserviceprovider");
-import { DriverBuilder } from "data-migration/lib";
+import { DriverBuilder } from "data-migration";
 import { Driver } from "data-migration/lib/DriverTypes";
 import UserPoolDriver, { User } from "data-migration/lib/DriverTypes/UserPool";
 
@@ -26,8 +26,8 @@ function convertToStandardUser(
   };
 }
 
-const cognitoDriver: DriverBuilder = (
-  params: { [key: string]: string },
+const cognitoDriver: DriverBuilder<Record<string, string>> = (
+  params,
   logger: (message: string) => void
 ): Driver => {
   let cognitoidentityserviceprovider: CognitoIdentityServiceProvider;

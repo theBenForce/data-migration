@@ -1,7 +1,7 @@
 import { Driver } from "./DriverTypes";
 
-type DriverBuilder = (
-  params: { [key: string]: string },
+type DriverBuilder = <T>(
+  params: T,
   logger: (message: string) => void
 ) => Driver;
 

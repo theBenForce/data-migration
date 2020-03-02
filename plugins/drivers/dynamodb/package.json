@@ -1,0 +1,26 @@
+{
+  "name": "dm-driver-dynamodb",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/drivers/dynamodb",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBenForce/data-migration.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.631.0",
+    "data-migration": "^1.0.18"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
