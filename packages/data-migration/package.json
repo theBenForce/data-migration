@@ -14,7 +14,8 @@
   },
   "scripts": {
     "prepublish": "yarn build",
-    "build": "tsc"
+    "build": "tsc",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "@babel/core": "^7.8.6",

@@ -8,7 +8,8 @@
     "data-migration": "^1.0.18"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
     "typescript": "^3.8.3"

@@ -17,7 +17,8 @@
     "zen-observable": "^0.8.15"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "files": [
     "/lib"

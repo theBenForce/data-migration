@@ -64,7 +64,8 @@
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
-    "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme"
+    "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "types": "lib/index.d.ts",
   "directories": {

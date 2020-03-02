@@ -13,20 +13,13 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   rm -rf .git
   git init
   git clean -dfx
-  git remote add origin https://github.com/theBenForce/data-migration.git
-  git fetch origin
-  git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+
+  git config user.email "travis@travis-ci.org"
+  git config user.name "Travis CI"
+  git remote set-url origin https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
   git checkout $TRAVIS_BRANCH
 
-  git config credential.helper store
-  echo "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/theBenForce/data-migration.git" > ~/.git-credentials
-
-  npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN -q
-  npm prune
-
-  git config --global user.email "benforce@gmail.com"
-  git config --global user.name "Ben Force"
-  git config --global push.default simple
+  echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc 2> /dev/null
 
   git fetch --tags
   git branch -u origin/$TRAVIS_BRANCH

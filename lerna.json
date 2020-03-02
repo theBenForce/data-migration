@@ -5,9 +5,12 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
+      "npmClient": "npm",
       "allowBranch": "master",
-      "message": "chore(release): publish %s"
+      "conventionalCommits": true
+    },
+    "version": {
+      "message": "chore(release): release [skip ci]"
     }
-  },
-  "lerna": "2.0.0-beta.34"
+  }
 }

@@ -14,10 +14,16 @@ jobs:
     - stage: publish
       before_install: .travis/before_install.sh
       script:
-        - yarn test
+        - yarn build
       deploy:
-        provider: script
-        script: yarn semantic-release
-        skip_cleanup: true
-        on:
-          branch: master
+        - provider: script
+          script: yarn release
+          skip_cleanup: true
+          on:
+            branch: master
+
+        - provider: script
+          script: yarn npm:publish
+          skip_cleanup: true
+          on:
+            branch: master
