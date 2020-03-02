@@ -10,7 +10,7 @@
     "@types/babel__core": "^7.1.6",
     "@types/lodash": "^4.14.149",
     "@types/zen-observable": "^0.8.0",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "prepublish": "yarn build",
