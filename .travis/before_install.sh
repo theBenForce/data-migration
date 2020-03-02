@@ -16,7 +16,7 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
 
   git config user.email "travis@travis-ci.org"
   git config user.name "Travis CI"
-  git remote set-url origin https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+  git remote add origin https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
   git checkout $TRAVIS_BRANCH
 
   echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc 2> /dev/null
