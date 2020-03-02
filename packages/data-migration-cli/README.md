@@ -52,7 +52,7 @@ OPTIONS
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/down.ts](https://github.com/drg-adaptive/data-migration/blob/v1.0.18/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v1.0.18/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -83,7 +83,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/drg-adaptive/data-migration/blob/v1.0.18/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v1.0.18/src/commands/init.ts)_
 
 ## `migrate new NAME`
 
@@ -98,7 +98,7 @@ OPTIONS
   --config=config  [default: /Users/bforce/repos/data-migration/packages/data-migration-cli/.swallow.js]
 ```
 
-_See code: [src/commands/new.ts](https://github.com/drg-adaptive/data-migration/blob/v1.0.18/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v1.0.18/src/commands/new.ts)_
 
 ## `migrate up [CONFIG]`
 
@@ -113,5 +113,5 @@ OPTIONS
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/up.ts](https://github.com/drg-adaptive/data-migration/blob/v1.0.18/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v1.0.18/src/commands/up.ts)_
 <!-- commandsstop -->

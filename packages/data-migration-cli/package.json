@@ -40,7 +40,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/drg-adaptive/data-migration",
+  "homepage": "https://github.com/theBenForce/data-migration/tree/master/packages/data-migration-cli",
   "keywords": [
     "oclif"
   ],
@@ -55,7 +55,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drg-adaptive/data-migration.git"
+    "url": "git+https://github.com/theBenForce/data-migration.git"
   },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",

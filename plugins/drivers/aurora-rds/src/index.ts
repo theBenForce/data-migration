@@ -5,7 +5,7 @@ import {
   ColumnMetadata,
   ExecuteStatementRequest
 } from "aws-sdk/clients/rdsdataservice";
-import { DriverBuilder } from "data-migration/lib";
+import { DriverBuilder } from "data-migration";
 import RDSDriver from "data-migration/lib/DriverTypes/RDS";
 
 function convertResultsToObject<T>(
@@ -30,7 +30,7 @@ function convertResultsToObject<T>(
   };
 }
 
-const rdsDriver: DriverBuilder = (
+const rdsDriver: DriverBuilder<Record<string, string>> = (
   params: { [key: string]: string },
   logger: (message: string) => void
 ): RDSDriver => {
@@ -98,3 +98,5 @@ const rdsDriver: DriverBuilder = (
     }
   };
 };
+
+export = rdsDriver;
