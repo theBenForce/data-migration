@@ -3,6 +3,11 @@
   "version": "1.0.18",
   "main": "index.js",
   "license": "MIT",
+  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/drivers/aurora-rds",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBenForce/data-migration.git"
+  },
   "dependencies": {
     "aws-sdk": "^2.630.0",
     "data-migration": "^1.0.18"

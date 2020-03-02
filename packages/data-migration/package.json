@@ -6,6 +6,11 @@
   "types": "lib/index.d.ts",
   "author": "Ben Force",
   "license": "MIT",
+  "homepage": "https://github.com/theBenForce/data-migration/tree/master/packages/data-migration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBenForce/data-migration.git"
+  },
   "devDependencies": {
     "@types/babel__core": "^7.1.6",
     "@types/lodash": "^4.14.149",

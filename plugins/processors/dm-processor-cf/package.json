@@ -5,6 +5,11 @@
   "main": "lib/index.js",
   "author": "Ben Force",
   "license": "MIT",
+  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/processors/db-processor-cf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBenForce/data-migration.git"
+  },
   "devDependencies": {
     "@types/listr": "^0.14.2",
     "@types/zen-observable": "^0.8.0",
