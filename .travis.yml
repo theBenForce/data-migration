@@ -26,7 +26,9 @@ jobs:
             branch: master
 
         - provider: script
-          script: yarn npm:publish
+          script:
+            - git update-index --assume-unchanged .npmrc
+            - yarn npm:publish
           skip_cleanup: true
           on:
             branch: master
