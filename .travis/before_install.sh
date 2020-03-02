@@ -18,12 +18,11 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   git config user.name "Travis CI"
   git remote add origin https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
   git fetch
-  git checkout origin/$TRAVIS_BRANCH
+  git checkout -b $TRAVIS_BRANCH origin/$TRAVIS_BRANCH
 
   echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc 2> /dev/null
 
   git fetch --tags
-  git branch -u origin/$TRAVIS_BRANCH
   git fsck --full #debug
   echo "npm whoami"
   npm whoami #debug
