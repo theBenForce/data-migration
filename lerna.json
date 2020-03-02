@@ -1,10 +1,6 @@
 {
-  "packages": [
-    "packages/*",
-    "plugins/drivers/*",
-    "plugins/processors/*"
-  ],
-  "version": "1.0.18",
+  "packages": ["packages/*", "plugins/drivers/*", "plugins/processors/*"],
+  "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
