@@ -1,20 +1,16 @@
 import * as AWS from "aws-sdk";
-// tslint:disable-next-line: no-duplicate-imports
-import { RDSDataService } from "aws-sdk";
-import {
-  ColumnMetadata,
-  ExecuteStatementRequest
-} from "aws-sdk/clients/rdsdataservice";
+import { ColumnMetadata, ExecuteStatementRequest } from "aws-sdk/clients/rdsdataservice";
 import { DriverBuilder } from "data-migration";
 import RDSDriver from "data-migration/lib/DriverTypes/RDS";
+import { Observable } from "rxjs";
 
 function convertResultsToObject<T>(
   metadata?: AWS.RDSDataService.ColumnMetadata[]
-): (record: RDSDataService.Field[]) => T {
+): (record: AWS.RDSDataService.Field[]) => T {
   if (!metadata) {
     throw new Error(`No metadata defined!`);
   }
-  return (record: RDSDataService.Field[]) => {
+  return (record: AWS.RDSDataService.Field[]) => {
     const result: { [key: string]: any } = {};
 
     metadata.forEach((value: ColumnMetadata, idx: number) => {
@@ -34,68 +30,69 @@ const rdsDriver: DriverBuilder<Record<string, string>> = (
   params: { [key: string]: string },
   logger: (message: string) => void
 ): RDSDriver => {
-  let dataService: RDSDataService;
-  let transactionId: string;
+  let dataService: AWS.RDSDataService;
+  let transactionId: string | undefined;
   let paramsBase = {
     resourceArn: params.resourceArn,
-    secretArn: params.secretArn
+    secretArn: params.secretArn,
   };
 
   return {
-    async query<T>(
-      query: string,
-      parameters: Array<RDSDataService.SqlParameter>
-    ): Promise<Array<T>> {
-      const queryParameters: ExecuteStatementRequest = {
-        ...paramsBase,
-        sql: query,
-        database: params.database,
-        schema: params.schema,
-        includeResultMetadata: true,
-        transactionId,
-        parameters
-      };
+    query<T>(query: string, parameters: Array<AWS.RDSDataService.SqlParameter>): Observable<T> {
+      // @ts-ignore
+      return new Observable<T>(async (subscriber) => {
+        const queryParameters: ExecuteStatementRequest = {
+          ...paramsBase,
+          sql: query,
+          database: params.database,
+          schema: params.schema,
+          includeResultMetadata: true,
+          transactionId,
+          parameters,
+        };
 
-      const result = await dataService
-        .executeStatement(queryParameters)
-        .promise();
+        const result = await dataService.executeStatement(queryParameters).promise();
 
-      if (result.records === undefined) {
-        return [];
-      }
+        if (result.records === undefined) {
+          return [];
+        }
 
-      return result.records.map(
-        convertResultsToObject<T>(result.columnMetadata)
-      );
+        result.records
+          .map(convertResultsToObject<T>(result.columnMetadata))
+          .forEach((record) => subscriber.next(record));
+
+        subscriber.complete();
+      });
     },
 
     async init() {
       dataService = new AWS.RDSDataService({
         apiVersion: "2018-08-01",
-        region: params.region
+        region: params.region,
       });
 
       const transactionParams = {
         ...paramsBase,
         database: params.database,
-        schema: params.schema
+        schema: params.schema,
       };
 
       logger(`Creating transaction`);
-      let { transactionId } = await dataService
-        .beginTransaction(transactionParams)
-        .promise();
+      const result = await dataService.beginTransaction(transactionParams).promise();
+      transactionId = result.transactionId;
     },
 
     async cleanup() {
-      const transactionParams = {
-        ...paramsBase,
-        transactionId
-      };
+      if (transactionId !== undefined) {
+        const transactionParams = {
+          ...paramsBase,
+          transactionId,
+        };
 
-      logger(`Committing transaction`);
-      await dataService.commitTransaction(transactionParams).promise();
-    }
+        logger(`Committing transaction`);
+        await dataService.commitTransaction(transactionParams).promise();
+      }
+    },
   };
 };
 

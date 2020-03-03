@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "aws-sdk": "^2.630.0",
-    "data-migration": "^1.0.18"
+    "data-migration": "^1.0.18",
+    "rxjs": "^6.5.4"
   },
   "scripts": {
     "build": "tsc",
