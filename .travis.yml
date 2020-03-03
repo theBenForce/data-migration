@@ -13,9 +13,7 @@ jobs:
   include:
     - stage: publish
       before_install: .travis/before_install.sh
-      script:
-        - yarn build
-        - 'git commit -am "chore: pipeline updates"'
+      script: yarn build
       deploy:
         - provider: script
           script: yarn release
