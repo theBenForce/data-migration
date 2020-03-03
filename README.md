@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-yarn add --dev swallow-cli
+yarn add --dev data-migration-cli
 ```
 
 ## Author

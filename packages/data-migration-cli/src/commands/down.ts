@@ -1,10 +1,10 @@
 import { Command, flags } from "@oclif/command";
-import SwallowMigration, {
+import DataMigrationProcessor, {
   Configuration,
   Driver,
   MigrationExecutor,
-  ScriptContext
-} from "data-migration/lib";
+  ScriptContext,
+} from "data-migration";
 import { appendFileSync } from "fs";
 import Listr = require("listr");
 import * as path from "path";
@@ -16,11 +16,11 @@ export default class Down extends Command {
   static flags = {
     help: flags.help({ char: "h" }),
     stage: flags.string({
-      description: "Stage that will be used when loading config values"
-    })
+      description: "Stage that will be used when loading config values",
+    }),
   };
 
-  static args = [{ name: "config", default: path.resolve("./.swallow.js") }];
+  static args = [{ name: "config", default: path.resolve("./.dm.config.js") }];
 
   async run() {
     const { args, flags } = this.parse(Down);
@@ -31,10 +31,7 @@ export default class Down extends Command {
     let drivers: Map<string, Driver>;
     let context: ScriptContext;
 
-    appendFileSync(
-      logFile,
-      `\n\nStarting migration at ${new Date().toISOString()}`
-    );
+    appendFileSync(logFile, `\n\nStarting migration at ${new Date().toISOString()}`);
 
     const tasks = new Listr([
       {
@@ -43,34 +40,30 @@ export default class Down extends Command {
           const logger = createLogger(["Init"]);
 
           logger("Loading drivers");
-          drivers = await SwallowMigration.loadDrivers(
+          drivers = await DataMigrationProcessor.loadDrivers(
             config.stages[stage],
             logger,
             (driverName: string) => createLogger(["DRIVER", driverName])
           );
 
-          const stageParams = await SwallowMigration.processParams(
+          const stageParams = await DataMigrationProcessor.processParams(
             config.stages[stage].params || {},
             logger
           );
 
           logger("Creating script context");
-          context = SwallowMigration.createScriptContext(drivers, stageParams);
+          context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
 
           logger("Finding up scripts");
-          scripts = await SwallowMigration.getDownScripts(
-            config,
-            context,
-            logger
-          );
+          scripts = await DataMigrationProcessor.getDownScripts(config, context, logger);
           logger(`Found ${scripts.length} up scripts`);
-        }
+        },
       },
       {
         title: `Running Migrations`,
         task() {
           return new Listr(
-            scripts.map(script => ({
+            scripts.map((script) => ({
               title: script.name,
               async task() {
                 const log = createLogger(["SCRIPT", script.name]);
@@ -78,10 +71,10 @@ export default class Down extends Command {
                 await script.down(context, log).catch((ex: any) => {
                   createLogger(["ERROR", script.name, "CATCH"])(ex.message);
                 });
-              }
+              },
             }))
           );
-        }
+        },
       },
       {
         title: `Cleanup`,
@@ -94,14 +87,14 @@ export default class Down extends Command {
                 logger(`Cleaning up driver ${driverName}`);
                 const driver = await context.getDriver(driverName);
                 await driver.cleanup();
-              }
+              },
             }))
           );
-        }
-      }
+        },
+      },
     ]);
 
-    await tasks.run().catch(ex => {
+    await tasks.run().catch((ex) => {
       createLogger(["ERROR", "CATCH"])(ex.message);
     });
     createLogger(["Done"])("");
