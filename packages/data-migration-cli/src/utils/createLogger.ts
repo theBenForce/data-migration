@@ -1,5 +1,5 @@
-import * as path from "path";
 import { appendFileSync } from "fs";
+import * as path from "path";
 
 export const logFile = path.join(process.cwd(), "migration.log");
 
@@ -13,8 +13,8 @@ export default function createLogger(
       [
         "\n",
         new Date().toISOString(),
-        ...labels.map(label => `[${label.trim()}]`),
-        message.trim()
+        ...labels.map((label) => `[${label.trim()}]`),
+        message.trim(),
       ].join("\t")
     );
 

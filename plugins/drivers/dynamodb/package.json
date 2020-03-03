@@ -11,8 +11,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest"
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "test": "jest",
+    "semantic-release": "semantic-release -e semantic-release-monorepo",
+    "lint": "eslint src/**/*.*"
   },
   "files": [
     "/lib"

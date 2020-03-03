@@ -1,0 +1,4 @@
+.eslintrc
+package.json
+node_modules/
+*.test.ts
