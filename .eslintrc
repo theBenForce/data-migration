@@ -1,0 +1,45 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "exclude": ["node_modules/**/*.ts", ".eslintrc"],
+    "include": ["src/**/*.ts"]
+  },
+  "env": {
+    "browser": false,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:sonarjs/recommended"
+  ],
+  "plugins": ["@typescript-eslint/eslint-plugin", "sonarjs", "unicorn"],
+  "rules": {
+    "@typescript-eslint/array-type": ["warn", { "default": "generic" }],
+    "@typescript-eslint/ban-ts-ignore": "warn",
+    "@typescript-eslint/class-name-casing": "error",
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      { "prefixWithI": "never" }
+    ],
+    "@typescript-eslint/prefer-interface": 0,
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      { "accessibility": "no-public" }
+    ],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": "warn",
+    "unicorn/filename-case": ["error", { "case": "camelCase" }],
+    "no-console": "warn",
+    "no-magic-numbers": ["error", { "ignore": [-1, 0, 1] }],
+    "no-var": "error",
+    "object-literal-sort-keys": 0,
+    "semi": "error"
+  }
+}

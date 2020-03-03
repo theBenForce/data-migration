@@ -15,19 +15,19 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
   logger: (message: string) => void
 ): NoSqlDriver => {
   const { TableName } = params;
-  let DocumentDb = new AWS.DynamoDB.DocumentClient({
+  const DocumentDb = new AWS.DynamoDB.DocumentClient({
     region: params.region,
     apiVersion: "2012-08-10",
     accessKeyId: params.accessKeyId,
-    secretAccessKey: params.secretAccessKey
+    secretAccessKey: params.secretAccessKey,
   });
 
   return {
     getAllRecords<T>(): Observable<T> {
       // @ts-ignore
-      return new Observable<T>(async subscriber => {
+      return new Observable<T>(async (subscriber) => {
         const params = {
-          TableName
+          TableName,
         } as AWS.DynamoDB.DocumentClient.ScanInput;
 
         let resultsRaw: AWS.DynamoDB.DocumentClient.ScanOutput;
@@ -46,7 +46,7 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
 
         subscriber.complete();
       });
-    }
+    },
   } as NoSqlDriver;
 };
 
