@@ -95,7 +95,7 @@ USAGE
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: /Users/bforce/repos/data-migration/packages/data-migration-cli/.swallow.js]
+  --config=config  [default: /Users/bforce/repos/data-migration/packages/data-migration-cli/.dm.config.js]
 ```
 
 _See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v1.0.18/src/commands/new.ts)_
