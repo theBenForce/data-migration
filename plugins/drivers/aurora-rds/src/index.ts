@@ -26,8 +26,15 @@ function convertResultsToObject<T>(
   };
 }
 
-const rdsDriver: DriverBuilder<Record<string, string>> = (
-  params: { [key: string]: string },
+interface AuroraRdsParameters {
+  region: string;
+  resourceArn: string;
+  secretArn: string;
+  databaseSchema: string | undefined;
+}
+
+const rdsDriver: DriverBuilder<AuroraRdsParameters> = (
+  params,
   logger: (message: string) => void
 ): RDSDriver => {
   let dataService: AWS.RDSDataService;
@@ -44,8 +51,8 @@ const rdsDriver: DriverBuilder<Record<string, string>> = (
         const queryParameters: ExecuteStatementRequest = {
           ...paramsBase,
           sql: query,
-          database: params.database,
-          schema: params.schema,
+          database: params.databaseSchema,
+          schema: params.databaseSchema,
           includeResultMetadata: true,
           transactionId,
           parameters,
@@ -73,8 +80,8 @@ const rdsDriver: DriverBuilder<Record<string, string>> = (
 
       const transactionParams = {
         ...paramsBase,
-        database: params.database,
-        schema: params.schema,
+        database: params.databaseSchema,
+        schema: params.databaseSchema,
       };
 
       logger(`Creating transaction`);
