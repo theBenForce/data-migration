@@ -17,8 +17,8 @@
     "data-migration": "^1.0.18",
     "date-fns": "^2.10.0",
     "listr": "^0.14.3",
-    "tslib": "^1.11.1",
-    "zen-observable": "^0.8.15"
+    "rxjs": "^6.5.4",
+    "tslib": "^1.11.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
