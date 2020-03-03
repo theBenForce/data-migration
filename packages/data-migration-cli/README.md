@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/1.0.18 darwin-x64 node-v12.13.1
+data-migration-cli/1.0.18 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -95,7 +95,7 @@ USAGE
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: /Users/bforce/repos/data-migration/packages/data-migration-cli/.dm.config.js]
+  --config=config  [default: /home/travis/build/theBenForce/data-migration/packages/data-migration-cli/.dm.config.js]
 ```
 
 _See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v1.0.18/src/commands/new.ts)_
