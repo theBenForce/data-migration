@@ -8,6 +8,7 @@ interface DynamoDbParameters {
   TableName: string;
   accessKeyId?: string;
   secretAccessKey?: string;
+  endpoint?: string;
 }
 
 const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
@@ -20,6 +21,7 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
     apiVersion: "2012-08-10",
     accessKeyId: params.accessKeyId,
     secretAccessKey: params.secretAccessKey,
+    endpoint: params.endpoint,
   });
 
   return {
