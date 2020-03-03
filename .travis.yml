@@ -15,6 +15,7 @@ jobs:
       before_install: .travis/before_install.sh
       script:
         - yarn build
+        - 'git commit -am "chore: pipeline updates"'
       deploy:
         - provider: script
           script: yarn release
