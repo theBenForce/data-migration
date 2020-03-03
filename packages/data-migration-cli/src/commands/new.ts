@@ -9,7 +9,7 @@ export default class New extends Command {
 
   static flags = {
     help: flags.help({ char: "h" }),
-    config: flags.string({ default: path.resolve("./.dm.config.js") }),
+    config: flags.string({ default: "./.dm.config.js" }),
   };
 
   static args = [{ name: "name", required: true }];
@@ -17,7 +17,7 @@ export default class New extends Command {
   async run() {
     const { args, flags } = this.parse(New);
 
-    let config: Configuration = require(flags.config);
+    let config: Configuration = require(path.resolve(flags.config));
     const prefix = DataMigrationProcessor.getMigrationsPath(config);
 
     if (!fs.existsSync(prefix)) {
