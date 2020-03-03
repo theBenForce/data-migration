@@ -1,6 +1,5 @@
 import { Command, flags } from "@oclif/command";
 import * as fs from "fs";
-import * as path from "path";
 import * as Listr from "listr";
 
 import defaultConfig from "../default-config";
