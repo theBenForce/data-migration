@@ -4,10 +4,11 @@ export default `module.exports = {
   stages: {
     prod: {
       users: {
-        driver: require("swallow-cognito"),
+        driver: require("dm-driver-dynamodb"),
         params: {
-          userPool: {
-            processor: require("swallow-processor-cf"),
+          region: "us-east-1",
+          TableName: {
+            processor: require("dm-processor-cf"),
             params: {
               stack: "some-stack-name",
               output: "SomeOutputName",

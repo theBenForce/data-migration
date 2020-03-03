@@ -1,5 +1,5 @@
 import { Command, flags } from "@oclif/command";
-import SwallowMigration, { Configuration } from "data-migration/lib";
+import DataMigrationProcessor, { Configuration } from "data-migration";
 import { format } from "date-fns";
 import * as fs from "fs";
 import * as path from "path";
@@ -9,7 +9,7 @@ export default class New extends Command {
 
   static flags = {
     help: flags.help({ char: "h" }),
-    config: flags.string({ default: path.resolve("./.swallow.js") })
+    config: flags.string({ default: path.resolve("./.dm.config.js") }),
   };
 
   static args = [{ name: "name", required: true }];
@@ -18,7 +18,7 @@ export default class New extends Command {
     const { args, flags } = this.parse(New);
 
     let config: Configuration = require(flags.config);
-    const prefix = SwallowMigration.getMigrationsPath(config);
+    const prefix = DataMigrationProcessor.getMigrationsPath(config);
 
     if (!fs.existsSync(prefix)) {
       fs.mkdirSync(prefix);
@@ -26,7 +26,7 @@ export default class New extends Command {
 
     const scriptName = [
       format(Date.now(), "yyyyMMddHHmmssSSS"),
-      args.name.replace(/\s+/g, "_")
+      args.name.replace(/\s+/g, "_"),
     ].join("-");
 
     let name = path.join(prefix, `${scriptName}.ts`);

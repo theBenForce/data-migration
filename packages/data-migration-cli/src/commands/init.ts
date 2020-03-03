@@ -8,7 +8,7 @@ export default class Init extends Command {
   static description = "Creates a basic configuration in the current directory";
 
   static flags = {
-    help: flags.help({ char: "h" })
+    help: flags.help({ char: "h" }),
   };
 
   async run() {
@@ -16,9 +16,9 @@ export default class Init extends Command {
       {
         title: "Creating config",
         task() {
-          fs.writeFileSync("./.swallow.js", defaultConfig);
-        }
-      }
+          fs.writeFileSync("./.dm.config.js", defaultConfig);
+        },
+      },
     ]);
 
     await tasks.run();

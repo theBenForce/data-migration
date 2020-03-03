@@ -9,11 +9,9 @@
       "request": "launch",
       "name": "Launch Migrate",
       "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
-      "cwd": "/Users/bforce/repos/swallow-test",
-      "args": [
-        "${workspaceFolder}/packages/swallow-cli/src/commands/migrate.ts"
-      ],
-      "outFiles": ["${workspaceFolder}/packages/swallow-cli/lib/**/*.js"]
+      "cwd": "/Users/bforce/repos/dm-test",
+      "args": ["${workspaceFolder}/packages/data-migration-cli/src/commands/migrate.ts"],
+      "outFiles": ["${workspaceFolder}/packages/data-migration-cli/lib/**/*.js"]
     }
   ]
 }
