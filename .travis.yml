@@ -17,9 +17,7 @@ jobs:
         - yarn build
       deploy:
         - provider: script
-          script:
-            - git update-index --assume-unchanged packages/data-migration-cli/README.md
-            - yarn release
+          script: yarn release
           skip_cleanup: true
           on:
             branch: master
