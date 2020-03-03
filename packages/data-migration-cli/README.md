@@ -95,7 +95,7 @@ USAGE
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: /home/travis/build/theBenForce/data-migration/packages/data-migration-cli/.dm.config.js]
+  --config=config  [default: ./.dm.config.js]
 ```
 
 _See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v1.1.0/src/commands/new.ts)_
