@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.1.0...dm-aurora-rds@1.1.1) (2020-03-03)
+
+
+### Bug Fixes
+
+* add documentation to aurora driver ([b12c465](https://github.com/theBenForce/data-migration/commit/b12c4650313135d8bf81e332f8810c7a05b1227f))
+
+
+
+
+
 # 1.1.0 (2020-03-03)
 
 
