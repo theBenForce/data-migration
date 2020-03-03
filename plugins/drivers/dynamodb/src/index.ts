@@ -47,6 +47,17 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
         subscriber.complete();
       });
     },
+    async putRecord<T>(record: T): Promise<T> {
+      logger(`Writing ${JSON.stringify(record)} to ${TableName}`);
+      const result = await DocumentDb.put({
+        TableName,
+        Item: record,
+      }).promise();
+
+      logger(`Used ${result.ConsumedCapacity?.WriteCapacityUnits} Write capacity units`);
+
+      return result.Attributes as T;
+    },
   } as NoSqlDriver;
 };
 
