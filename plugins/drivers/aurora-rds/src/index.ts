@@ -1,7 +1,7 @@
 import * as AWS from "aws-sdk";
 import { ColumnMetadata, ExecuteStatementRequest } from "aws-sdk/clients/rdsdataservice";
-import { DriverBuilder, Logger } from "data-migration";
-import RDSDriver, { QueryOptions } from "data-migration/lib/DriverTypes/RDS";
+import { DriverBuilder, Logger, RdsDriver } from "data-migration";
+import { QueryOptions } from "data-migration/lib/DriverTypes/RDS";
 import { Observable } from "rxjs";
 
 function convertResultsToObject<T>(
@@ -33,7 +33,7 @@ interface AuroraRdsParameters {
   databaseSchema: string | undefined;
 }
 
-const rdsDriver: DriverBuilder<AuroraRdsParameters> = (params, logger: Logger): RDSDriver => {
+const rdsDriver: DriverBuilder<AuroraRdsParameters> = (params, logger: Logger): RdsDriver => {
   let dataService: AWS.RDSDataService;
   let transactionId: string | undefined;
   let paramsBase = {

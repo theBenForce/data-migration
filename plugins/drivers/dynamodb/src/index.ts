@@ -1,5 +1,5 @@
 import * as AWS from "aws-sdk";
-import { DriverBuilder, NoSql as NoSqlDriver, Logger } from "data-migration";
+import { DriverBuilder, NoSqlDriver, Logger } from "data-migration";
 import { Observable } from "rxjs";
 
 interface DynamoDbParameters {
