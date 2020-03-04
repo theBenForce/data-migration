@@ -16,8 +16,10 @@ export interface ConfigDriverEntry<T> {
 
 export type LoadConfigParameters<T> = {
   defaultParams?: Record<string, string>;
+  params?: Record<string, string | ProcessorParams>;
 } & Record<string, ConfigDriverEntry<T>>;
 
 import * as methods from "./methods";
+import { ProcessorParams } from "./Processor";
 
 export default methods;
