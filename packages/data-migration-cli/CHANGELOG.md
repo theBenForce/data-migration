@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/theBenForce/data-migration/compare/data-migration-cli@1.1.4...data-migration-cli@1.1.5) (2020-03-04)
+
+
+### Bug Fixes
+
+* make init and cleanup driver methods optional ([0456ea8](https://github.com/theBenForce/data-migration/commit/0456ea889fab04312adcf70dd983c8e623b1eaad))
+
+
+
+
+
 ## [1.1.4](https://github.com/theBenForce/data-migration/compare/data-migration-cli@1.1.3...data-migration-cli@1.1.4) (2020-03-04)
 
 **Note:** Version bump only for package data-migration-cli
