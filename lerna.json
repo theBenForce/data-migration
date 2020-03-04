@@ -1,5 +1,6 @@
 {
   "packages": ["packages/*", "plugins/drivers/*", "plugins/processors/*", "plugins/trackers/*"],
+  "ignoreChanges": ["**/CHANGELOG.md", "packages/data-migration-cli/README.md"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,

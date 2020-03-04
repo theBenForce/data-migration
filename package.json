@@ -21,7 +21,7 @@
     "build": "lerna run build --stream",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint --parallel",
-    "release": "lerna version --conventional-commits --yes --ignore-changes **/CHANGELOG.md",
+    "release": "lerna version --conventional-commits --yes",
     "npm:publish": "lerna publish from-package --yes"
   },
   "config": {
