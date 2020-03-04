@@ -17,7 +17,8 @@ export default interface MigrationScript {
 
 export interface InitializedMigrationScript {
   name: string;
-  up: MigrationExecutor<void>;
-  down: MigrationExecutor<void>;
+  up: () => Promise<void>;
+  down: () => Promise<void>;
   hasRun: boolean;
+  executedAt?: string;
 }

@@ -14,6 +14,7 @@
     "@oclif/config": "^1.14.0",
     "@oclif/plugin-help": "^2.2.3",
     "@types/node": "^13.7.7",
+    "cli-ux": "^5.4.5",
     "data-migration": "^1.3.1",
     "date-fns": "^2.10.0",
     "listr": "^0.14.3",

@@ -3104,7 +3104,7 @@ cli-truncate@^0.2.1:
     slice-ansi "0.0.4"
     string-width "^1.0.1"
 
-cli-ux@^5.2.1:
+cli-ux@^5.2.1, cli-ux@^5.4.5:
   version "5.4.5"
   resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-5.4.5.tgz#1b9e6648754307a1fa59a0c5a9c6be0ed899c2cd"
   integrity sha512-5A6FuU0wPUlfCWUjtizUvNIbXElp6jN9QUJsDibs6F9cVX1kTgaMR3m6KT0R3iriEXpMrmPKV6yYS8XICNuQ6Q==
@@ -9587,8 +9587,3 @@ yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
-
-zen-observable@^0.8.15:
-  version "0.8.15"
-  resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.8.15.tgz#96415c512d8e3ffd920afd3889604e30b9eaac15"
-  integrity sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==

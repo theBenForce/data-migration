@@ -1,11 +1,10 @@
 {
-  "name": "dm-processor-cf",
-  "version": "1.0.25",
-  "description": "Gets an output from cloudformation and returns the value",
+  "name": "dm-tracker-dynamodb",
+  "version": "1.0.0",
   "main": "lib/index.js",
-  "author": "Ben Force",
   "license": "MIT",
-  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/processors/db-processor-cf",
+  "author": "Ben Force",
+  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/trackers/dynamo",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theBenForce/data-migration.git"
@@ -23,6 +22,5 @@
   },
   "files": [
     "/lib"
-  ],
-  "gitHead": "3e1557dd7fba054a0ddd53299cad6143d406c62b"
+  ]
 }

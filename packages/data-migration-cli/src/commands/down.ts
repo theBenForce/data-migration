@@ -6,6 +6,7 @@ import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
+import loadScripts from "../utils/loadScripts";
 export default class Down extends Command {
   static description = "run all down migration scripts";
 
@@ -20,49 +21,24 @@ export default class Down extends Command {
 
   async run() {
     const { args, flags } = this.parse(Down);
-    let config: Configuration = require(args.config);
-
-    let stage = flags.stage || config.defaultStage || "prod";
+    let stage: string = "";
     let scripts: Array<InitializedMigrationScript>;
-    let drivers: Map<string, Driver>;
     let context: ScriptContext;
 
     appendFileSync(logFile, `\n\nStarting migration at ${new Date().toISOString()}`);
 
     const tasks = new Listr([
       {
-        title: `Load configuration for stage: ${stage}`,
+        title: `Load configuration`,
         async task() {
-          const logger = createLogger(["Init"]);
-
-          logger("Loading drivers");
-          drivers = await DataMigrationProcessor.loadDrivers(
-            config.stages[stage],
-            logger,
-            (driverName: string) => createLogger(["DRIVER", driverName])
-          );
-
-          const stageParams = await DataMigrationProcessor.processParams(
-            config.stages[stage].contextParams || {},
-            logger
-          );
-
-          logger("Creating script context");
-          context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
-
-          const tracker = await DataMigrationProcessor.loadExecutionTracker(
-            config.stages[stage],
-            logger,
-            () => createLogger(["TRACKER"])
-          );
-
-          logger("Finding down scripts");
-          scripts = await DataMigrationProcessor.getScripts(config, context, logger, tracker);
-          logger(`Found ${scripts.length} down scripts`);
+          const scriptDetails = await loadScripts(args.config, flags.stage);
+          scripts = scriptDetails.scripts;
+          context = scriptDetails.context;
+          stage = scriptDetails.stage;
         },
       },
       {
-        title: `Running Migrations`,
+        title: `Running Migrations for stage "${stage}"`,
         task() {
           return new Listr(
             scripts
@@ -72,7 +48,7 @@ export default class Down extends Command {
                 async task() {
                   const log = createLogger(["SCRIPT", script.name]);
 
-                  await script.down(context, log).catch((ex: any) => {
+                  await script.down().catch((ex: any) => {
                     createLogger(["ERROR", script.name, "CATCH"])(ex.message);
                   });
                 },
