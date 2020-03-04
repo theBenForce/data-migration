@@ -1,18 +1,11 @@
 import { Command, flags } from "@oclif/command";
-import DataMigrationProcessor, {
-  Configuration,
-  Driver,
-  MigrationExecutor,
-  ScriptContext,
-} from "data-migration";
-import { appendFileSync } from "fs";
-import * as Listr from "listr";
 import * as path from "path";
 
-import createLogger, { logFile } from "../utils/createLogger";
-import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
 import { cli } from "cli-ux";
 import loadScripts from "../utils/loadScripts";
+
+import { formatRelative, parseISO } from "date-fns";
+import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
 
 export default class List extends Command {
   static description = "list all migration scripts and their status";
@@ -38,8 +31,15 @@ export default class List extends Command {
         name: {
           header: "Script",
         },
-        executedAt: { header: "Executed At" },
         hasRun: { header: "Has Run" },
+        executedAt: {
+          header: "Executed At",
+          get(script: InitializedMigrationScript) {
+            if (script.executedAt) {
+              return formatRelative(parseISO(script.executedAt), new Date());
+            }
+          },
+        },
       },
       flags
     );
