@@ -65,30 +65,33 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (params, logger: Logge
         RequestItems: {},
       } as AWS.DynamoDB.DocumentClient.BatchWriteItemInput;
 
-      params.RequestItems[TableName] = records.map(
-        (record) =>
-          ({
-            PutRequest: {
-              Item: record,
-            },
-          } as AWS.DynamoDB.DocumentClient.WriteRequest)
-      );
+      for (let startIdx = 0; startIdx < records.length; startIdx += 25) {
+        params.RequestItems[TableName] = records
+          .slice(startIdx, Math.min(startIdx + 25, records.length))
+          .map(
+            (record) =>
+              ({
+                PutRequest: {
+                  Item: record,
+                },
+              } as AWS.DynamoDB.DocumentClient.WriteRequest)
+          );
 
-      const result = await DocumentDb.batchWrite(params).promise();
-
-      logger(
-        `Used ${result.ConsumedCapacity?.reduce(
-          (total, next) => total + (next.WriteCapacityUnits || 0),
-          0
-        )}`
-      );
-
-      if (result.UnprocessedItems?.[TableName]?.length) {
+        const result = await DocumentDb.batchWrite(params).promise();
         logger(
-          `Error writing items to ${TableName}: ${JSON.stringify(
-            result.UnprocessedItems[TableName]
+          `Used ${result.ConsumedCapacity?.reduce(
+            (total, next) => total + (next.WriteCapacityUnits || 0),
+            0
           )}`
         );
+
+        if (result.UnprocessedItems?.[TableName]?.length) {
+          logger(
+            `Error writing items to ${TableName}: ${JSON.stringify(
+              result.UnprocessedItems[TableName]
+            )}`
+          );
+        }
       }
 
       return records;
