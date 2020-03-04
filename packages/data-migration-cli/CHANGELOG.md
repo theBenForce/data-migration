@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/theBenForce/data-migration/compare/data-migration-cli@1.1.1...data-migration-cli@1.1.2) (2020-03-04)
+
+
+### Bug Fixes
+
+* log typos ([7018aa1](https://github.com/theBenForce/data-migration/commit/7018aa10dd4e990165e90eb44694d528beed32b3))
+
+
+
+
+
 ## [1.1.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@1.1.0...data-migration-cli@1.1.1) (2020-03-03)
 
 **Note:** Version bump only for package data-migration-cli

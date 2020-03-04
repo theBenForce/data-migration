@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.1.2...dm-aurora-rds@1.2.0) (2020-03-04)
+
+
+### Features
+
+* allow queries to be excluded from transaction ([209ac1f](https://github.com/theBenForce/data-migration/commit/209ac1fc98a98f065354e7397c858701ea322c8d))
+
+
+
+
+
 ## [1.1.2](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.1.1...dm-aurora-rds@1.1.2) (2020-03-03)
 
 
