@@ -1,6 +1,5 @@
 import * as AWS from "aws-sdk";
-import { DriverBuilder } from "data-migration";
-import NoSqlDriver from "data-migration/lib/DriverTypes/NoSQL";
+import { DriverBuilder, NoSql as NoSqlDriver, Logger } from "data-migration";
 import { Observable } from "rxjs";
 
 interface DynamoDbParameters {
@@ -11,10 +10,7 @@ interface DynamoDbParameters {
   endpoint?: string;
 }
 
-const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
-  params,
-  logger: (message: string) => void
-): NoSqlDriver => {
+const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (params, logger: Logger): NoSqlDriver => {
   const { TableName } = params;
   const DocumentDb = new AWS.DynamoDB.DocumentClient({
     region: params.region,

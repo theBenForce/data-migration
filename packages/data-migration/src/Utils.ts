@@ -7,13 +7,14 @@ import { MigrationScript } from "../src";
 import Configuration from "./Config";
 import { MissingParameters } from "./Errors";
 import { getMigrationsPath } from "./methods";
+import { Logger } from "./Logger";
 
 export function checkParameters(
   label: string,
   requiredParams: Array<string>,
   params: { [key: string]: any }
 ) {
-  const missingParams = requiredParams.filter(key => !params[key]);
+  const missingParams = requiredParams.filter((key) => !params[key]);
   if (missingParams.length > 0) {
     throw new MissingParameters(label, missingParams);
   }
@@ -43,11 +44,8 @@ export function createErrorLogger(observer?: ZenObservable.Observer<any>) {
 
 export async function loadScript<T>(filename: string): Promise<T> {
   const transformResult = await babel.transformFileAsync(filename, {
-    presets: [
-      "@babel/preset-typescript",
-      ["@babel/preset-env", { targets: { node: true } }]
-    ],
-    cwd: process.cwd()
+    presets: ["@babel/preset-typescript", ["@babel/preset-env", { targets: { node: true } }]],
+    cwd: process.cwd(),
   });
 
   let script: T;
@@ -62,7 +60,7 @@ export async function loadScript<T>(filename: string): Promise<T> {
 
 export async function getAllScripts(
   config: Configuration,
-  log: (message: string) => void
+  log: Logger
 ): Promise<Map<string, MigrationScript>> {
   let scripts = new Map<string, MigrationScript>();
   let scriptFiles = fs

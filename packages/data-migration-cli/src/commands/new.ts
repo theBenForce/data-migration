@@ -34,28 +34,28 @@ export default class New extends Command {
     fs.writeFileSync(
       name,
       `
-import { ScriptContext } from "data-migration";
+import { ScriptContext, Logger } from "data-migration";
 
 export default {
   name: "${args.name}",
   /**
    * Run the acutal migration
    */
-  async up(context: ScriptContext, log: (message: string) => void) {
+  async up(context: ScriptContext, log: Logger) {
     log("Running up migration ${scriptName}");
   },
 
   /**
    * Revert all changes in the up script
    */
-  async down(context: ScriptContext, log: (message: string) => void) {
+  async down(context: ScriptContext, log: Logger) {
     log("Running down migration ${scriptName}");
   },
 
   /**
    * Determines if this script has already been executed
    */
-  async hasRun(context: ScriptContext, log: (message: string) => void) {
+  async hasRun(context: ScriptContext, log: Logger) {
     return false;
   }
 };

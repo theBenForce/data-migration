@@ -1,14 +1,12 @@
 import Configuration from "../Config";
-import MigrationScript, {
-  MigrationExecutor,
-  ScriptContext
-} from "../MigrationScript";
+import MigrationScript, { MigrationExecutor, ScriptContext } from "../MigrationScript";
 import { getAllScripts } from "../Utils";
+import { Logger } from "../Logger";
 
 export default async function getUpScripts(
   config: Configuration,
   context: ScriptContext,
-  log: (message: string) => void
+  log: Logger
 ): Promise<Array<{ name: string; up: MigrationExecutor<void> }>> {
   let result = new Array<{ name: string; up: MigrationExecutor<void> }>();
 
@@ -26,7 +24,7 @@ export default async function getUpScripts(
     if (!hasRun) {
       result.push({
         name: fname,
-        up: script.up
+        up: script.up,
       });
     }
   }

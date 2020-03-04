@@ -1,8 +1,9 @@
 import { ProcessorParams } from "../Processor";
+import { Logger } from "../Logger";
 
 export default async function ProcessParams(
   params: Record<string, string | ProcessorParams>,
-  log: (message: string) => void,
+  log: Logger,
   defaultParams?: Record<string, string>
 ): Promise<Record<string, string>> {
   let newParams: Record<string, string> = {};
