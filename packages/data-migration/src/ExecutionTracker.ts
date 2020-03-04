@@ -12,4 +12,7 @@ export interface TrackerInstance {
   remove(script: string): Promise<void>;
 }
 
-type ExecutionTracker = <T = Record<string, string>>(params: T, logger: Logger) => TrackerInstance;
+export type ExecutionTracker = <T = Record<string, string>>(
+  params: T,
+  logger: Logger
+) => TrackerInstance;
