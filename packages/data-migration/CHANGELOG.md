@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/theBenForce/data-migration/compare/data-migration@1.2.3...data-migration@1.3.0) (2020-03-04)
+
+
+### Features
+
+* allow bulk uploads to dynamodb ([a94c777](https://github.com/theBenForce/data-migration/commit/a94c777fd9c1ab052a2d4abf048add124a4f94f4))
+
+
+
+
+
 ## [1.2.3](https://github.com/theBenForce/data-migration/compare/data-migration@1.2.2...data-migration@1.2.3) (2020-03-04)
 
 
