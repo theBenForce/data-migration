@@ -18,6 +18,9 @@ export default async function loadDrivers(
   const resultDrivers = new Map<string, Driver>();
 
   for (const driverName of Object.keys(sourceDrivers)) {
+    if (driverName === "defaultParams" || driverName === "params") {
+      continue;
+    }
     const params = {
       ...sourceDrivers.defaultParams,
       ...sourceDrivers[driverName].params,
