@@ -37,10 +37,9 @@ export default class List extends Command {
       {
         name: {
           header: "Script",
-          extended: true,
         },
-        executedAt: { extended: true },
-        hasRun: {},
+        executedAt: { header: "Executed At" },
+        hasRun: { header: "Has Run" },
       },
       flags
     );
