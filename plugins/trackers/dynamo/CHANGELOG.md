@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.1.0...dm-tracker-dynamodb@1.1.1) (2020-03-04)
+
+
+### Bug Fixes
+
+* rename key parameters ([f711d96](https://github.com/theBenForce/data-migration/commit/f711d96cbc5319b7da5f1dc3ad55899ec0241682))
+
+
+
+
+
 # 1.1.0 (2020-03-04)
 
 
