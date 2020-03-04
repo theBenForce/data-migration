@@ -1,7 +1,7 @@
 import * as AWS from "aws-sdk";
 import { ColumnMetadata, ExecuteStatementRequest } from "aws-sdk/clients/rdsdataservice";
 import { DriverBuilder } from "data-migration";
-import RDSDriver from "data-migration/lib/DriverTypes/RDS";
+import RDSDriver, { QueryOptions } from "data-migration/lib/DriverTypes/RDS";
 import { Observable } from "rxjs";
 
 function convertResultsToObject<T>(
@@ -45,7 +45,11 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters> = (
   };
 
   return {
-    query<T>(query: string, parameters: Array<AWS.RDSDataService.SqlParameter>): Observable<T> {
+    query<T>(
+      query: string,
+      parameters: Array<AWS.RDSDataService.SqlParameter>,
+      options?: QueryOptions
+    ): Observable<T> {
       // @ts-ignore
       return new Observable<T>(async (subscriber) => {
         const queryParameters: ExecuteStatementRequest = {
@@ -54,9 +58,12 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters> = (
           database: params.databaseSchema,
           schema: params.databaseSchema,
           includeResultMetadata: true,
-          transactionId,
           parameters,
         };
+
+        if (!options?.excludeFromTransaction) {
+          queryParameters.transactionId = transactionId;
+        }
 
         const result = await dataService.executeStatement(queryParameters).promise();
 
