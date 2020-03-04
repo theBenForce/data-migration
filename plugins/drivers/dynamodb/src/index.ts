@@ -52,6 +52,7 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
     async putRecord<T>(record: T): Promise<T> {
       logger(`Writing ${JSON.stringify(record)} to ${TableName}`);
       const result = await DocumentDb.put({
+        ReturnConsumedCapacity: "INDEXES",
         TableName,
         Item: record,
       }).promise();
@@ -59,6 +60,42 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (
       logger(`Used ${result.ConsumedCapacity?.WriteCapacityUnits} Write capacity units`);
 
       return result.Attributes as T;
+    },
+    async putRecordsBulk<T>(records: Array<T>): Promise<Array<T>> {
+      logger(`Writing ${records.length} entries to ${TableName}`);
+
+      const params = {
+        ReturnConsumedCapacity: "INDEXES",
+        RequestItems: {},
+      } as AWS.DynamoDB.DocumentClient.BatchWriteItemInput;
+
+      params.RequestItems[TableName] = records.map(
+        (record) =>
+          ({
+            PutRequest: {
+              Item: record,
+            },
+          } as AWS.DynamoDB.DocumentClient.WriteRequest)
+      );
+
+      const result = await DocumentDb.batchWrite(params).promise();
+
+      logger(
+        `Used ${result.ConsumedCapacity?.reduce(
+          (total, next) => total + (next.WriteCapacityUnits || 0),
+          0
+        )}`
+      );
+
+      if (result.UnprocessedItems?.[TableName]?.length) {
+        logger(
+          `Error writing items to ${TableName}: ${JSON.stringify(
+            result.UnprocessedItems[TableName]
+          )}`
+        );
+      }
+
+      return records;
     },
   } as NoSqlDriver;
 };
