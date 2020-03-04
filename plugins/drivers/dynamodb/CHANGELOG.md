@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.2...dm-driver-dynamodb@1.2.3) (2020-03-04)
+
+
+### Bug Fixes
+
+* handle large bulk put requests ([bee81e1](https://github.com/theBenForce/data-migration/commit/bee81e155c625a8ba43c0952a831c9b8a97f1324))
+
+
+
+
+
 ## [1.2.2](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.1...dm-driver-dynamodb@1.2.2) (2020-03-04)
 
 
