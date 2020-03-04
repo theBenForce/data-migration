@@ -1,8 +1,11 @@
+import { ProcessorParams } from "../Processor";
+
 export default async function ProcessParams(
-  params: any,
-  log: (message: string) => void
-): Promise<{ [key: string]: string }> {
-  let newParams: { [key: string]: string } = {};
+  params: Record<string, string | ProcessorParams>,
+  log: (message: string) => void,
+  defaultParams?: Record<string, string>
+): Promise<Record<string, string>> {
+  let newParams: Record<string, string> = {};
   for (const key of Object.keys(params)) {
     try {
       const value = params[key];
@@ -17,7 +20,13 @@ export default async function ProcessParams(
         throw new Error(`No processor provided for ${key}`);
       }
 
-      const processorResult = await value.processor(value.params, log);
+      const processorResult = await value.processor(
+        {
+          ...defaultParams,
+          ...value.params,
+        },
+        log
+      );
       newParams[key] = processorResult;
     } catch (ex) {
       log(ex.message);

@@ -9,14 +9,14 @@ export { Driver } from "./DriverTypes";
 
 import * as _ from "lodash";
 
-export interface LoadConfigParameters<T> {
-  [key: string]: {
-    driver: DriverBuilder<any>;
-    params: {
-      [key: string]: T;
-    };
-  };
+export interface ConfigDriverEntry<T> {
+  driver: DriverBuilder<any>;
+  params: Record<string, T>;
 }
+
+export type LoadConfigParameters<T> = {
+  defaultParams?: Record<string, string>;
+} & Record<string, ConfigDriverEntry<T>>;
 
 import * as methods from "./methods";
 
