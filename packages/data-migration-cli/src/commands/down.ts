@@ -50,8 +50,14 @@ export default class Down extends Command {
           logger("Creating script context");
           context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
 
+          const tracker = await DataMigrationProcessor.loadExecutionTracker(
+            config.stages[stage],
+            logger,
+            () => createLogger(["TRACKER"])
+          );
+
           logger("Finding down scripts");
-          scripts = await DataMigrationProcessor.getScripts(config, context, logger);
+          scripts = await DataMigrationProcessor.getScripts(config, context, logger, tracker);
           logger(`Found ${scripts.length} down scripts`);
         },
       },

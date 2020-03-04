@@ -55,8 +55,14 @@ export default class Up extends Command {
           );
           context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
 
+          const tracker = await DataMigrationProcessor.loadExecutionTracker(
+            config.stages[stage],
+            logger,
+            () => createLogger(["TRACKER"])
+          );
+
           logger("Finding up scripts");
-          scripts = await DataMigrationProcessor.getScripts(config, context, logger);
+          scripts = await DataMigrationProcessor.getScripts(config, context, logger, tracker);
           logger(`Found ${scripts.length} up scripts`);
         },
       },

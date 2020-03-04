@@ -14,7 +14,7 @@ import * as _ from "lodash";
 
 import * as methods from "./methods";
 import { ProcessorParams } from "./Processor";
-import { ExecutionTracker } from "./ExecutionTracker";
+import { ExecutionTrackerParams } from "./ExecutionTracker";
 
 export interface ConfigDriverEntry<T> {
   driver: DriverBuilder<any>;
@@ -24,7 +24,7 @@ export interface ConfigDriverEntry<T> {
 export type LoadConfigParameters<T> = {
   defaultParams?: Record<string, string>;
   contextParams?: Record<string, string | ProcessorParams>;
-  tracker?: ExecutionTracker;
+  tracker?: ExecutionTrackerParams;
   drivers: Record<string, ConfigDriverEntry<T>>;
 };
 

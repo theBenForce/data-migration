@@ -3,7 +3,7 @@ import { Logger } from "./Logger";
 
 export interface ExecutionTrackerParams {
   executionTracker: ExecutionTracker;
-  params: LoadConfigParameters<string | ProcessorParams>;
+  params: Record<string, string | ProcessorParams>;
 }
 
 export interface ExecutionTrackerInstance {
