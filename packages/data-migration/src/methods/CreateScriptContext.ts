@@ -1,4 +1,4 @@
-import { Configuration, ScriptContext } from "../../src";
+import { ScriptContext } from "../";
 import { Driver } from "../DriverTypes";
 
 export default function createScriptContext(

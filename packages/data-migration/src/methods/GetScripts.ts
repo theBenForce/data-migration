@@ -1,9 +1,5 @@
 import Configuration from "../Config";
-import MigrationScript, {
-  MigrationExecutor,
-  ScriptContext,
-  InitializedMigrationScript,
-} from "../MigrationScript";
+import MigrationScript, { ScriptContext, InitializedMigrationScript } from "../MigrationScript";
 import { getAllScripts } from "../Utils";
 import { Logger } from "../Logger";
 import { ExecutionTrackerInstance } from "../ExecutionTracker";
