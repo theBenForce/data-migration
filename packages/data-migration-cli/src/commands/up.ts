@@ -86,7 +86,7 @@ export default class Up extends Command {
               async task() {
                 logger(`Cleaning up driver ${driverName}`);
                 const driver = await context.getDriver(driverName);
-                await driver.cleanup();
+                if (driver.cleanup) await driver.cleanup();
               },
             }))
           );

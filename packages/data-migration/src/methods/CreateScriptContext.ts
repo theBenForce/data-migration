@@ -16,7 +16,7 @@ export default function createScriptContext(
 
       if (driversUsed.indexOf(driverName) === -1) {
         driversUsed.push(driverName);
-        await result.init();
+        if (result.init) await result.init();
       }
 
       return result;
@@ -24,6 +24,6 @@ export default function createScriptContext(
 
     getConfigValue: (key: string) => config[key],
 
-    getDriversUsed: () => driversUsed
+    getDriversUsed: () => driversUsed,
   };
 }
