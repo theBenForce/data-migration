@@ -54,9 +54,9 @@ export default class Down extends Command {
           logger("Creating script context");
           context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
 
-          logger("Finding up scripts");
+          logger("Finding down scripts");
           scripts = await DataMigrationProcessor.getDownScripts(config, context, logger);
-          logger(`Found ${scripts.length} up scripts`);
+          logger(`Found ${scripts.length} down scripts`);
         },
       },
       {
