@@ -50,13 +50,6 @@ export default {
    */
   async down(context: ScriptContext, log: Logger) {
     log("Running down migration ${scriptName}");
-  },
-
-  /**
-   * Determines if this script has already been executed
-   */
-  async hasRun(context: ScriptContext, log: Logger) {
-    return false;
   }
 };
 
