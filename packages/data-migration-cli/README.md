@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/1.1.7 linux-x64 node-v12.16.1
+data-migration-cli/1.1.7 darwin-x64 node-v12.13.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -36,6 +36,7 @@ USAGE
 * [`migrate down [CONFIG]`](#migrate-down-config)
 * [`migrate help [COMMAND]`](#migrate-help-command)
 * [`migrate init`](#migrate-init)
+* [`migrate list [CONFIG]`](#migrate-list-config)
 * [`migrate new NAME`](#migrate-new-name)
 * [`migrate up [CONFIG]`](#migrate-up-config)
 
@@ -84,6 +85,29 @@ OPTIONS
 ```
 
 _See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v1.1.7/src/commands/init.ts)_
+
+## `migrate list [CONFIG]`
+
+list all migration scripts and their status
+
+```
+USAGE
+  $ migrate list [CONFIG]
+
+OPTIONS
+  -h, --help              show CLI help
+  -x, --extended          show extra columns
+  --columns=columns       only show provided columns (comma-separated)
+  --csv                   output is csv format [alias: --output=csv]
+  --filter=filter         filter property by partial string matching, ex: name=foo
+  --no-header             hide table header from output
+  --no-truncate           do not truncate output to fit screen
+  --output=csv|json|yaml  output in a more machine friendly format
+  --sort=sort             property to sort by (prepend '-' for descending)
+  --stage=stage           Stage that will be used when loading config values
+```
+
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v1.1.7/src/commands/list.ts)_
 
 ## `migrate new NAME`
 

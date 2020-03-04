@@ -33,7 +33,8 @@
     "packages": [
       "packages/*",
       "plugins/drivers/*",
-      "plugins/processors/*"
+      "plugins/processors/*",
+      "plugins/trackers/*"
     ]
   },
   "husky": {

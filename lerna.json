@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/*", "plugins/drivers/*", "plugins/processors/*"],
+  "packages": ["packages/*", "plugins/drivers/*", "plugins/processors/*", "plugins/trackers/*"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,

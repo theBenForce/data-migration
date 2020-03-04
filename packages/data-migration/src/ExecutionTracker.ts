@@ -8,11 +8,11 @@ export interface ExecutionTrackerParams {
 
 export interface ExecutionTrackerInstance {
   markDone(script: string): Promise<void>;
-  isDone(script: string): Promise<boolean>;
+  wasExecuted(script: string): Promise<string | undefined>;
   remove(script: string): Promise<void>;
 }
 
-export type ExecutionTracker = <T = Record<string, string>>(
+export type ExecutionTracker<T = Record<string, string>> = (
   params: T,
   logger: Logger
 ) => ExecutionTrackerInstance;
