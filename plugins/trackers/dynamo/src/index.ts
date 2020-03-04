@@ -5,10 +5,8 @@ import { Logger } from "data-migration";
 interface DynamoTrackerParams {
   region: string;
   TableName: string;
-  keyConfiguration: {
-    partitionKey: string;
-    sortKey: string;
-  };
+  partitionKeyName: string;
+  sortKeyName: string;
   accessKeyId?: string;
   secretAccessKey?: string;
   endpoint?: string;
@@ -37,8 +35,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
         TableName,
         KeyConditionExpression: "#primaryKey = :primaryKey and #sortKey = :sortKey",
         ExpressionAttributeNames: {
-          "#primaryKey": params.keyConfiguration.partitionKey,
-          "#sortKey": params.keyConfiguration.sortKey,
+          "#primaryKey": params.partitionKeyName,
+          "#sortKey": params.sortKeyName,
         },
         ExpressionAttributeValues: {
           ":primaryKey": prefix,
@@ -54,8 +52,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
     async markDone(script: string) {
       const Item = {} as Record<string, string>;
       Item[EXECUTED_AT_PROPERTY] = new Date().toISOString();
-      Item[params.keyConfiguration.partitionKey] = prefix;
-      Item[params.keyConfiguration.sortKey] = script;
+      Item[params.partitionKeyName] = prefix;
+      Item[params.sortKeyName] = script;
 
       await DocumentDb.put({
         TableName,
@@ -65,8 +63,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
 
     async remove(script: string) {
       const Key = {} as Record<string, string>;
-      Key[params.keyConfiguration.partitionKey] = prefix;
-      Key[params.keyConfiguration.sortKey] = script;
+      Key[params.partitionKeyName] = prefix;
+      Key[params.sortKeyName] = script;
 
       await DocumentDb.delete({
         TableName,

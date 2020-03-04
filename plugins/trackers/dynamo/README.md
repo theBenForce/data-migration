@@ -13,12 +13,12 @@
 
 The DynamoDB driver accepts the following parameters as part of its configuration:
 
-| Name                          | Type   | Required | Description                                                                            |
-| ----------------------------- | ------ | -------- | -------------------------------------------------------------------------------------- |
-| region                        | string | Yes      | The AWS Region where this table exists                                                 |
-| TableName                     | string | Yes      | The name of the DynamoDB table to connect to                                           |
-| keyConfiguration.partitionKey | string | Yes      | Name of the partition key in the dynamo table                                          |
-| keyConfiguration.sortKey      | string | Yes      | Name of the sort key in the dynamo table                                               |
-| accessKeyId                   | string | No       | AWS Credentials, if not provided data-migration will use the default AWS configuration |
-| secretAccessKey               | string | No       |                                                                                        |
-| prefix                        | string | No       | Value to use for the partition key for migration records                               |
+| Name             | Type   | Required | Description                                                                            |
+| ---------------- | ------ | -------- | -------------------------------------------------------------------------------------- |
+| region           | string | Yes      | The AWS Region where this table exists                                                 |
+| TableName        | string | Yes      | The name of the DynamoDB table to connect to                                           |
+| partitionKeyName | string | Yes      | Name of the partition key in the dynamo table                                          |
+| sortKeyName      | string | Yes      | Name of the sort key in the dynamo table                                               |
+| accessKeyId      | string | No       | AWS Credentials, if not provided data-migration will use the default AWS configuration |
+| secretAccessKey  | string | No       |                                                                                        |
+| prefix           | string | No       | Value to use for the partition key for migration records                               |
