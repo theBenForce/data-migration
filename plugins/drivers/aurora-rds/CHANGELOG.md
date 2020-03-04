@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.2.0...dm-aurora-rds@1.2.1) (2020-03-04)
+
+**Note:** Version bump only for package dm-aurora-rds
+
+
+
+
+
 # [1.2.0](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.1.2...dm-aurora-rds@1.2.0) (2020-03-04)
 
 

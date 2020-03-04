@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/theBenForce/data-migration/compare/data-migration@1.2.0...data-migration@1.2.1) (2020-03-04)
+
+
+### Bug Fixes
+
+* dont try to load non-existing drivers ([1160b4b](https://github.com/theBenForce/data-migration/commit/1160b4b6a11366638afd7791cd5bc7038613e648))
+
+
+
+
+
 # [1.2.0](https://github.com/theBenForce/data-migration/compare/data-migration@1.1.0...data-migration@1.2.0) (2020-03-04)
 
 
