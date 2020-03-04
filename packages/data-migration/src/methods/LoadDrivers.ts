@@ -18,13 +18,10 @@ export default async function loadDrivers(
   const sourceDrivers = _.cloneDeep(stageConfig);
   const resultDrivers = new Map<string, Driver>();
 
-  for (const driverName of Object.keys(sourceDrivers)) {
-    if (driverName === "defaultParams" || driverName === "params") {
-      continue;
-    }
+  for (const driverName of Object.keys(sourceDrivers.drivers)) {
     const params = {
       ...sourceDrivers.defaultParams,
-      ...sourceDrivers[driverName].params,
+      ...sourceDrivers.drivers[driverName].params,
     };
 
     log(`Processing ${driverName} parameters`);
@@ -33,7 +30,7 @@ export default async function loadDrivers(
 
     resultDrivers.set(
       driverName,
-      sourceDrivers[driverName].driver(processedParams, createLogger(driverName))
+      sourceDrivers.drivers[driverName].driver(processedParams, createLogger(driverName))
     );
   }
 
