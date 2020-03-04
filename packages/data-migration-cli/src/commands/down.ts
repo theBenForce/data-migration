@@ -47,7 +47,7 @@ export default class Down extends Command {
           );
 
           const stageParams = await DataMigrationProcessor.processParams(
-            config.stages[stage].params || {},
+            config.stages[stage].contextParams || {},
             logger
           );
 

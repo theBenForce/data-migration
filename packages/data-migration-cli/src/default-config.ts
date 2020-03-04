@@ -6,14 +6,16 @@ export default `module.exports = {
       defaultParams: {
         region: "us-east-1",
       },
-      users: {
-        driver: require("dm-driver-dynamodb"),
-        params: {
-          TableName: {
-            processor: require("dm-processor-cf"),
-            params: {
-              stack: "some-stack-name",
-              output: "SomeOutputName",
+      drivers: {
+        users: {
+          driver: require("dm-driver-dynamodb"),
+          params: {
+            TableName: {
+              processor: require("dm-processor-cf"),
+              params: {
+                stack: "some-stack-name",
+                output: "SomeOutputName",
+              }
             }
           }
         }

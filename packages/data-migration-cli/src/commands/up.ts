@@ -49,7 +49,7 @@ export default class Up extends Command {
 
           logger("Creating script context");
           const stageParams = await DataMigrationProcessor.processParams(
-            config.stages[stage].params || {},
+            config.stages[stage].contextParams || {},
             logger
           );
           context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
