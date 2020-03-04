@@ -12,6 +12,10 @@ export const Utils = UtilsImport;
 
 import * as _ from "lodash";
 
+import * as methods from "./methods";
+import { ProcessorParams } from "./Processor";
+import { ExecutionTracker } from "./ExecutionTracker";
+
 export interface ConfigDriverEntry<T> {
   driver: DriverBuilder<any>;
   params: Record<string, T>;
@@ -20,10 +24,8 @@ export interface ConfigDriverEntry<T> {
 export type LoadConfigParameters<T> = {
   defaultParams?: Record<string, string>;
   contextParams?: Record<string, string | ProcessorParams>;
+  tracker?: ExecutionTracker;
   drivers: Record<string, ConfigDriverEntry<T>>;
 };
-
-import * as methods from "./methods";
-import { ProcessorParams } from "./Processor";
 
 export default methods;
