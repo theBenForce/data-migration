@@ -1,4 +1,5 @@
 import { Driver } from "./DriverTypes";
+import { Logger } from "./Logger";
 
 export type ScriptContext = {
   getDriver: <T extends Driver>(name: string) => Promise<T>;
@@ -6,10 +7,7 @@ export type ScriptContext = {
   getConfigValue: (key: string) => string;
 };
 
-export type MigrationExecutor<T> = (
-  context: ScriptContext,
-  log: (message: string) => void
-) => Promise<T>;
+export type MigrationExecutor<T> = (context: ScriptContext, log: Logger) => Promise<T>;
 
 export default interface MigrationScript {
   up: MigrationExecutor<void>;

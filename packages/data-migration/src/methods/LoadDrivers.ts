@@ -4,6 +4,7 @@ import { LoadConfigParameters, ProcessorParams } from "../../src";
 import { Driver } from "../DriverTypes";
 
 import ProcessParams from "./ProcessParams";
+import { Logger } from "../Logger";
 
 /**
  * Runs all processors on the given parameters
@@ -11,8 +12,8 @@ import ProcessParams from "./ProcessParams";
  */
 export default async function loadDrivers(
   stageConfig: LoadConfigParameters<string | ProcessorParams>,
-  log: (message: string) => void,
-  createLogger: (driverName: string) => (message: string) => void
+  log: Logger,
+  createLogger: (driverName: string) => Logger
 ): Promise<Map<string, Driver>> {
   const sourceDrivers = _.cloneDeep(stageConfig);
   const resultDrivers = new Map<string, Driver>();

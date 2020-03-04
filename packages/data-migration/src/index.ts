@@ -5,7 +5,10 @@ export { ProcessorParams } from "./Processor";
 export { default as MigrationScript, ScriptContext, MigrationExecutor } from "./MigrationScript";
 export { default as DriverBuilder } from "./DriverBuilder";
 export { default as Configuration } from "./Config";
+export { Logger } from "./Logger";
 export * from "./DriverTypes";
+import * as UtilsImport from "./Utils";
+export const Utils = UtilsImport;
 
 import * as _ from "lodash";
 
