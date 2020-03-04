@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@1.1.7...data-migration-cli@2.0.0) (2020-03-04)
+
+
+### Bug Fixes
+
+* don't update cli usage ([4a0ecec](https://github.com/theBenForce/data-migration/commit/4a0ecec9149fd94df8de412bff2f8130c556c124))
+* **config:** rename context params and drivers ([630c359](https://github.com/theBenForce/data-migration/commit/630c3597ebada4ef50a463a1bb7464f5959a8dac))
+
+
+### Features
+
+* add dynamodb tracker ([30d5456](https://github.com/theBenForce/data-migration/commit/30d54564ff40bf3731c8ccaf5f53dcfb78bb7339))
+* use execution trackers ([dda6d3d](https://github.com/theBenForce/data-migration/commit/dda6d3d75c5b6e72d3e05c6c511005eeeafa0692))
+* use new getScripts function ([cecdeb2](https://github.com/theBenForce/data-migration/commit/cecdeb21accca7dcf5f4b683f13d37bde1259c4a))
+
+
+### BREAKING CHANGES
+
+* **config:** moves driver configuration to drivers property
+
+
+
+
+
 ## [1.1.7](https://github.com/theBenForce/data-migration/compare/data-migration-cli@1.1.6...data-migration-cli@1.1.7) (2020-03-04)
 
 **Note:** Version bump only for package data-migration-cli

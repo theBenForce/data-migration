@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.2.5...dm-aurora-rds@1.2.6) (2020-03-04)
+
+
+### Bug Fixes
+
+* update driver type names ([1907689](https://github.com/theBenForce/data-migration/commit/19076899a0124527973006d53ea6d8ec677472c6))
+
+
+
+
+
 ## [1.2.5](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.2.4...dm-aurora-rds@1.2.5) (2020-03-04)
 
 **Note:** Version bump only for package dm-aurora-rds

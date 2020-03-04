@@ -1,6 +1,6 @@
 {
   "name": "dm-tracker-dynamodb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Ben Force",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.632.0",
-    "data-migration": "^1.3.1"
+    "data-migration": "^2.0.0"
   },
   "scripts": {
     "build": "tsc",

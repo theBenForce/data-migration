@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/theBenForce/data-migration/compare/data-migration@1.3.1...data-migration@2.0.0) (2020-03-04)
+
+
+### Bug Fixes
+
+* remove GetDownScripts ([bdaac1a](https://github.com/theBenForce/data-migration/commit/bdaac1a6b10d4a59ade6a2c5519c2bcee4afac0a))
+* **config:** rename context params and drivers ([630c359](https://github.com/theBenForce/data-migration/commit/630c3597ebada4ef50a463a1bb7464f5959a8dac))
+* update driver type names ([1907689](https://github.com/theBenForce/data-migration/commit/19076899a0124527973006d53ea6d8ec677472c6))
+
+
+### Features
+
+* add dynamodb tracker ([30d5456](https://github.com/theBenForce/data-migration/commit/30d54564ff40bf3731c8ccaf5f53dcfb78bb7339))
+* use execution trackers ([dda6d3d](https://github.com/theBenForce/data-migration/commit/dda6d3d75c5b6e72d3e05c6c511005eeeafa0692))
+* use new getScripts function ([cecdeb2](https://github.com/theBenForce/data-migration/commit/cecdeb21accca7dcf5f4b683f13d37bde1259c4a))
+* use the tracker to determine if an up script should run ([da3ff74](https://github.com/theBenForce/data-migration/commit/da3ff74ef8ac2560ed98d998ef67f284b56e03ef))
+* **config:** add tracker stage property ([109c3ac](https://github.com/theBenForce/data-migration/commit/109c3acd02db7de2783e5e49b50322c1bd4316ea))
+* create execution tracker interfaces ([0e6a8a3](https://github.com/theBenForce/data-migration/commit/0e6a8a366b4b68f3bb32589cff363ecbf886924e))
+
+
+### BREAKING CHANGES
+
+* **config:** moves driver configuration to drivers property
+
+
+
+
+
 ## [1.3.1](https://github.com/theBenForce/data-migration/compare/data-migration@1.3.0...data-migration@1.3.1) (2020-03-04)
 
 
