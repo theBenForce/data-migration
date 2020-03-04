@@ -6,13 +6,13 @@ export interface ExecutionTrackerParams {
   params: LoadConfigParameters<string | ProcessorParams>;
 }
 
-export interface TrackerInstance {
+export interface ExecutionTrackerInstance {
   markDone(script: string): Promise<void>;
-  isDone(script: string): Promise<void>;
+  isDone(script: string): Promise<boolean>;
   remove(script: string): Promise<void>;
 }
 
 export type ExecutionTracker = <T = Record<string, string>>(
   params: T,
   logger: Logger
-) => TrackerInstance;
+) => ExecutionTrackerInstance;
