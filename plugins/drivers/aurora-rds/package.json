@@ -1,6 +1,6 @@
 {
   "name": "dm-aurora-rds",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.630.0",
-    "data-migration": "^1.2.1",
+    "data-migration": "^1.2.2",
     "rxjs": "^6.5.4"
   },
   "scripts": {
