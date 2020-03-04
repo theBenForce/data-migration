@@ -1,15 +1,11 @@
 import { Command, flags } from "@oclif/command";
-import DataMigrationProcessor, {
-  Configuration,
-  Driver,
-  MigrationExecutor,
-  ScriptContext,
-} from "data-migration";
+import DataMigrationProcessor, { Configuration, Driver, ScriptContext } from "data-migration";
 import { appendFileSync } from "fs";
 import Listr = require("listr");
 import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
+import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
 export default class Down extends Command {
   static description = "run all down migration scripts";
 
@@ -27,7 +23,7 @@ export default class Down extends Command {
     let config: Configuration = require(args.config);
 
     let stage = flags.stage || config.defaultStage || "prod";
-    let scripts: Array<{ name: string; down: MigrationExecutor<void> }>;
+    let scripts: Array<InitializedMigrationScript>;
     let drivers: Map<string, Driver>;
     let context: ScriptContext;
 
@@ -55,7 +51,7 @@ export default class Down extends Command {
           context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
 
           logger("Finding down scripts");
-          scripts = await DataMigrationProcessor.getDownScripts(config, context, logger);
+          scripts = await DataMigrationProcessor.getScripts(config, context, logger);
           logger(`Found ${scripts.length} down scripts`);
         },
       },
@@ -63,16 +59,18 @@ export default class Down extends Command {
         title: `Running Migrations`,
         task() {
           return new Listr(
-            scripts.map((script) => ({
-              title: script.name,
-              async task() {
-                const log = createLogger(["SCRIPT", script.name]);
+            scripts
+              .filter((script) => script.hasRun)
+              .map((script) => ({
+                title: script.name,
+                async task() {
+                  const log = createLogger(["SCRIPT", script.name]);
 
-                await script.down(context, log).catch((ex: any) => {
-                  createLogger(["ERROR", script.name, "CATCH"])(ex.message);
-                });
-              },
-            }))
+                  await script.down(context, log).catch((ex: any) => {
+                    createLogger(["ERROR", script.name, "CATCH"])(ex.message);
+                  });
+                },
+              }))
           );
         },
       },

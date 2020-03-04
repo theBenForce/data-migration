@@ -10,6 +10,7 @@ import * as Listr from "listr";
 import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
+import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
 
 export default class Up extends Command {
   static description = "run all migration scripts";
@@ -28,7 +29,7 @@ export default class Up extends Command {
     let config: Configuration = require(args.config);
 
     let stage = flags.stage || config.defaultStage || "prod";
-    let scripts: Array<{ name: string; up: MigrationExecutor<void> }>;
+    let scripts: Array<InitializedMigrationScript>;
     let drivers: Map<string, Driver>;
     let context: ScriptContext;
 
@@ -55,7 +56,7 @@ export default class Up extends Command {
           context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
 
           logger("Finding up scripts");
-          scripts = await DataMigrationProcessor.getUpScripts(config, context, logger);
+          scripts = await DataMigrationProcessor.getScripts(config, context, logger);
           logger(`Found ${scripts.length} up scripts`);
         },
       },
@@ -63,16 +64,18 @@ export default class Up extends Command {
         title: `Running Migrations`,
         task() {
           return new Listr(
-            scripts.map((script) => ({
-              title: script.name,
-              async task() {
-                const log = createLogger(["SCRIPT", script.name]);
+            scripts
+              .filter((script) => !script.hasRun)
+              .map((script) => ({
+                title: script.name,
+                async task() {
+                  const log = createLogger(["SCRIPT", script.name]);
 
-                await script.up(context, log).catch((ex: any) => {
-                  createLogger(["ERROR", script.name, "CATCH"])(ex.message);
-                });
-              },
-            }))
+                  await script.up(context, log).catch((ex: any) => {
+                    createLogger(["ERROR", script.name, "CATCH"])(ex.message);
+                  });
+                },
+              }))
           );
         },
       },
