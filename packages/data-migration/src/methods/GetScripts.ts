@@ -49,7 +49,7 @@ export default async function getScripts(
             scriptLogger(
               `Something went wrong while executing ${fname} up script: ${JSON.stringify(ex)}`
             );
-            throw ex;
+            subscriber.error(ex);
           }
 
           subscriber.complete();
@@ -73,7 +73,7 @@ export default async function getScripts(
             scriptLogger(
               `Something went wrong while executing ${fname} down script: ${JSON.stringify(ex)}`
             );
-            throw ex;
+            subscriber.error(ex);
           }
 
           subscriber.complete();
