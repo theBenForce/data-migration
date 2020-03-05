@@ -11,6 +11,7 @@ export type ScriptContext = {
 export type MigrationExecutor<T> = (context: ScriptContext, log: Logger) => Promise<T>;
 
 export default interface MigrationScript {
+  description?: string;
   up: MigrationExecutor<void>;
   down?: MigrationExecutor<void>;
   hasRun?: MigrationExecutor<boolean>;
@@ -18,6 +19,7 @@ export default interface MigrationScript {
 
 export interface InitializedMigrationScript {
   name: string;
+  description?: string;
   up: () => Promise<void>;
   down: () => Promise<void>;
   hasRun: boolean;

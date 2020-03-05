@@ -34,10 +34,10 @@ export default class New extends Command {
     fs.writeFileSync(
       name,
       `
-import { ScriptContext, Logger } from "data-migration";
+import { ScriptContext, Logger, MigrationScript } from "data-migration";
 
 export default {
-  name: "${args.name}",
+  description: "${args.name}",
   /**
    * Run the acutal migration
    */
@@ -51,7 +51,7 @@ export default {
   async down(context: ScriptContext, log: Logger) {
     log("Running down migration ${scriptName}");
   }
-};
+} as MigrationScript;
 
 
     `

@@ -31,6 +31,7 @@ export default async function getScripts(
 
     result.push({
       name: fname,
+      description: script.description,
       executionInformation,
       hasRun,
       up: () =>
