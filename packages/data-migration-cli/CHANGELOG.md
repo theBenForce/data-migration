@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.2.0...data-migration-cli@2.2.1) (2020-03-05)
+
+
+### Bug Fixes
+
+* add documentation badge ([c04d39a](https://github.com/theBenForce/data-migration/commit/c04d39adbc5492d898dbb8713e867509969668ca))
+* pass subscriber to createLogger ([9bbd525](https://github.com/theBenForce/data-migration/commit/9bbd525f4115e67a428302315c90461c26de9f2c))
+* use down script directly ([3462c37](https://github.com/theBenForce/data-migration/commit/3462c3703e4f008ab8a12a3a886ee5bd3526e264))
+
+
+
+
+
 # [2.2.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.1.0...data-migration-cli@2.2.0) (2020-03-05)
 
 
