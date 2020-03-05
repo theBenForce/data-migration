@@ -7,9 +7,9 @@
 
 > A [Data Migration](https://www.npmjs.com/package/data-migration) driver to run queries on an Aurora RDS instance.
 
-# Configuration
+## Configuration
 
-## Parameters
+### Parameters
 
 The Aurora RDS driver accepts the following parameters as part of its configuration:
 
@@ -20,40 +20,71 @@ The Aurora RDS driver accepts the following parameters as part of its configurat
 | secretArn      | string | Yes      | ARN of the secret manager secret to use for database credentials |
 | databaseSchema | string | No       | The database schema to connect to by default                     |
 
-## Sample Configuration
+### Example
 
 ```javascript
+const CloudFormationProcessor = require("dm-processor-cf");
+
 module.exports = {
   defaultStage: "prod",
   migrationDirectory: "migrations",
   stages: {
     prod: {
-      users: {
-        driver: require("dm-aurora-rds"),
-        params: {
-          region: "us-east-1",
-          databaseSchema: "some-schema",
-          resourceArn: {
-            // Use this processor to get values from CloudFormation
-            processor: require("dm-processor-cf"),
-            params: {
-              stack: "some-stack-name",
-              output: "SomeOutputName",
-              region: "us-east-1",
+      defaultParams: {
+        region: "us-east-1",
+        stack: "some-stack-name",
+      },
+      drivers: {
+        auroraDriver: {
+          driver: require("dm-aurora-rds"),
+          params: {
+            databaseSchema: "some-schema",
+            resourceArn: {
+              processor: CloudFormationProcessor,
+              params: {
+                output: "AuroraArn",
+              },
             },
-          },
-          secretArn: {
-            // Use this processor to get values from CloudFormation
-            processor: require("dm-processor-cf"),
-            params: {
-              stack: "some-stack-name",
-              output: "SomeOutputName",
-              region: "us-east-1",
+            secretArn: {
+              processor: CloudFormationProcessor,
+              params: {
+                output: "AuroraSecretArn",
+              },
             },
           },
         },
       },
     },
+  },
+};
+```
+
+## Methods
+
+### query
+
+> Executes a query against the database, returning an `Observable`
+
+#### Arguments
+
+| Name       | Description                                                                   |
+| ---------- | ----------------------------------------------------------------------------- |
+| query      | The query string to be executed                                               |
+| parameters | An array of `AWS.RDSDataService.SqlParameter`s that will be used in the query |
+| options    | A `QueryOptions` object                                                       |
+
+#### Example
+
+```typescript
+import { toArray } from "rxjs/operators";
+
+export default {
+  async up(context: ScriptContext, log: Logger) {
+    const aurora = await context.getDriver<RdsDriver>("auroraDriver");
+    const someTableResults = await aurora
+      .query<SomeDataType>(`SELECT * FROM some_table`)
+      .pipe(toArray())
+      .toPromise();
   },
 };
 ```

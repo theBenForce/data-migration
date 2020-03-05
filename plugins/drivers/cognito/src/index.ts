@@ -23,7 +23,12 @@ function convertToStandardUser(input: CognitoIdentityServiceProvider.UserType): 
   };
 }
 
-const cognitoDriver: DriverBuilder<Record<string, string>> = (params, logger: Logger): Driver => {
+interface CognitoDriverParams {
+  userPool: string;
+  region: string;
+}
+
+const cognitoDriver: DriverBuilder<CognitoDriverParams> = (params, logger: Logger): Driver => {
   let cognitoidentityserviceprovider: CognitoIdentityServiceProvider;
   let userPool: { UserPoolId: string };
 
