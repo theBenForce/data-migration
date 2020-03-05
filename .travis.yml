@@ -26,3 +26,8 @@ jobs:
           skip_cleanup: true
           on:
             branch: master
+
+        - provider: script
+          script: yarn docs:build
+          after_success:
+            - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi

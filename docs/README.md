@@ -1,0 +1,21 @@
+# Documentation
+
+- [Data Migration](../README.md)
+- Getting Started
+  - [Quick Start](intro/quick-start.md)
+- [CLI](/packages/data-migration-cli/README.md)
+  - [Changes](/packages/data-migration-cli/CHANGELOG.md)
+- [Plugins](plugins.md)
+  - Processors
+    - [Cloud Formation](/plugins/processors/dm-processor-cf/README.md)
+      - [Changes](/plugins/processors/dm-processor-cf/CHANGELOG.md)
+  - Drivers
+    - [Aurora RDS](/plugins/drivers/aurora-rds/README.md)
+      - [Changes](/plugins/drivers/aurora-rds/CHANGELOG.md)
+    - [Cognito](/plugins/drivers/cognito/README.md)
+      - [Changes](/plugins/drivers/cognito/CHANGELOG.md)
+    - [DynamoDB](/plugins/drivers/dynamodb/README.md)
+      - [Changes](/plugins/drivers/dynamodb/CHANGELOG.md)
+  - Trackers
+    - [DynamoDB](/plugins/trackers/dynamo/README.md)
+      - [Changes](/plugins/trackers/dynamo/CHANGELOG.md)
