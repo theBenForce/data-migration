@@ -25,8 +25,8 @@
     "lint": "lerna run lint --parallel",
     "release": "lerna version --conventional-commits --yes",
     "npm:publish": "lerna publish from-package --yes",
-    "docs:preview": "docpress serve",
-    "docs:build": "docpress build"
+    "docs:preview": "yarn docpress serve",
+    "docs:build": "yarn docpress build"
   },
   "config": {
     "commitizen": {
