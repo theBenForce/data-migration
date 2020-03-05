@@ -4,7 +4,7 @@ import * as path from "path";
 import { cli } from "cli-ux";
 import loadScripts from "../utils/loadScripts";
 
-import { formatRelative, parseISO } from "date-fns";
+import { formatRelative, parseISO, formatDistance } from "date-fns";
 import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
 
 export default class List extends Command {
@@ -31,13 +31,36 @@ export default class List extends Command {
         name: {
           header: "Script",
         },
-        hasRun: { header: "Has Run" },
         executedAt: {
           header: "Executed At",
           get(script: InitializedMigrationScript) {
-            if (script.executedAt) {
-              return formatRelative(parseISO(script.executedAt), new Date());
+            if (script.executionInformation) {
+              return formatRelative(script.executionInformation.start, new Date());
             }
+
+            return "";
+          },
+        },
+        time: {
+          header: "Took",
+          get(script: InitializedMigrationScript) {
+            if (script.executionInformation) {
+              return formatDistance(
+                script.executionInformation.finished,
+                script.executionInformation.start,
+                { includeSeconds: true }
+              );
+            }
+            return "";
+          },
+        },
+        drivers: {
+          header: "Drivers Used",
+          get(script: InitializedMigrationScript) {
+            if (script.executionInformation) {
+              return script.executionInformation.driversUsed.join(", ");
+            }
+            return "";
           },
         },
       },

@@ -6,9 +6,15 @@ export interface ExecutionTrackerParams {
   params: Record<string, string | ProcessorParams>;
 }
 
+export interface ExecutionInformation {
+  start: Date;
+  finished: Date;
+  driversUsed: Array<string>;
+}
+
 export interface ExecutionTrackerInstance {
-  markDone(script: string): Promise<void>;
-  wasExecuted(script: string): Promise<string | undefined>;
+  markDone(script: string, start: Date, driversUsed: Array<string>): Promise<void>;
+  wasExecuted(script: string): Promise<ExecutionInformation | undefined>;
   remove(script: string): Promise<void>;
 }
 

@@ -1,6 +1,11 @@
 import * as AWS from "aws-sdk";
-import { ExecutionTracker, ExecutionTrackerInstance } from "data-migration/lib/ExecutionTracker";
+import {
+  ExecutionTracker,
+  ExecutionTrackerInstance,
+  ExecutionInformation,
+} from "data-migration/lib/ExecutionTracker";
 import { Logger } from "data-migration";
+import { parseISO } from "date-fns";
 
 interface DynamoTrackerParams {
   region: string;
@@ -14,7 +19,9 @@ interface DynamoTrackerParams {
 }
 
 const DEFAULT_MIGRATION_PREFIX = "migrations";
-const EXECUTED_AT_PROPERTY = "executed_at";
+const EXECUTED_AT_PROPERTY = "completed_at";
+const STARTED_AT_PROPERTY = "started_at";
+const DRIVERS_USED = "drivers";
 
 const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => {
   const { TableName } = params;
@@ -28,8 +35,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
   const prefix = params.prefix ?? DEFAULT_MIGRATION_PREFIX;
 
   return {
-    async wasExecuted(script: string): Promise<string | undefined> {
-      let result: string | undefined;
+    async wasExecuted(script: string): Promise<ExecutionInformation | undefined> {
+      let result: ExecutionInformation | undefined;
 
       const resultDetails = await DocumentDb.query({
         TableName,
@@ -44,14 +51,22 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
         },
       }).promise();
 
-      resultDetails.Items?.forEach((item) => (result = item[EXECUTED_AT_PROPERTY]));
+      resultDetails.Items?.forEach((item) => {
+        result = {
+          finished: parseISO(item[EXECUTED_AT_PROPERTY]),
+          start: parseISO(item[STARTED_AT_PROPERTY]),
+          driversUsed: item[DRIVERS_USED],
+        };
+      });
 
       return result;
     },
 
-    async markDone(script: string) {
-      const Item = {} as Record<string, string>;
+    async markDone(script: string, start: Date, driversUsed: Array<string>) {
+      const Item = {} as Record<string, string | Array<string>>;
       Item[EXECUTED_AT_PROPERTY] = new Date().toISOString();
+      Item[STARTED_AT_PROPERTY] = start.toISOString();
+      Item[DRIVERS_USED] = driversUsed;
       Item[params.partitionKeyName] = prefix;
       Item[params.sortKeyName] = script;
 

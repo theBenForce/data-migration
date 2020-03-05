@@ -1,5 +1,6 @@
 import { Driver } from "./DriverTypes";
 import { Logger } from "./Logger";
+import { ExecutionInformation } from "./ExecutionTracker";
 
 export type ScriptContext = {
   getDriver: <T extends Driver>(name: string) => Promise<T>;
@@ -20,5 +21,5 @@ export interface InitializedMigrationScript {
   up: () => Promise<void>;
   down: () => Promise<void>;
   hasRun: boolean;
-  executedAt?: string;
+  executionInformation?: ExecutionInformation;
 }

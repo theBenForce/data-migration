@@ -2,7 +2,7 @@ import Configuration from "../Config";
 import MigrationScript, { ScriptContext, InitializedMigrationScript } from "../MigrationScript";
 import { getAllScripts } from "../Utils";
 import { Logger } from "../Logger";
-import { ExecutionTrackerInstance } from "../ExecutionTracker";
+import { ExecutionTrackerInstance, ExecutionInformation } from "../ExecutionTracker";
 
 export default async function getScripts(
   config: Configuration,
@@ -19,27 +19,28 @@ export default async function getScripts(
     const script = scripts.get(fname) as MigrationScript;
 
     let hasRun = false;
-    let executedAt: string | undefined;
+    let executionInformation: ExecutionInformation | undefined;
 
     if (script.hasRun) {
       hasRun = await script.hasRun(context, log);
     } else if (tracker) {
-      executedAt = await tracker.wasExecuted(fname);
-      hasRun = Boolean(executedAt);
+      executionInformation = await tracker.wasExecuted(fname);
+      hasRun = Boolean(executionInformation);
     }
 
     const scriptLogger = createLogger(fname);
 
     result.push({
       name: fname,
-      executedAt,
+      executionInformation,
       hasRun,
       async up() {
         let result;
+        const start = new Date();
         try {
           result = await script.up(context, scriptLogger);
           if (tracker) {
-            await tracker.markDone(fname);
+            await tracker.markDone(fname, start, context.getDriversUsed());
           }
         } catch (ex) {
           scriptLogger(
