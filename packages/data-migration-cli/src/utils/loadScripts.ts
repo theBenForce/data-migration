@@ -4,6 +4,7 @@ import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
+import { Subscriber } from "rxjs";
 
 interface LoadScriptsResult {
   scripts: Array<InitializedMigrationScript>;
@@ -43,7 +44,8 @@ export default async function loadScripts(
     config,
     context,
     logger,
-    (scriptName: string) => createLogger(["SCRIPT", scriptName]),
+    (scriptName: string, subsriber?: Subscriber<string>) =>
+      createLogger(["SCRIPT", scriptName], subsriber),
     tracker
   );
   logger(`Found ${scripts.length} scripts`);
