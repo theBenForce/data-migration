@@ -17,6 +17,13 @@ env:
 jobs:
   include:
     - stage: publish
+      name: "Documentation"
+      script: ./node_modules/.bin/docpress build
+      after_success:
+        - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi
+
+    - stage: publish
+      name: "Deploy Packages"
       before_install: .travis/before_install.sh
       script: yarn build
       deploy:
@@ -31,8 +38,3 @@ jobs:
           skip_cleanup: true
           on:
             branch: master
-
-        - provider: script
-          script: ./node_modules/.bin/docpress build
-          after_success:
-            - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi
