@@ -31,6 +31,9 @@ export default class List extends Command {
         name: {
           header: "Script",
         },
+        description: {
+          header: "Description",
+        },
         executedAt: {
           header: "Executed",
           minWidth: 25,

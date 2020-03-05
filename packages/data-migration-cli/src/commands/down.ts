@@ -46,7 +46,7 @@ export default class Down extends Command {
 
           return new Listr(
             filteredScripts.map((script) => ({
-              title: script.name,
+              title: script.description ?? script.name,
               task: script.down,
             }))
           );
