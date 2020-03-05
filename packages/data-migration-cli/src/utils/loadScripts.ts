@@ -16,31 +16,39 @@ export default async function loadScripts(
   forcedStage?: string
 ): Promise<LoadScriptsResult> {
   let config: Configuration = require(path.resolve(configPath));
-  let stage = forcedStage || config.defaultStage || "prod";
+  let stage = forcedStage ?? config.defaultStage ?? "prod";
   let scripts: Array<InitializedMigrationScript>;
   let drivers: Map<string, Driver>;
   let context: ScriptContext;
 
-  appendFileSync(logFile, `\n\nStarting migration at ${new Date().toISOString()}`);
-  const logger = createLogger(["Init"]);
-  logger("Loading drivers");
-
-  drivers = await DataMigrationProcessor.loadDrivers(
-    config.stages[stage],
-    logger,
-    (driverName: string) => createLogger(["DRIVER", driverName])
+  appendFileSync(
+    logFile,
+    `\n\nStarting migration at ${new Date().toISOString()} on stage ${stage}`
   );
-  logger("Creating script context");
+  const logger = createLogger(["Init"]);
+
+  const stageConfig = config.stages[stage];
+  logger(`Stage config: ${JSON.stringify(stageConfig)}`);
+
+  logger("Loading drivers");
+  drivers = await DataMigrationProcessor.loadDrivers(stageConfig, logger, (driverName: string) =>
+    createLogger(["DRIVER", driverName])
+  );
+
+  logger("Processing stage context parameters");
   const stageParams = await DataMigrationProcessor.processParams(
-    config.stages[stage].contextParams || {},
+    stageConfig.contextParams || {},
     logger
   );
+
+  logger("Creating script context");
   context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
-  const tracker = await DataMigrationProcessor.loadExecutionTracker(
-    config.stages[stage],
-    logger,
-    () => createLogger(["TRACKER"])
+
+  logger("Creating migration tracker");
+  const tracker = await DataMigrationProcessor.loadExecutionTracker(stageConfig, logger, () =>
+    createLogger(["TRACKER"])
   );
+
   logger("Finding scripts");
   scripts = await DataMigrationProcessor.getScripts(
     config,
@@ -50,6 +58,7 @@ export default async function loadScripts(
       createLogger(["SCRIPT", scriptName], subsriber),
     tracker
   );
+
   logger(`Found ${scripts.length} scripts`);
 
   return { scripts, context, stage };
