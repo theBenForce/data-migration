@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../assets/style.css?t=90051322">
+    <script src="../../../assets/script.js?t=93f1a66c"></script>
+    <title>DynamoDB - Data Migration</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <ul>
+          <li class="menu-item -level-0 -parent">
+            <ul class="submenu">
+              <li class="menu-item -level-1"><a class="link title  link-index" href="../../../index.html">Data Migration</a>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Getting Started</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-introquick-start" href="../../../intro/quick-start.html">Quick Start</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><a class="link title  link-packagesdata-migration-cli" href="../../../packages/data-migration-cli/index.html">CLI</a>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-packagesdata-migration-clichangelog" href="../../../packages/data-migration-cli/CHANGELOG.html">Changes</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><a class="link title  link-plugins" href="../../../plugins.html">Plugins</a>
+                <ul class="submenu">
+                  <li class="menu-item -level-2 -parent"><span class="title">Processors</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsprocessorsdm-processor-cf" href="../../../plugins/processors/dm-processor-cf/index.html">Cloud Formation</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsprocessorsdm-processor-cfchangelog" href="../../../plugins/processors/dm-processor-cf/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2 -parent"><span class="title">Drivers</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriversaurora-rds" href="../../../plugins/drivers/aurora-rds/index.html">Aurora RDS</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriversaurora-rdschangelog" href="../../../plugins/drivers/aurora-rds/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriverscognito" href="../../../plugins/drivers/cognito/index.html">Cognito</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriverscognitochangelog" href="../../../plugins/drivers/cognito/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriversdynamodb" href="../../../plugins/drivers/dynamodb/index.html">DynamoDB</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriversdynamodbchangelog" href="../../../plugins/drivers/dynamodb/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2 -parent"><span class="title">Trackers</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title -active link-pluginstrackersdynamo" href="../../../plugins/trackers/dynamo/index.html">DynamoDB</a>
+                        <ul class="headings heading-list">
+                          <li class="heading-item -depth-2"><a class="hlink link-parameters" href="#parameters">Parameters</a>
+                          </li>
+                        </ul>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginstrackersdynamochangelog" href="../../../plugins/trackers/dynamo/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body page-pluginstrackersdynamo">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/theBenForce/data-migration" data-title="theBenForce/data-migration">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="welcome-to-dm-tracker-dynamodb">Welcome to dm-tracker-dynamodb &#x1F44B;</h1>
+<p><a href="https://travis-ci.org/theBenForce/data-migration"><img src="https://travis-ci.org/theBenForce/data-migration.svg?branch=master" alt="Build Status"></a>
+<a href="https://www.npmjs.com/package/dm-tracker-dynamodb"><img src="https://img.shields.io/npm/v/dm-tracker-dynamodb" alt="NPM Package"></a>
+<a href="https://codeclimate.com/github/theBenForce/data-migration/maintainability"><img src="https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability" alt="Maintainability"></a>
+<a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna"></a></p>
+<blockquote>
+<p>A <a href="https://www.npmjs.com/package/data-migration">Data Migration</a> tracker to keep track of which migration scripts have been executed.</p>
+</blockquote>
+<h1 id="configuration">Configuration</h1>
+<h2 id="parameters">Parameters</h2>
+<p>The DynamoDB driver accepts the following parameters as part of its configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>Yes</td>
+<td>The AWS Region where this table exists</td>
+</tr>
+<tr>
+<td>TableName</td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the DynamoDB table to connect to</td>
+</tr>
+<tr>
+<td>partitionKeyName</td>
+<td>string</td>
+<td>Yes</td>
+<td>Name of the partition key in the dynamo table</td>
+</tr>
+<tr>
+<td>sortKeyName</td>
+<td>string</td>
+<td>Yes</td>
+<td>Name of the sort key in the dynamo table</td>
+</tr>
+<tr>
+<td>accessKeyId</td>
+<td>string</td>
+<td>No</td>
+<td>AWS Credentials, if not provided data-migration will use the default AWS configuration</td>
+</tr>
+<tr>
+<td>secretAccessKey</td>
+<td>string</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>string</td>
+<td>No</td>
+<td>Value to use for the partition key for migration records</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../../../plugins/drivers/dynamodb/CHANGELOG.html"><span class="title">Changes</span></a></div>
+          <div class="right"><a href="../../../plugins/trackers/dynamo/CHANGELOG.html"><span class="label">Next: </span><span class="title">Changes</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

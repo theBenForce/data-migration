@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../assets/style.css?t=90051322">
+    <script src="../../../assets/script.js?t=93f1a66c"></script>
+    <title>Aurora RDS - Data Migration</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <ul>
+          <li class="menu-item -level-0 -parent">
+            <ul class="submenu">
+              <li class="menu-item -level-1"><a class="link title  link-index" href="../../../index.html">Data Migration</a>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Getting Started</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-introquick-start" href="../../../intro/quick-start.html">Quick Start</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><a class="link title  link-packagesdata-migration-cli" href="../../../packages/data-migration-cli/index.html">CLI</a>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-packagesdata-migration-clichangelog" href="../../../packages/data-migration-cli/CHANGELOG.html">Changes</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><a class="link title  link-plugins" href="../../../plugins.html">Plugins</a>
+                <ul class="submenu">
+                  <li class="menu-item -level-2 -parent"><span class="title">Processors</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsprocessorsdm-processor-cf" href="../../../plugins/processors/dm-processor-cf/index.html">Cloud Formation</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsprocessorsdm-processor-cfchangelog" href="../../../plugins/processors/dm-processor-cf/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2 -parent"><span class="title">Drivers</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title -active link-pluginsdriversaurora-rds" href="../../../plugins/drivers/aurora-rds/index.html">Aurora RDS</a>
+                        <ul class="headings heading-list">
+                          <li class="heading-item -depth-2"><a class="hlink link-configuration" href="#configuration">Configuration</a>
+                            <ul class="heading-list -depth-2">
+                              <li class="heading-item -depth-3"><a class="hlink link-parameters" href="#parameters">Parameters</a>
+                              </li>
+                              <li class="heading-item -depth-3"><a class="hlink link-example" href="#example">Example</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="heading-item -depth-2"><a class="hlink link-methods" href="#methods">Methods</a>
+                            <ul class="heading-list -depth-2">
+                              <li class="heading-item -depth-3"><a class="hlink link-query" href="#query">query</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriversaurora-rdschangelog" href="../../../plugins/drivers/aurora-rds/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriverscognito" href="../../../plugins/drivers/cognito/index.html">Cognito</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriverscognitochangelog" href="../../../plugins/drivers/cognito/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriversdynamodb" href="../../../plugins/drivers/dynamodb/index.html">DynamoDB</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriversdynamodbchangelog" href="../../../plugins/drivers/dynamodb/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2 -parent"><span class="title">Trackers</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginstrackersdynamo" href="../../../plugins/trackers/dynamo/index.html">DynamoDB</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginstrackersdynamochangelog" href="../../../plugins/trackers/dynamo/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body page-pluginsdriversaurora-rds">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/theBenForce/data-migration" data-title="theBenForce/data-migration">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="welcome-to-dm-aurora-rds">Welcome to dm-aurora-rds &#x1F44B;</h1>
+<p><a href="https://travis-ci.org/theBenForce/data-migration"><img src="https://travis-ci.org/theBenForce/data-migration.svg?branch=master" alt="Build Status"></a>
+<a href="https://www.npmjs.com/package/dm-aurora-rds"><img src="https://img.shields.io/npm/v/dm-aurora-rds" alt="NPM Package"></a>
+<a href="https://codeclimate.com/github/theBenForce/data-migration/maintainability"><img src="https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability" alt="Maintainability"></a>
+<a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna"></a></p>
+<blockquote>
+<p>A <a href="https://www.npmjs.com/package/data-migration">Data Migration</a> driver to run queries on an Aurora RDS instance.</p>
+</blockquote>
+<h2 id="configuration">Configuration</h2>
+<h3 id="parameters">Parameters</h3>
+<p>The Aurora RDS driver accepts the following parameters as part of its configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>region</td>
+<td>string</td>
+<td>Yes</td>
+<td>The AWS Region where this table exists</td>
+</tr>
+<tr>
+<td>resourceArn</td>
+<td>string</td>
+<td>Yes</td>
+<td>ARN of the Aruora RDS cluster</td>
+</tr>
+<tr>
+<td>secretArn</td>
+<td>string</td>
+<td>Yes</td>
+<td>ARN of the secret manager secret to use for database credentials</td>
+</tr>
+<tr>
+<td>databaseSchema</td>
+<td>string</td>
+<td>No</td>
+<td>The database schema to connect to by default</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3>
+<pre><code class="lang-javascript"><span class="pl-k">const</span> CloudFormationProcessor = <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-processor-cf&quot;</span>);
+
+<span class="pl-c1">module</span>.exports = {
+  <span class="hljs-attr">defaultStage</span>: <span class="pl-s">&quot;prod&quot;</span>,
+  <span class="hljs-attr">migrationDirectory</span>: <span class="pl-s">&quot;migrations&quot;</span>,
+  <span class="hljs-attr">stages</span>: {
+    <span class="hljs-attr">prod</span>: {
+      <span class="hljs-attr">defaultParams</span>: {
+        <span class="hljs-attr">region</span>: <span class="pl-s">&quot;us-east-1&quot;</span>,
+        <span class="hljs-attr">stack</span>: <span class="pl-s">&quot;some-stack-name&quot;</span>,
+      },
+      <span class="hljs-attr">drivers</span>: {
+        <span class="hljs-attr">auroraDriver</span>: {
+          <span class="hljs-attr">driver</span>: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-aurora-rds&quot;</span>),
+          <span class="hljs-attr">params</span>: {
+            <span class="hljs-attr">databaseSchema</span>: <span class="pl-s">&quot;some-schema&quot;</span>,
+            <span class="hljs-attr">resourceArn</span>: {
+              <span class="hljs-attr">processor</span>: CloudFormationProcessor,
+              <span class="hljs-attr">params</span>: {
+                <span class="hljs-attr">output</span>: <span class="pl-s">&quot;AuroraArn&quot;</span>,
+              },
+            },
+            <span class="hljs-attr">secretArn</span>: {
+              <span class="hljs-attr">processor</span>: CloudFormationProcessor,
+              <span class="hljs-attr">params</span>: {
+                <span class="hljs-attr">output</span>: <span class="pl-s">&quot;AuroraSecretArn&quot;</span>,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+</code></pre>
+<h2 id="methods">Methods</h2>
+<h3 id="query">query</h3>
+<blockquote>
+<p>Executes a query against the database, returning an <code>Observable</code></p>
+</blockquote>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>The query string to be executed</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>An array of <code>AWS.RDSDataService.SqlParameter</code>s that will be used in the query</td>
+</tr>
+<tr>
+<td>options</td>
+<td>A <code>QueryOptions</code> object</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example">Example</h4>
+<pre><code class="lang-typescript"><span class="pl-k">import</span> { toArray } <span class="pl-k">from</span> <span class="pl-s">&quot;rxjs/operators&quot;</span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
+  <span class="pl-k">async</span> up(context: ScriptContext, log: Logger) {
+    <span class="pl-k">const</span> aurora = <span class="pl-k">await</span> context.getDriver&lt;RdsDriver&gt;(<span class="pl-s">&quot;auroraDriver&quot;</span>);
+    <span class="pl-k">const</span> someTableResults = <span class="pl-k">await</span> aurora
+      .query&lt;SomeDataType&gt;(<span class="pl-s">`SELECT * FROM some_table`</span>)
+      .pipe(toArray())
+      .toPromise();
+  },
+};
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../../../plugins/processors/dm-processor-cf/CHANGELOG.html"><span class="title">Changes</span></a></div>
+          <div class="right"><a href="../../../plugins/drivers/aurora-rds/CHANGELOG.html"><span class="label">Next: </span><span class="title">Changes</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

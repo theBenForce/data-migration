@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../assets/style.css?t=90051322">
+    <script src="../../assets/script.js?t=93f1a66c"></script>
+    <title>CLI - Data Migration</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <ul>
+          <li class="menu-item -level-0 -parent">
+            <ul class="submenu">
+              <li class="menu-item -level-1"><a class="link title  link-index" href="../../index.html">Data Migration</a>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Getting Started</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-introquick-start" href="../../intro/quick-start.html">Quick Start</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><a class="link title -active link-packagesdata-migration-cli" href="../../packages/data-migration-cli/index.html">CLI</a>
+                <ul class="headings heading-list">
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-down-config" href="#migrate-down-config">`migrate down [CONFIG]`</a>
+                  </li>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-help-command" href="#migrate-help-command">`migrate help [COMMAND]`</a>
+                  </li>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-init" href="#migrate-init">`migrate init`</a>
+                  </li>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-list-config" href="#migrate-list-config">`migrate list [CONFIG]`</a>
+                  </li>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-new-name" href="#migrate-new-name">`migrate new NAME`</a>
+                  </li>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-up-config" href="#migrate-up-config">`migrate up [CONFIG]`</a>
+                  </li>
+                </ul>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title  link-packagesdata-migration-clichangelog" href="../../packages/data-migration-cli/CHANGELOG.html">Changes</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item -level-1 -parent"><a class="link title  link-plugins" href="../../plugins.html">Plugins</a>
+                <ul class="submenu">
+                  <li class="menu-item -level-2 -parent"><span class="title">Processors</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsprocessorsdm-processor-cf" href="../../plugins/processors/dm-processor-cf/index.html">Cloud Formation</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsprocessorsdm-processor-cfchangelog" href="../../plugins/processors/dm-processor-cf/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2 -parent"><span class="title">Drivers</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriversaurora-rds" href="../../plugins/drivers/aurora-rds/index.html">Aurora RDS</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriversaurora-rdschangelog" href="../../plugins/drivers/aurora-rds/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriverscognito" href="../../plugins/drivers/cognito/index.html">Cognito</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriverscognitochangelog" href="../../plugins/drivers/cognito/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsdriversdynamodb" href="../../plugins/drivers/dynamodb/index.html">DynamoDB</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginsdriversdynamodbchangelog" href="../../plugins/drivers/dynamodb/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2 -parent"><span class="title">Trackers</span>
+                    <ul class="submenu">
+                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginstrackersdynamo" href="../../plugins/trackers/dynamo/index.html">DynamoDB</a>
+                        <ul class="submenu">
+                          <li class="menu-item -level-4"><a class="link title  link-pluginstrackersdynamochangelog" href="../../plugins/trackers/dynamo/CHANGELOG.html">Changes</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body page-packagesdata-migration-cli">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/theBenForce/data-migration" data-title="theBenForce/data-migration">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="data-migration-cli">data-migration-cli</h1>
+<p>A migration utility for AWS resources</p>
+<p><a href="https://oclif.io"><img src="https://img.shields.io/badge/cli-oclif-brightgreen.svg" alt="oclif"></a>
+<a href="https://npmjs.org/package/data-migration-cli"><img src="https://img.shields.io/npm/v/data-migration-cli.svg" alt="Version"></a>
+<a href="https://codecov.io/gh/drg-adaptive/data-migration"><img src="https://codecov.io/gh/drg-adaptive/data-migration/branch/master/graph/badge.svg" alt="Codecov"></a>
+<a href="https://npmjs.org/package/data-migration-cli"><img src="https://img.shields.io/npm/dw/data-migration-cli.svg" alt="Downloads/week"></a>
+<a href="https://github.com/drg-adaptive/data-migration/blob/master/package.json"><img src="https://img.shields.io/npm/l/data-migration-cli.svg" alt="License"></a></p>
+<!-- toc -->
+<ul>
+<li><a href="#data-migration-cli">data-migration-cli</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#commands">Commands</a></li>
+</ul>
+<!-- tocstop -->
+<h1 id="usage">Usage</h1>
+<pre><code class="lang-sh-session">$ npm install -g data-migration-cli
+$ migrate COMMAND
+running command...
+$ migrate (-v|--version|version)
+data-migration-cli/1.1.7 linux-x64 node-v12.13.1
+$ migrate --help [COMMAND]
+USAGE
+  $ migrate COMMAND
+...
+</code></pre>
+<h1 id="commands">Commands</h1>
+<!-- commands -->
+<ul>
+<li><a href="#migrate-down-config"><code>migrate down [CONFIG]</code></a></li>
+<li><a href="#migrate-help-command"><code>migrate help [COMMAND]</code></a></li>
+<li><a href="#migrate-init"><code>migrate init</code></a></li>
+<li><a href="#migrate-list-config"><code>migrate list [CONFIG]</code></a></li>
+<li><a href="#migrate-new-name"><code>migrate new NAME</code></a></li>
+<li><a href="#migrate-up-config"><code>migrate up [CONFIG]</code></a></li>
+</ul>
+<h2 id="migrate-down-config"><code>migrate down [CONFIG]</code></h2>
+<p>run all down migration scripts</p>
+<pre><code>USAGE
+  $ migrate down [CONFIG]
+
+OPTIONS
+  -h, --help     show CLI help
+  --stage=stage  Stage that will be used when loading config values
+</code></pre>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.0.2/src/commands/down.ts">src/commands/down.ts</a></em></p>
+<h2 id="migrate-help-command"><code>migrate help [COMMAND]</code></h2>
+<p>display help for migrate</p>
+<pre><code>USAGE
+  $ migrate help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+</code></pre>
+<p><em>See code: <a href="https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts">@oclif/plugin-help</a></em></p>
+<h2 id="migrate-init"><code>migrate init</code></h2>
+<p>Creates a basic configuration in the current directory</p>
+<pre><code>USAGE
+  $ migrate init
+
+OPTIONS
+  -h, --help  show CLI help
+</code></pre>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.0.2/src/commands/init.ts">src/commands/init.ts</a></em></p>
+<h2 id="migrate-list-config"><code>migrate list [CONFIG]</code></h2>
+<p>list all migration scripts and their status</p>
+<pre><code>USAGE
+  $ migrate list [CONFIG]
+
+OPTIONS
+  -h, --help              show CLI help
+  -x, --extended          show extra columns
+  --columns=columns       only show provided columns (comma-separated)
+  --csv                   output is csv format [alias: --output=csv]
+  --filter=filter         filter property by partial string matching, ex: name=foo
+  --no-header             hide table header from output
+  --no-truncate           do not truncate output to fit screen
+  --output=csv|json|yaml  output in a more machine friendly format
+  --sort=sort             property to sort by (prepend &apos;-&apos; for descending)
+  --stage=stage           Stage that will be used when loading config values
+</code></pre>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.0.2/src/commands/list.ts">src/commands/list.ts</a></em></p>
+<h2 id="migrate-new-name"><code>migrate new NAME</code></h2>
+<p>Create a new migration script</p>
+<pre><code>USAGE
+  $ migrate new NAME
+
+OPTIONS
+  -h, --help       show CLI help
+  --config=config  [default: ./.dm.config.js]
+</code></pre>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.0.2/src/commands/new.ts">src/commands/new.ts</a></em></p>
+<h2 id="migrate-up-config"><code>migrate up [CONFIG]</code></h2>
+<p>run all migration scripts</p>
+<pre><code>USAGE
+  $ migrate up [CONFIG]
+
+OPTIONS
+  -h, --help     show CLI help
+  --stage=stage  Stage that will be used when loading config values
+</code></pre>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.0.2/src/commands/up.ts">src/commands/up.ts</a></em></p>
+<!-- commandsstop -->
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../../intro/quick-start.html"><span class="title">Quick Start</span></a></div>
+          <div class="right"><a href="../../packages/data-migration-cli/CHANGELOG.html"><span class="label">Next: </span><span class="title">Changes</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
