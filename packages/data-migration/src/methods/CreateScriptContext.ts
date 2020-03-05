@@ -9,7 +9,17 @@ export default function createScriptContext(
   return {
     async getDriver<T extends Driver>(driverName: string): Promise<T> {
       if (!drivers.has(driverName)) {
-        throw new Error(`No driver named ${driverName} found!`);
+        const availableDrivers: Array<string> = [];
+
+        for (const driverName of drivers.keys()) {
+          availableDrivers.push(driverName);
+        }
+
+        throw new Error(
+          `No driver named ${driverName} found! Available drivers are ${availableDrivers.join(
+            ", "
+          )}`
+        );
       }
 
       let result = drivers.get(driverName) as T;
