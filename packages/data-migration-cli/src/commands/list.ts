@@ -32,7 +32,8 @@ export default class List extends Command {
           header: "Script",
         },
         executedAt: {
-          header: "Executed At",
+          header: "Executed",
+          minWidth: 25,
           get(script: InitializedMigrationScript) {
             if (script.executionInformation) {
               return formatRelative(script.executionInformation.start, new Date());
@@ -43,6 +44,7 @@ export default class List extends Command {
         },
         time: {
           header: "Took",
+          minWidth: 25,
           get(script: InitializedMigrationScript) {
             if (script.executionInformation) {
               return formatDistance(
