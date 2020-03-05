@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/theBenForce/data-migration/compare/dm-driver-cognito@1.1.7...dm-driver-cognito@1.2.0) (2020-03-05)
+
+
+### Features
+
+* add documentation ([865e37a](https://github.com/theBenForce/data-migration/commit/865e37ad495a345dc839f857628234a207747534))
+
+
+
+
+
 ## [1.1.7](https://github.com/theBenForce/data-migration/compare/dm-driver-cognito@1.1.6...dm-driver-cognito@1.1.7) (2020-03-04)
 
 **Note:** Version bump only for package dm-driver-cognito
