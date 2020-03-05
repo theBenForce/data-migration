@@ -20,9 +20,11 @@ export default async function loadScripts(
   let scripts: Array<InitializedMigrationScript>;
   let drivers: Map<string, Driver>;
   let context: ScriptContext;
+
   appendFileSync(logFile, `\n\nStarting migration at ${new Date().toISOString()}`);
   const logger = createLogger(["Init"]);
   logger("Loading drivers");
+
   drivers = await DataMigrationProcessor.loadDrivers(
     config.stages[stage],
     logger,
