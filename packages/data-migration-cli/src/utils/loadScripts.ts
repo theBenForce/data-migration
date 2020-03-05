@@ -3,7 +3,7 @@ import { appendFileSync } from "fs";
 import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
-import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
+import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import { Subscriber } from "rxjs";
 
 interface LoadScriptsResult {

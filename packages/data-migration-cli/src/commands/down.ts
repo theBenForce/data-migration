@@ -5,7 +5,7 @@ import Listr = require("listr");
 import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
-import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
+import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import loadScripts from "../utils/loadScripts";
 export default class Down extends Command {
   static description = "run all down migration scripts";

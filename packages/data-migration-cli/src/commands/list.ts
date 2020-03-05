@@ -5,7 +5,7 @@ import { cli } from "cli-ux";
 import loadScripts from "../utils/loadScripts";
 
 import { formatRelative, parseISO, formatDistance } from "date-fns";
-import { InitializedMigrationScript } from "data-migration/src/MigrationScript";
+import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 
 export default class List extends Command {
   static description = "list all migration scripts and their status";
