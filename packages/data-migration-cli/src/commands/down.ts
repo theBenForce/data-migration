@@ -38,20 +38,14 @@ export default class Down extends Command {
         },
       },
       {
-        title: `Running Migrations for stage "${stage}"`,
+        title: `Running Down Migrations`,
         task() {
           return new Listr(
             scripts
               .filter((script) => script.hasRun)
               .map((script) => ({
                 title: script.name,
-                async task() {
-                  const log = createLogger(["SCRIPT", script.name]);
-
-                  await script.down().catch((ex: any) => {
-                    createLogger(["ERROR", script.name, "CATCH"])(ex.message);
-                  });
-                },
+                task: script.down,
               }))
           );
         },

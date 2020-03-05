@@ -44,7 +44,7 @@ export default class Up extends Command {
         },
       },
       {
-        title: `Running Migrations for stage "${stage}"`,
+        title: `Running Up Migrations`,
         task() {
           return new Listr(
             scripts
