@@ -3,8 +3,8 @@
 A migration utility for AWS resources
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://thebenforce.github.io/data-migration/)
 [![Version](https://img.shields.io/npm/v/data-migration-cli.svg)](https://npmjs.org/package/data-migration-cli)
-[![Codecov](https://codecov.io/gh/drg-adaptive/data-migration/branch/master/graph/badge.svg)](https://codecov.io/gh/drg-adaptive/data-migration)
 [![Downloads/week](https://img.shields.io/npm/dw/data-migration-cli.svg)](https://npmjs.org/package/data-migration-cli)
 [![License](https://img.shields.io/npm/l/data-migration-cli.svg)](https://github.com/drg-adaptive/data-migration/blob/master/package.json)
 
