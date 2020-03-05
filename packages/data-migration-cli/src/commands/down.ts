@@ -39,14 +39,16 @@ export default class Down extends Command {
       },
       {
         title: `Running Down Migrations`,
-        task() {
+        task(ctx, task) {
+          const filteredScripts = scripts.filter((script) => script.hasRun);
+
+          task.title = `Running ${filteredScripts.length} Down Migrations on ${stage}`;
+
           return new Listr(
-            scripts
-              .filter((script) => script.hasRun)
-              .map((script) => ({
-                title: script.name,
-                task: script.down,
-              }))
+            filteredScripts.map((script) => ({
+              title: script.name,
+              task: script.down,
+            }))
           );
         },
       },

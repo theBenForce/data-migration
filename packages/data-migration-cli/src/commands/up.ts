@@ -45,14 +45,16 @@ export default class Up extends Command {
       },
       {
         title: `Running Up Migrations`,
-        task() {
+        task(ctx, task) {
+          const filteredScripts = scripts.filter((script) => !script.hasRun);
+
+          task.title = `Running ${filteredScripts.length} Up Migrations on ${stage}`;
+
           return new Listr(
-            scripts
-              .filter((script) => !script.hasRun)
-              .map((script) => ({
-                title: script.name,
-                task: script.up,
-              }))
+            filteredScripts.map((script) => ({
+              title: script.name,
+              task: script.up,
+            }))
           );
         },
       },
