@@ -3,12 +3,13 @@ import MigrationScript, { ScriptContext, InitializedMigrationScript } from "../M
 import { getAllScripts } from "../Utils";
 import { Logger } from "../Logger";
 import { ExecutionTrackerInstance, ExecutionInformation } from "../ExecutionTracker";
+import { Observable, Subscriber } from "rxjs";
 
 export default async function getScripts(
   config: Configuration,
   context: ScriptContext,
   log: Logger,
-  createLogger: (scriptName: string) => Logger,
+  createLogger: (scriptName: string, subscriber?: Subscriber<string>) => Logger,
   tracker?: ExecutionTrackerInstance
 ): Promise<Array<InitializedMigrationScript>> {
   let result = new Array<InitializedMigrationScript>();
@@ -28,48 +29,56 @@ export default async function getScripts(
       hasRun = Boolean(executionInformation);
     }
 
-    const scriptLogger = createLogger(fname);
-
     result.push({
       name: fname,
       executionInformation,
       hasRun,
-      async up() {
-        let result;
-        const start = new Date();
-        try {
-          result = await script.up(context, scriptLogger);
-          if (tracker) {
-            await tracker.markDone(fname, start, context.getDriversUsed());
-          }
-        } catch (ex) {
-          scriptLogger(
-            `Something went wrong while executing ${fname} up script: ${JSON.stringify(ex)}`
-          );
-          throw ex;
-        }
-
-        return result;
-      },
-      async down() {
-        let result;
-        try {
-          if (script.down) {
-            result = await script.down(context, scriptLogger);
+      up: () =>
+        // @ts-ignore
+        new Observable(async (subscriber: Subscriber<string>) => {
+          let result;
+          const start = new Date();
+          const scriptLogger = createLogger(fname, subscriber);
+          try {
+            result = await script.up(context, scriptLogger);
+            if (tracker) {
+              scriptLogger(`Marking as done`);
+              await tracker.markDone(fname, start, context.getDriversUsed());
+            }
+          } catch (ex) {
+            scriptLogger(
+              `Something went wrong while executing ${fname} up script: ${JSON.stringify(ex)}`
+            );
+            throw ex;
           }
 
-          if (tracker) {
-            await tracker.remove(fname);
-          }
-        } catch (ex) {
-          scriptLogger(
-            `Something went wrong while executing ${fname} down script: ${JSON.stringify(ex)}`
-          );
-          throw ex;
-        }
+          subscriber.complete();
+          return result;
+        }),
+      down: () =>
+        // @ts-ignore
+        new Observable(async (subscriber: Subscriber<string>) => {
+          let result;
+          const scriptLogger = createLogger(fname, subscriber);
+          try {
+            if (script.down) {
+              result = await script.down(context, scriptLogger);
+            }
 
-        return result;
-      },
+            if (tracker) {
+              scriptLogger(`Removing execution record`);
+              await tracker.remove(fname);
+            }
+          } catch (ex) {
+            scriptLogger(
+              `Something went wrong while executing ${fname} down script: ${JSON.stringify(ex)}`
+            );
+            throw ex;
+          }
+
+          subscriber.complete();
+          return result;
+        }),
     });
   }
 
