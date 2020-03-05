@@ -1,5 +1,9 @@
 {
   "docs": "docs",
   "github": "theBenForce/data-migration",
-  "lang": "en"
+  "lang": "en",
+  "googleAnalytics": {
+    "id": "UA-159860241-1",
+    "domain": "theBenForce.github.io"
+  }
 }
