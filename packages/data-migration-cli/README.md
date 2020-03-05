@@ -51,7 +51,7 @@ OPTIONS
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.3.1/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.3.2/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -82,7 +82,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.3.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.3.2/src/commands/init.ts)_
 
 ## `migrate list [CONFIG]`
 
@@ -105,7 +105,7 @@ OPTIONS
   --stage=stage           Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.3.1/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.3.2/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -120,7 +120,7 @@ OPTIONS
   --config=config  [default: ./.dm.config.js]
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.3.1/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.3.2/src/commands/new.ts)_
 
 ## `migrate up [CONFIG]`
 
@@ -135,5 +135,5 @@ OPTIONS
   --stage=stage  Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.3.1/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.3.2/src/commands/up.ts)_
 <!-- commandsstop -->
