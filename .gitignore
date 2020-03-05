@@ -98,3 +98,4 @@ lib/
 oclif.manifest.json
 *.log
 .npmrc
+_docpress
