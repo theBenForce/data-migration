@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.6](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.5...data-migration-cli@2.4.6) (2020-03-06)
+
+
+### Bug Fixes
+
+* reverse sort scripts in down migration ([22df6dd](https://github.com/theBenForce/data-migration/commit/22df6dd735e915bf17f31ffe224dd5198078024b))
+
+
+
+
+
 ## [2.4.5](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.4...data-migration-cli@2.4.5) (2020-03-06)
 
 
