@@ -17,7 +17,14 @@ export default async function loadScripts(
   flags: DefaultFlagParameters
 ): Promise<LoadScriptsResult> {
   let config = await loadConfiguration(path.resolve(flags.config));
-  let stage = flags.stage ?? config.defaultStage ?? "prod";
+  let stage = "prod";
+
+  if (flags.stage) {
+    stage = flags.stage;
+  } else if (config.defaultStage) {
+    stage = config.defaultStage;
+  }
+
   let scripts: Array<InitializedMigrationScript>;
   let drivers: Map<string, Driver<any, any>>;
   let context: ScriptContext;
