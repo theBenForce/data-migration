@@ -85,6 +85,18 @@
             "slug": "packagesdata-migration-clichangelog",
             "headings": [
               {
+                "title": "[2.4.17](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.16...data-migration-cli@2.4.17) (2020-03-06)",
+                "depth": 2,
+                "id": "2.4.17(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.4.16...data-migration-cli@2.4.17)-(2020-03-06)",
+                "headings": [
+                  {
+                    "title": "Bug Fixes",
+                    "depth": 3,
+                    "id": "bug-fixes"
+                  }
+                ]
+              },
+              {
                 "title": "[2.4.16](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.15...data-migration-cli@2.4.16) (2020-03-06)",
                 "depth": 2,
                 "id": "2.4.16(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.4.15...data-migration-cli@2.4.16)-(2020-03-06)"
@@ -1627,6 +1639,18 @@
       "pageTitle": "Changes",
       "slug": "packagesdata-migration-clichangelog",
       "headings": [
+        {
+          "title": "[2.4.17](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.16...data-migration-cli@2.4.17) (2020-03-06)",
+          "depth": 2,
+          "id": "2.4.17(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.4.16...data-migration-cli@2.4.17)-(2020-03-06)",
+          "headings": [
+            {
+              "title": "Bug Fixes",
+              "depth": 3,
+              "id": "bug-fixes"
+            }
+          ]
+        },
         {
           "title": "[2.4.16](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.15...data-migration-cli@2.4.16) (2020-03-06)",
           "depth": 2,
