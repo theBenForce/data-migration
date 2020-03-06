@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.4.13 linux-x64 node-v12.16.1
+data-migration-cli/2.4.14 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -51,10 +51,10 @@ USAGE
 OPTIONS
   -h, --help       show CLI help
   --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
-  --stage=stage    [default: migrations] Stage that will be used when loading config values
+  --stage=stage    Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.4.13/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -85,10 +85,10 @@ OPTIONS
   -d, --directory=directory  [default: migrations] Path to migration directory
   -h, --help                 show CLI help
   --config=config            [default: ./.dm.config.ts] Path to the configuration file to use
-  --stage=stage              [default: migrations] Stage that will be used when loading config values
+  --stage=stage              Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.13/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/init.ts)_
 
 ## `migrate list`
 
@@ -109,10 +109,10 @@ OPTIONS
   --no-truncate           do not truncate output to fit screen
   --output=csv|json|yaml  output in a more machine friendly format
   --sort=sort             property to sort by (prepend '-' for descending)
-  --stage=stage           [default: migrations] Stage that will be used when loading config values
+  --stage=stage           Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.4.13/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -127,7 +127,7 @@ OPTIONS
   --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.4.13/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/new.ts)_
 
 ## `migrate up`
 
@@ -140,8 +140,8 @@ USAGE
 OPTIONS
   -h, --help       show CLI help
   --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
-  --stage=stage    [default: migrations] Stage that will be used when loading config values
+  --stage=stage    Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.13/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/up.ts)_
 <!-- commandsstop -->
