@@ -7,7 +7,7 @@ export default async function ProcessParams(
   defaultParams?: Record<string, string>
 ): Promise<Record<string, string>> {
   let newParams: Record<string, string> = {};
-  const sourceParams: Record<string, string | ProcessorParams> = { ...params, ...defaultParams };
+  const sourceParams: Record<string, string | ProcessorParams> = { ...defaultParams, ...params };
   for (const key in sourceParams) {
     try {
       let value = sourceParams[key];
