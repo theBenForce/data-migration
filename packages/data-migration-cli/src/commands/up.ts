@@ -1,9 +1,8 @@
 import { Command, flags } from "@oclif/command";
 import { ScriptContext } from "data-migration";
-import { appendFileSync } from "fs";
 import * as Listr from "listr";
 
-import createLogger, { logFile } from "../utils/createLogger";
+import createLogger from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import loadScripts from "../utils/loadScripts";
 import { DefaultFlags } from "../default-flags";
@@ -36,7 +35,7 @@ export default class Up extends Command {
       },
       {
         title: `Running Up Migrations`,
-        task(task) {
+        task(context, task) {
           const filteredScripts = scripts.filter((script) => !script.hasRun);
 
           task.title = `Running ${filteredScripts.length} Up Migrations on ${stage}`;
