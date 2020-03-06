@@ -26,7 +26,7 @@ export type LoadConfigParameters<T> = {
   defaultParams?: Record<string, string>;
   contextParams?: Record<string, string | ProcessorParams>;
   tracker?: ExecutionTrackerParams;
-  drivers: Record<string, ConfigDriverEntry<T>>;
+  drivers?: Record<string, ConfigDriverEntry<T>>;
 };
 
 export const loadConfiguration = (configFile: string): Promise<Configuration> =>

@@ -1,6 +1,6 @@
 import { Logger } from "./Logger";
 
-export interface ProcessorParams<T = Record<string, string>> {
+export interface ProcessorParams<T = any> {
   processor: Processor<T>;
   params: T;
 }
