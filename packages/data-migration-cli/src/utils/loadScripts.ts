@@ -5,6 +5,8 @@ import * as path from "path";
 import createLogger, { logFile } from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import { Subscriber } from "rxjs";
+import { loadConfiguration } from "data-migration/src";
+import { DefaultFlagParameters } from "../default-flags";
 
 interface LoadScriptsResult {
   scripts: Array<InitializedMigrationScript>;
@@ -12,11 +14,10 @@ interface LoadScriptsResult {
   stage: string;
 }
 export default async function loadScripts(
-  configPath: string,
-  forcedStage?: string
+  flags: DefaultFlagParameters
 ): Promise<LoadScriptsResult> {
-  let config: Configuration = require(path.resolve(configPath));
-  let stage = forcedStage ?? config.defaultStage ?? "prod";
+  let config = await loadConfiguration(path.resolve(flags.config));
+  let stage = flags.stage ?? config.defaultStage ?? "prod";
   let scripts: Array<InitializedMigrationScript>;
   let drivers: Map<string, Driver>;
   let context: ScriptContext;

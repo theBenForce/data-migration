@@ -3,13 +3,15 @@ import DataMigrationProcessor, { Configuration } from "data-migration";
 import { format } from "date-fns";
 import * as fs from "fs";
 import * as path from "path";
+import { loadConfiguration } from "data-migration/src";
+import { DefaultFlags } from "../default-flags";
 
 export default class New extends Command {
   static description = "Create a new migration script";
 
   static flags = {
     help: flags.help({ char: "h" }),
-    config: flags.string({ default: "./.dm.config.js" }),
+    config: DefaultFlags.config,
   };
 
   static args = [{ name: "name", required: true }];
@@ -17,7 +19,7 @@ export default class New extends Command {
   async run() {
     const { args, flags } = this.parse(New);
 
-    let config: Configuration = require(path.resolve(flags.config));
+    let config = await loadConfiguration(path.resolve(flags.config));
     const prefix = DataMigrationProcessor.getMigrationsPath(config);
 
     if (!fs.existsSync(prefix)) {

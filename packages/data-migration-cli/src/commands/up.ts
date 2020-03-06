@@ -1,32 +1,25 @@
 import { Command, flags } from "@oclif/command";
-import DataMigrationProcessor, {
-  Configuration,
-  Driver,
-  MigrationExecutor,
-  ScriptContext,
-} from "data-migration";
+import { ScriptContext } from "data-migration";
 import { appendFileSync } from "fs";
 import * as Listr from "listr";
-import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import loadScripts from "../utils/loadScripts";
+import { DefaultFlags } from "../default-flags";
 
 export default class Up extends Command {
   static description = "run all migration scripts";
 
   static flags = {
     help: flags.help({ char: "h" }),
-    stage: flags.string({
-      description: "Stage that will be used when loading config values",
-    }),
+    ...DefaultFlags,
   };
 
-  static args = [{ name: "config", default: path.resolve("./.dm.config.js") }];
+  static args = [];
 
   async run() {
-    const { args, flags } = this.parse(Up);
+    const { flags } = this.parse(Up);
     let stage: string = "";
     let scripts: Array<InitializedMigrationScript>;
     let context: ScriptContext;
@@ -37,7 +30,7 @@ export default class Up extends Command {
       {
         title: `Load configuration`,
         async task() {
-          const scriptDetails = await loadScripts(args.config, flags.stage);
+          const scriptDetails = await loadScripts(flags);
           scripts = scriptDetails.scripts;
           context = scriptDetails.context;
           stage = scriptDetails.stage;
@@ -45,7 +38,7 @@ export default class Up extends Command {
       },
       {
         title: `Running Up Migrations`,
-        task(ctx, task) {
+        task(task) {
           const filteredScripts = scripts.filter((script) => !script.hasRun);
 
           task.title = `Running ${filteredScripts.length} Up Migrations on ${stage}`;

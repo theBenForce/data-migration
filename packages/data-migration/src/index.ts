@@ -15,6 +15,7 @@ import * as _ from "lodash";
 import * as methods from "./methods";
 import { ProcessorParams } from "./Processor";
 import { ExecutionTrackerParams } from "./ExecutionTracker";
+import Configuration from "./Config";
 
 export interface ConfigDriverEntry<T> {
   driver: DriverBuilder<any>;
@@ -27,5 +28,8 @@ export type LoadConfigParameters<T> = {
   tracker?: ExecutionTrackerParams;
   drivers: Record<string, ConfigDriverEntry<T>>;
 };
+
+export const loadConfiguration = (configFile: string): Promise<Configuration> =>
+  UtilsImport.loadScript<Configuration>(configFile);
 
 export default methods;

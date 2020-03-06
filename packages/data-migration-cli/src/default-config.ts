@@ -1,6 +1,9 @@
-export default `module.exports = {
-  defaultStage: "prod",
-  migrationDirectory: "migrations",
+export default (defaultStage = "prod", migrationDirectory = "migrations") => `
+import { Configuration } from "data-migration";
+
+export default {
+  defaultStage: "${defaultStage}",
+  migrationDirectory: "${migrationDirectory}",
   stages: {
     prod: {
       defaultParams: {
@@ -22,5 +25,5 @@ export default `module.exports = {
       }
     }
   }
-}
+} as Configuration;
 `;

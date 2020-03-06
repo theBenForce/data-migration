@@ -6,23 +6,22 @@ import loadScripts from "../utils/loadScripts";
 
 import { formatRelative, parseISO, formatDistance } from "date-fns";
 import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
+import { DefaultFlags } from "../default-flags";
 
 export default class List extends Command {
   static description = "list all migration scripts and their status";
 
   static flags = {
     help: flags.help({ char: "h" }),
-    stage: flags.string({
-      description: "Stage that will be used when loading config values",
-    }),
+    ...DefaultFlags,
     ...cli.table.Flags,
   };
 
-  static args = [{ name: "config", default: path.resolve("./.dm.config.js") }];
+  static args = [];
 
   async run() {
     const { args, flags } = this.parse(List);
-    const { scripts } = await loadScripts(args.config, flags.stage);
+    const { scripts } = await loadScripts(flags);
 
     cli.info(`Found ${scripts.length} scripts`);
     cli.table(
