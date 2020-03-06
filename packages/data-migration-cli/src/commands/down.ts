@@ -39,7 +39,9 @@ export default class Down extends Command {
       {
         title: `Running Down Migrations`,
         task(ctx, task) {
-          const filteredScripts = scripts.filter((script) => script.hasRun);
+          const filteredScripts = scripts
+            .filter((script) => script.hasRun)
+            .sort((a, b) => (a.name > b.name ? -1 : 1));
 
           task.title = `Running ${filteredScripts.length} Down Migrations on ${stage}`;
 
