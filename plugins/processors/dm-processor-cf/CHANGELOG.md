@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.2.6...dm-processor-cf@1.3.0) (2020-03-06)
+
+
+### Features
+
+* get physical resource ids ([ce6ebc2](https://github.com/theBenForce/data-migration/commit/ce6ebc2e6c509332d56e4777d7332245fad6202b))
+
+
+
+
+
 ## [1.2.6](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.2.5...dm-processor-cf@1.2.6) (2020-03-05)
 
 **Note:** Version bump only for package dm-processor-cf
