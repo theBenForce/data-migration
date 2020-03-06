@@ -9,40 +9,36 @@ A migration utility for AWS resources
 [![License](https://img.shields.io/npm/l/data-migration-cli.svg)](https://github.com/drg-adaptive/data-migration/blob/master/package.json)
 
 <!-- toc -->
-
-- [data-migration-cli](#data-migration-cli)
-- [Usage](#usage)
-- [Commands](#commands)
-  <!-- tocstop -->
+* [data-migration-cli](#data-migration-cli)
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.4.4 linux-x64 node-v12.16.1
+data-migration-cli/2.4.5 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`migrate down`](#migrate-down)
-- [`migrate help [COMMAND]`](#migrate-help-command)
-- [`migrate init`](#migrate-init)
-- [`migrate list`](#migrate-list)
-- [`migrate new NAME`](#migrate-new-name)
-- [`migrate up`](#migrate-up)
+* [`migrate down`](#migrate-down)
+* [`migrate help [COMMAND]`](#migrate-help-command)
+* [`migrate init`](#migrate-init)
+* [`migrate list`](#migrate-list)
+* [`migrate new NAME`](#migrate-new-name)
+* [`migrate up`](#migrate-up)
 
 ## `migrate down`
 
@@ -58,7 +54,7 @@ OPTIONS
   --stage=stage    [default: migrations] Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.4.4/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.4.5/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -92,7 +88,7 @@ OPTIONS
   --stage=stage              [default: migrations] Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.4/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.5/src/commands/init.ts)_
 
 ## `migrate list`
 
@@ -116,7 +112,7 @@ OPTIONS
   --stage=stage           [default: migrations] Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.4.4/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.4.5/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -131,7 +127,7 @@ OPTIONS
   --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.4.4/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.4.5/src/commands/new.ts)_
 
 ## `migrate up`
 
@@ -147,6 +143,5 @@ OPTIONS
   --stage=stage    [default: migrations] Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.4/src/commands/up.ts)_
-
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.5/src/commands/up.ts)_
 <!-- commandsstop -->
