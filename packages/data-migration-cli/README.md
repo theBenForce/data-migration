@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.4.17 linux-x64 node-v12.16.1
+data-migration-cli/2.4.18 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -54,7 +54,7 @@ OPTIONS
   --stage=stage    Stage name to use
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.4.17/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.4.18/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -88,7 +88,7 @@ OPTIONS
   --stage=stage              Stage name to use
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.17/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.18/src/commands/init.ts)_
 
 ## `migrate list`
 
@@ -112,7 +112,7 @@ OPTIONS
   --stage=stage           Stage name to use
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.4.17/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.4.18/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -127,7 +127,7 @@ OPTIONS
   --config=config  [default: ./.dm.config.ts] Path to the configuration file
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.4.17/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.4.18/src/commands/new.ts)_
 
 ## `migrate up`
 
@@ -143,5 +143,5 @@ OPTIONS
   --stage=stage    Stage name to use
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.17/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.18/src/commands/up.ts)_
 <!-- commandsstop -->

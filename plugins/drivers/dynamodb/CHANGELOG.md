@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.3.9...dm-driver-dynamodb@1.4.0) (2020-03-06)
+
+
+### Features
+
+* add dynamodb bulk delete operations ([c00ec02](https://github.com/theBenForce/data-migration/commit/c00ec02c1913c0a68fe5ed262636d1bd680e96ae))
+
+
+
+
+
 ## [1.3.9](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.3.8...dm-driver-dynamodb@1.3.9) (2020-03-06)
 
 **Note:** Version bump only for package dm-driver-dynamodb

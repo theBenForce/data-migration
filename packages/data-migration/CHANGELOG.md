@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.6.8...data-migration@2.7.0) (2020-03-06)
+
+
+### Features
+
+* add dynamodb bulk delete operations ([c00ec02](https://github.com/theBenForce/data-migration/commit/c00ec02c1913c0a68fe5ed262636d1bd680e96ae))
+
+
+
+
+
 ## [2.6.8](https://github.com/theBenForce/data-migration/compare/data-migration@2.6.7...data-migration@2.6.8) (2020-03-06)
 
 
