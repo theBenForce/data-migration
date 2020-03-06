@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
-  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/drivers/dynamodb",
+  "homepage": "https://data-migration.js.org/plugins/drivers/dynamodb",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theBenForce/data-migration.git"

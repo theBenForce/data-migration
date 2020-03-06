@@ -5,7 +5,7 @@
   "types": "lib/index.d.ts",
   "license": "MIT",
   "author": "Ben Force",
-  "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/trackers/dynamo",
+  "homepage": "https://data-migration.js.org/plugins/trackers/dynamo",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theBenForce/data-migration.git"

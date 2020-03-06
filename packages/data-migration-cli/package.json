@@ -40,7 +40,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/theBenForce/data-migration/tree/master/packages/data-migration-cli",
+  "homepage": "https://data-migration.js.org/packages/data-migration-cli",
   "keywords": [
     "oclif"
   ],

@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "author": "Ben Force",
   "license": "MIT",
-  "homepage": "https://github.com/theBenForce/data-migration/tree/master/packages/data-migration",
+  "homepage": "https://data-migration.js.org",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theBenForce/data-migration.git"
