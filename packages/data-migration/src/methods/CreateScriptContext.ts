@@ -2,12 +2,12 @@ import { ScriptContext } from "../";
 import { Driver } from "../DriverTypes";
 
 export default function createScriptContext(
-  drivers: Map<string, Driver>,
+  drivers: Map<string, Driver<any, any>>,
   config: { [key: string]: string }
 ): ScriptContext {
   const driversUsed: Array<string> = [];
   return {
-    async getDriver<T extends Driver>(driverName: string): Promise<T> {
+    async getDriver<T extends Driver<any, any>>(driverName: string): Promise<T> {
       if (!drivers.has(driverName)) {
         const availableDrivers: Array<string> = [];
 

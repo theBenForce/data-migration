@@ -11,6 +11,7 @@ import createLogger, { logFile } from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import { Subscriber } from "rxjs";
 import { DefaultFlagParameters } from "../default-flags";
+import { userInfo } from "os";
 
 interface LoadScriptsResult {
   scripts: Array<InitializedMigrationScript>;
@@ -23,12 +24,14 @@ export default async function loadScripts(
   let config = await loadConfiguration(path.resolve(flags.config));
   let stage = flags.stage ?? config.defaultStage ?? "prod";
   let scripts: Array<InitializedMigrationScript>;
-  let drivers: Map<string, Driver>;
+  let drivers: Map<string, Driver<any, any>>;
   let context: ScriptContext;
 
   appendFileSync(
     logFile,
-    `\n\nStarting migration at ${new Date().toISOString()} on stage ${stage}`
+    `\n\nStarting migration at ${new Date().toISOString()} by ${
+      userInfo()?.username
+    } on stage ${stage}`
   );
   const logger = createLogger(["Init"]);
 

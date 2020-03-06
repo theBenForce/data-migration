@@ -14,9 +14,9 @@ export default async function loadDrivers(
   stageConfig: LoadConfigParameters<string | ProcessorParams>,
   log: Logger,
   createLogger: (driverName: string) => Logger
-): Promise<Map<string, Driver>> {
+): Promise<Map<string, Driver<any, any>>> {
   const sourceDrivers = _.cloneDeep(stageConfig);
-  const resultDrivers = new Map<string, Driver>();
+  const resultDrivers = new Map<string, Driver<any, any>>();
 
   for (const driverName of Object.keys(sourceDrivers.drivers)) {
     const params = {

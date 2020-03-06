@@ -1,9 +1,10 @@
 import { format } from "date-fns";
+import { userInfo } from "os";
 
 export default (defaultStage = "prod", migrationDirectory = "migrations") => `
 /**
- * Data Migration script created on ${format(new Date(), "MMMM do, yyyy")} ${
-  process.env.USER ? `by ${process.env.USER}` : ""
+ * Data Migration script created on ${format(new Date(), "MMMM do, yyyy")} by ${
+  userInfo()?.username
 }
  */
 import { Configuration } from "data-migration";

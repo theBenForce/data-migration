@@ -3,7 +3,7 @@ import { Logger } from "./Logger";
 import { ExecutionInformation } from "./ExecutionTracker";
 
 export type ScriptContext = {
-  getDriver: <T extends Driver>(name: string) => Promise<T>;
+  getDriver: <T extends Driver<any, any>>(name: string) => Promise<T>;
   getDriversUsed: () => Array<string>;
   getConfigValue: (key: string) => string;
 };
