@@ -1,9 +1,4 @@
-import DataMigrationProcessor, {
-  Configuration,
-  Driver,
-  ScriptContext,
-  loadConfiguration,
-} from "data-migration";
+import DataMigrationProcessor, { Driver, ScriptContext, loadConfiguration } from "data-migration";
 import { appendFileSync } from "fs";
 import * as path from "path";
 
@@ -46,7 +41,8 @@ export default async function loadScripts(
   logger("Processing stage context parameters");
   const stageParams = await DataMigrationProcessor.processParams(
     stageConfig.contextParams || {},
-    logger
+    logger,
+    stageConfig.defaultParams
   );
 
   logger("Creating script context");

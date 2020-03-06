@@ -5,11 +5,11 @@ import { ExecutionTrackerInstance } from "../ExecutionTracker";
 import ProcessParams from "./ProcessParams";
 
 export default async function loadExecutionTracker(
-  stageConfig: LoadConfigParameters<string | ProcessorParams>,
+  stageConfig: LoadConfigParameters<string | ProcessorParams> | undefined,
   log: Logger,
   createLogger: () => Logger
 ): Promise<ExecutionTrackerInstance | undefined> {
-  if (!stageConfig.tracker) return;
+  if (!stageConfig?.tracker) return;
 
   try {
     log(`Processing tracker params`);
