@@ -346,6 +346,18 @@
                     "slug": "pluginsprocessorsdm-processor-cfchangelog",
                     "headings": [
                       {
+                        "title": "[1.3.2](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.3.1...dm-processor-cf@1.3.2) (2020-03-06)",
+                        "depth": 2,
+                        "id": "1.3.2(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.3.1...dm-processor-cf@1.3.2)-(2020-03-06)",
+                        "headings": [
+                          {
+                            "title": "Bug Fixes",
+                            "depth": 3,
+                            "id": "bug-fixes"
+                          }
+                        ]
+                      },
+                      {
                         "title": "[1.3.1](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.3.0...dm-processor-cf@1.3.1) (2020-03-06)",
                         "depth": 2,
                         "id": "1.3.1(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.3.0...dm-processor-cf@1.3.1)-(2020-03-06)",
@@ -825,6 +837,18 @@
                     "slug": "pluginsdriversdynamodbchangelog",
                     "headings": [
                       {
+                        "title": "[1.2.12](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.11...dm-driver-dynamodb@1.2.12) (2020-03-06)",
+                        "depth": 2,
+                        "id": "1.2.12(https:github.comthebenforcedata-migrationcomparedm-driver-dynamodb@1.2.11...dm-driver-dynamodb@1.2.12)-(2020-03-06)",
+                        "headings": [
+                          {
+                            "title": "Bug Fixes",
+                            "depth": 3,
+                            "id": "bug-fixes"
+                          }
+                        ]
+                      },
+                      {
                         "title": "[1.2.11](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.10...dm-driver-dynamodb@1.2.11) (2020-03-06)",
                         "depth": 2,
                         "id": "1.2.11(https:github.comthebenforcedata-migrationcomparedm-driver-dynamodb@1.2.10...dm-driver-dynamodb@1.2.11)-(2020-03-06)"
@@ -955,6 +979,18 @@
                     "url": "plugins/trackers/dynamo/CHANGELOG.html",
                     "slug": "pluginstrackersdynamochangelog",
                     "headings": [
+                      {
+                        "title": "[1.2.8](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.2.7...dm-tracker-dynamodb@1.2.8) (2020-03-06)",
+                        "depth": 2,
+                        "id": "1.2.8(https:github.comthebenforcedata-migrationcomparedm-tracker-dynamodb@1.2.7...dm-tracker-dynamodb@1.2.8)-(2020-03-06)",
+                        "headings": [
+                          {
+                            "title": "Bug Fixes",
+                            "depth": 3,
+                            "id": "bug-fixes"
+                          }
+                        ]
+                      },
                       {
                         "title": "[1.2.7](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.2.6...dm-tracker-dynamodb@1.2.7) (2020-03-06)",
                         "depth": 2,
@@ -1359,6 +1395,18 @@
       "pageTitle": "Changes",
       "slug": "pluginsprocessorsdm-processor-cfchangelog",
       "headings": [
+        {
+          "title": "[1.3.2](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.3.1...dm-processor-cf@1.3.2) (2020-03-06)",
+          "depth": 2,
+          "id": "1.3.2(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.3.1...dm-processor-cf@1.3.2)-(2020-03-06)",
+          "headings": [
+            {
+              "title": "Bug Fixes",
+              "depth": 3,
+              "id": "bug-fixes"
+            }
+          ]
+        },
         {
           "title": "[1.3.1](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.3.0...dm-processor-cf@1.3.1) (2020-03-06)",
           "depth": 2,
@@ -1828,6 +1876,18 @@
       "slug": "pluginsdriversdynamodbchangelog",
       "headings": [
         {
+          "title": "[1.2.12](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.11...dm-driver-dynamodb@1.2.12) (2020-03-06)",
+          "depth": 2,
+          "id": "1.2.12(https:github.comthebenforcedata-migrationcomparedm-driver-dynamodb@1.2.11...dm-driver-dynamodb@1.2.12)-(2020-03-06)",
+          "headings": [
+            {
+              "title": "Bug Fixes",
+              "depth": 3,
+              "id": "bug-fixes"
+            }
+          ]
+        },
+        {
           "title": "[1.2.11](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.10...dm-driver-dynamodb@1.2.11) (2020-03-06)",
           "depth": 2,
           "id": "1.2.11(https:github.comthebenforcedata-migrationcomparedm-driver-dynamodb@1.2.10...dm-driver-dynamodb@1.2.11)-(2020-03-06)"
@@ -1951,6 +2011,18 @@
       "pageTitle": "Changes",
       "slug": "pluginstrackersdynamochangelog",
       "headings": [
+        {
+          "title": "[1.2.8](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.2.7...dm-tracker-dynamodb@1.2.8) (2020-03-06)",
+          "depth": 2,
+          "id": "1.2.8(https:github.comthebenforcedata-migrationcomparedm-tracker-dynamodb@1.2.7...dm-tracker-dynamodb@1.2.8)-(2020-03-06)",
+          "headings": [
+            {
+              "title": "Bug Fixes",
+              "depth": 3,
+              "id": "bug-fixes"
+            }
+          ]
+        },
         {
           "title": "[1.2.7](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.2.6...dm-tracker-dynamodb@1.2.7) (2020-03-06)",
           "depth": 2,
