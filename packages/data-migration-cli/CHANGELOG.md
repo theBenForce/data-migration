@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.3.3...data-migration-cli@2.4.0) (2020-03-06)
+
+
+### Bug Fixes
+
+* add usage ([6e6956d](https://github.com/theBenForce/data-migration/commit/6e6956d7136438880f6df38375ec42991e72d443))
+
+
+### Features
+
+* use typescript configuration files ([c3636e2](https://github.com/theBenForce/data-migration/commit/c3636e288beb292cb8af3fa69192a0aff927f8cf))
+
+
+
+
+
 ## [2.3.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.3.2...data-migration-cli@2.3.3) (2020-03-06)
 
 **Note:** Version bump only for package data-migration-cli

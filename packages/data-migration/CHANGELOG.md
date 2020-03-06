@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.4.0...data-migration@2.5.0) (2020-03-06)
+
+
+### Features
+
+* use typescript configuration files ([c3636e2](https://github.com/theBenForce/data-migration/commit/c3636e288beb292cb8af3fa69192a0aff927f8cf))
+
+
+
+
+
 # [2.4.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.3.0...data-migration@2.4.0) (2020-03-06)
 
 

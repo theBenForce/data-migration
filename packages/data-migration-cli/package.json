@@ -1,7 +1,7 @@
 {
   "name": "data-migration-cli",
   "description": "A migration utility for AWS resources",
-  "version": "2.3.3",
+  "version": "2.4.0",
   "author": "Ben Force",
   "bin": {
     "migrate": "./bin/run"
@@ -15,7 +15,7 @@
     "@oclif/plugin-help": "^2.2.3",
     "@types/node": "^13.7.7",
     "cli-ux": "^5.4.5",
-    "data-migration": "^2.4.0",
+    "data-migration": "^2.5.0",
     "date-fns": "^2.10.0",
     "listr": "^0.14.3",
     "rxjs": "^6.5.4",
