@@ -2,7 +2,7 @@ import * as babel from "@babel/core";
 import * as fs from "fs";
 import * as path from "path";
 
-import { MigrationScript } from "../src";
+import { MigrationScript } from "./";
 
 import Configuration from "./Config";
 import { MissingParameters } from "./Errors";

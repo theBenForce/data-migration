@@ -1,4 +1,4 @@
-import { LoadConfigParameters, ProcessorParams } from "../src";
+import { LoadConfigParameters, ProcessorParams } from "./";
 
 export default interface Configuration {
   defaultStage?: string;

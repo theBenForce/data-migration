@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 
-import { LoadConfigParameters, ProcessorParams } from "../../src";
+import { LoadConfigParameters, ProcessorParams } from "../index";
 import { Driver } from "../DriverTypes";
 
 import ProcessParams from "./ProcessParams";

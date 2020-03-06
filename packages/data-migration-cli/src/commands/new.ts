@@ -3,7 +3,7 @@ import DataMigrationProcessor, { Configuration } from "data-migration";
 import { format } from "date-fns";
 import * as fs from "fs";
 import * as path from "path";
-import { loadConfiguration } from "data-migration/src";
+import { loadConfiguration } from "data-migration";
 import { DefaultFlags } from "../default-flags";
 
 export default class New extends Command {
