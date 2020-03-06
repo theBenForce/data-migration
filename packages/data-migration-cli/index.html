@@ -123,7 +123,7 @@
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.4.14 linux-x64 node-v12.16.1
+data-migration-cli/2.4.15 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -147,10 +147,10 @@ USAGE
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
-  --stage=stage    Stage that will be used when loading config values
+  --config=config  [default: ./.dm.config.ts] Path to the configuration file
+  --stage=stage    Stage name to use
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/down.ts">src/commands/down.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.15/src/commands/down.ts">src/commands/down.ts</a></em></p>
 <h2 id="migrate-help-command"><code>migrate help [COMMAND]</code></h2>
 <p>display help for migrate</p>
 <pre><code>USAGE
@@ -171,10 +171,10 @@ OPTIONS
 OPTIONS
   -d, --directory=directory  [default: migrations] Path to migration directory
   -h, --help                 show CLI help
-  --config=config            [default: ./.dm.config.ts] Path to the configuration file to use
-  --stage=stage              Stage that will be used when loading config values
+  --config=config            [default: ./.dm.config.ts] Path to the configuration file
+  --stage=stage              Stage name to use
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/init.ts">src/commands/init.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.15/src/commands/init.ts">src/commands/init.ts</a></em></p>
 <h2 id="migrate-list"><code>migrate list</code></h2>
 <p>list all migration scripts and their status</p>
 <pre><code>USAGE
@@ -184,16 +184,16 @@ OPTIONS
   -h, --help              show CLI help
   -x, --extended          show extra columns
   --columns=columns       only show provided columns (comma-separated)
-  --config=config         [default: ./.dm.config.ts] Path to the configuration file to use
+  --config=config         [default: ./.dm.config.ts] Path to the configuration file
   --csv                   output is csv format [alias: --output=csv]
   --filter=filter         filter property by partial string matching, ex: name=foo
   --no-header             hide table header from output
   --no-truncate           do not truncate output to fit screen
   --output=csv|json|yaml  output in a more machine friendly format
   --sort=sort             property to sort by (prepend &apos;-&apos; for descending)
-  --stage=stage           Stage that will be used when loading config values
+  --stage=stage           Stage name to use
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/list.ts">src/commands/list.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.15/src/commands/list.ts">src/commands/list.ts</a></em></p>
 <h2 id="migrate-new-name"><code>migrate new NAME</code></h2>
 <p>Create a new migration script</p>
 <pre><code>USAGE
@@ -201,9 +201,9 @@ OPTIONS
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
+  --config=config  [default: ./.dm.config.ts] Path to the configuration file
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/new.ts">src/commands/new.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.15/src/commands/new.ts">src/commands/new.ts</a></em></p>
 <h2 id="migrate-up"><code>migrate up</code></h2>
 <p>run all migration scripts</p>
 <pre><code>USAGE
@@ -211,10 +211,10 @@ OPTIONS
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
-  --stage=stage    Stage that will be used when loading config values
+  --config=config  [default: ./.dm.config.ts] Path to the configuration file
+  --stage=stage    Stage name to use
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.14/src/commands/up.ts">src/commands/up.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.15/src/commands/up.ts">src/commands/up.ts</a></em></p>
 <!-- commandsstop -->
 
         </div>
