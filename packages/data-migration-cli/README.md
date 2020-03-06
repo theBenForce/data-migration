@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.4.0 linux-x64 node-v12.16.1
+data-migration-cli/2.4.1 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -68,5 +68,5 @@ OPTIONS
   --stage=stage              [default: migrations] Stage that will be used when loading config values
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.4.1/src/commands/init.ts)_
 <!-- commandsstop -->

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.0...data-migration-cli@2.4.1) (2020-03-06)
+
+
+### Bug Fixes
+
+* remove reference to src path ([6c1bc80](https://github.com/theBenForce/data-migration/commit/6c1bc806d867c1e13b5bcff62f19be3750bea212))
+
+
+
+
+
 # [2.4.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.3.3...data-migration-cli@2.4.0) (2020-03-06)
 
 
