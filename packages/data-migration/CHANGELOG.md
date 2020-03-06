@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.7](https://github.com/theBenForce/data-migration/compare/data-migration@2.6.6...data-migration@2.6.7) (2020-03-06)
+
+
+### Bug Fixes
+
+* get param values from sourceParams ([2c1694f](https://github.com/theBenForce/data-migration/commit/2c1694f23515792950c0198118370a9d3fe0016f))
+
+
+
+
+
 ## [2.6.6](https://github.com/theBenForce/data-migration/compare/data-migration@2.6.5...data-migration@2.6.6) (2020-03-06)
 
 
