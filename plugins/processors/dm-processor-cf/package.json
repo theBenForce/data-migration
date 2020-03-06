@@ -1,6 +1,6 @@
 {
   "name": "dm-processor-cf",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Gets an output from cloudformation and returns the value",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
