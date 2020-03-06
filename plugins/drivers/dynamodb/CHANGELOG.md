@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.12...dm-driver-dynamodb@1.3.0) (2020-03-06)
+
+
+### Features
+
+* use export default ([44e0998](https://github.com/theBenForce/data-migration/commit/44e0998215dad652a980ab14e4e82dff69c41740))
+
+
+
+
+
 ## [1.2.12](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.2.11...dm-driver-dynamodb@1.2.12) (2020-03-06)
 
 

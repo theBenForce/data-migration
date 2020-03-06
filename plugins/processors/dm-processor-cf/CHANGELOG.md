@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.3.2...dm-processor-cf@1.4.0) (2020-03-06)
+
+
+### Features
+
+* use export default ([44e0998](https://github.com/theBenForce/data-migration/commit/44e0998215dad652a980ab14e4e82dff69c41740))
+
+
+
+
+
 ## [1.3.2](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.3.1...dm-processor-cf@1.3.2) (2020-03-06)
 
 
