@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/theBenForce/data-migration.svg?branch=master)](https://travis-ci.org/theBenForce/data-migration)
 [![NPM Package](https://img.shields.io/npm/v/dm-processor-cf)](https://www.npmjs.com/package/dm-processor-cf)
 [![Maintainability](https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability)](https://codeclimate.com/github/theBenForce/data-migration/maintainability)
+[![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://thebenforce.github.io/data-migration/)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 > A [Data Migration](https://www.npmjs.com/package/data-migration) processor to load values from CloudFormation stack outputs.
@@ -11,14 +12,14 @@
 
 ## Parameters
 
-The DynamoDB driver accepts the following parameters as part of its configuration:
+The CloudFormation processor accepts the following parameters as part of its configuration:
 
-| Name            | Type   | Required | Description                                                                            |
-| --------------- | ------ | -------- | -------------------------------------------------------------------------------------- |
-| region          | string | Yes      | The AWS Region where this table exists                                                 |
-| TableName       | string | Yes      | The name of the DynamoDB table to connect to                                           |
-| accessKeyId     | string | No       | AWS Credentials, if not provided data-migration will use the default AWS configuration |
-| secretAccessKey | string | No       |
+| Name      | Type   | Required | Description                                                                                                            |
+| --------- | ------ | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| region    | string | Yes      | The AWS Region where this table exists                                                                                 |
+| stack     | string | Yes      | The name of the stack to get values from                                                                               |
+| output    | string | Maybe    | Name of the output that should be loaded. Required if `logicalId` is not provided                                      |
+| logicalId | string | Maybe    | Logical ID of a resource in the stack. The processor will return the Physical ID. Required if `output` is not provided |
 
 ## Sample Configuration
 

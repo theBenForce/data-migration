@@ -1,10 +1,10 @@
 import { Logger } from "./Logger";
 
-export interface ProcessorParams {
-  processor: Processor;
-  params: Record<string, string>;
+export interface ProcessorParams<T = Record<string, string>> {
+  processor: Processor<T>;
+  params: T;
 }
 
-type Processor = (params: Record<string, string>, log: Logger) => Promise<string>;
+type Processor<T> = (params: T, log: Logger) => Promise<string>;
 
 export default Processor;
