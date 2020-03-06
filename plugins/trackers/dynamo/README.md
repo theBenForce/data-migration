@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/theBenForce/data-migration.svg?branch=master)](https://travis-ci.org/theBenForce/data-migration)
 [![NPM Package](https://img.shields.io/npm/v/dm-tracker-dynamodb)](https://www.npmjs.com/package/dm-tracker-dynamodb)
 [![Maintainability](https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability)](https://codeclimate.com/github/theBenForce/data-migration/maintainability)
-[![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://thebenforce.github.io/data-migration/)
+[![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://data-migration.js.org/)
 [![Downloads/week](https://img.shields.io/npm/dw/dm-tracker-dynamodb.svg)](https://npmjs.org/package/dm-tracker-dynamodb)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 

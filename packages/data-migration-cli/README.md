@@ -3,20 +3,22 @@
 A migration utility for AWS resources
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://thebenforce.github.io/data-migration/)
+[![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://data-migration.js.org/)
 [![Version](https://img.shields.io/npm/v/data-migration-cli.svg)](https://npmjs.org/package/data-migration-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/data-migration-cli.svg)](https://npmjs.org/package/data-migration-cli)
 [![License](https://img.shields.io/npm/l/data-migration-cli.svg)](https://github.com/drg-adaptive/data-migration/blob/master/package.json)
 
 <!-- toc -->
-* [data-migration-cli](#data-migration-cli)
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
+
+- [data-migration-cli](#data-migration-cli)
+- [Usage](#usage)
+- [Commands](#commands)
+  <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g data-migration-cli
 $ migrate COMMAND
@@ -28,17 +30,19 @@ USAGE
   $ migrate COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`migrate down`](#migrate-down)
-* [`migrate help [COMMAND]`](#migrate-help-command)
-* [`migrate init`](#migrate-init)
-* [`migrate list`](#migrate-list)
-* [`migrate new NAME`](#migrate-new-name)
-* [`migrate up`](#migrate-up)
+
+- [`migrate down`](#migrate-down)
+- [`migrate help [COMMAND]`](#migrate-help-command)
+- [`migrate init`](#migrate-init)
+- [`migrate list`](#migrate-list)
+- [`migrate new NAME`](#migrate-new-name)
+- [`migrate up`](#migrate-up)
 
 ## `migrate down`
 
@@ -144,4 +148,5 @@ OPTIONS
 ```
 
 _See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.4.4/src/commands/up.ts)_
+
 <!-- commandsstop -->
