@@ -1,4 +1,4 @@
-import { ProcessorParams } from "../Processor";
+import { ProcessorParams, isProcessorParams } from "../Processor";
 import { Logger } from "../Logger";
 
 export default async function ProcessParams(
@@ -7,30 +7,30 @@ export default async function ProcessParams(
   defaultParams?: Record<string, string>
 ): Promise<Record<string, string>> {
   let newParams: Record<string, string> = {};
-  for (const key of Object.keys(params)) {
+  const sourceParams = { ...params, ...defaultParams };
+  for (const key in sourceParams) {
     try {
-      const value = params[key];
-
-      if (!value || typeof value === "string") {
-        newParams[key] = value;
-        continue;
-      }
+      let value = params[key];
+      let finalValue: string;
 
       log(`Processing parameter ${key}`);
-      if (!value.processor) {
-        throw new Error(`No processor provided for ${key}`);
+
+      if (isProcessorParams(value)) {
+        finalValue = await value.processor(
+          {
+            ...defaultParams,
+            ...value.params,
+          },
+          log
+        );
+      } else {
+        log(`Copying parameter ${key}: "${value}"`);
+        finalValue = value;
       }
 
-      const processorResult = await value.processor(
-        {
-          ...defaultParams,
-          ...value.params,
-        },
-        log
-      );
-      newParams[key] = processorResult;
+      newParams[key] = finalValue;
     } catch (ex) {
-      log(ex.message);
+      log(`Error processing parameter ${key}: ${ex.message}`);
       throw ex;
     }
   }

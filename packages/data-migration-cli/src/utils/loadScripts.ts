@@ -40,7 +40,7 @@ export default async function loadScripts(
 
   logger("Processing stage context parameters");
   const stageParams = await DataMigrationProcessor.processParams(
-    stageConfig.contextParams || {},
+    { ...stageConfig.contextParams },
     logger,
     stageConfig.defaultParams
   );

@@ -1,5 +1,9 @@
 import { Logger } from "./Logger";
 
+export function isProcessorParams(value: any): value is ProcessorParams<any> {
+  return typeof value?.processor === "function";
+}
+
 export interface ProcessorParams<T = any> {
   processor: Processor<T>;
   params: T;
