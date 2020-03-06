@@ -10,7 +10,12 @@ interface DynamoDbParameters {
   endpoint?: string;
 }
 
-const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (params, logger: Logger): NoSqlDriver => {
+export type DynamoDbDriver = NoSqlDriver<DynamoDbParameters, AWS.DynamoDB.DocumentClient>;
+
+const dynamoDbDriver: DriverBuilder<DynamoDbParameters, DynamoDbDriver> = (
+  params,
+  logger: Logger
+): DynamoDbDriver => {
   const { TableName } = params;
   const DocumentDb = new AWS.DynamoDB.DocumentClient({
     region: params.region,
@@ -21,6 +26,12 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (params, logger: Logge
   });
 
   return {
+    parameters: params,
+    resource: DocumentDb,
+
+    /**
+     * Gets every record in the table
+     */
     getAllRecords<T>(): Observable<T> {
       // @ts-ignore
       return new Observable<T>(async (subscriber) => {
@@ -96,7 +107,7 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters> = (params, logger: Logge
 
       return records;
     },
-  } as NoSqlDriver;
+  } as DynamoDbDriver;
 };
 
-export = dynamoDbDriver;
+export default dynamoDbDriver;

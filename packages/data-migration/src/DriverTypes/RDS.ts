@@ -5,6 +5,6 @@ export interface QueryOptions {
   excludeFromTransaction?: boolean;
 }
 
-export default interface RdsDriver extends Driver {
+export default interface RdsDriver<P, D> extends Driver<P, D> {
   query<T>(query: string, params: Array<any>, options?: QueryOptions): Observable<T>;
 }

@@ -28,8 +28,16 @@ interface CognitoDriverParams {
   region: string;
 }
 
-const cognitoDriver: DriverBuilder<CognitoDriverParams> = (params, logger: Logger): Driver => {
-  let cognitoidentityserviceprovider: CognitoIdentityServiceProvider;
+export type CognitoDriver = UserPoolDriver<CognitoDriverParams, AWS.CognitoIdentityServiceProvider>;
+
+const cognitoDriver: DriverBuilder<CognitoDriverParams, CognitoDriver> = (
+  params,
+  logger: Logger
+): CognitoDriver => {
+  const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
+    apiVersion: "2016-04-18",
+    region: params.region,
+  });
   let userPool: { UserPoolId: string };
 
   return {
@@ -82,16 +90,11 @@ const cognitoDriver: DriverBuilder<CognitoDriverParams> = (params, logger: Logge
       logger("Initializing cognito");
 
       userPool = { UserPoolId: params.userPool };
-
-      cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
-        apiVersion: "2016-04-18",
-        region: params.region,
-      });
     },
     async cleanup() {
       logger("Cleaning up cognito driver");
     },
-  } as UserPoolDriver;
+  } as CognitoDriver;
 };
 
-export = cognitoDriver;
+export default cognitoDriver;

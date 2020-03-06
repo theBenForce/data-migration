@@ -3,6 +3,7 @@ import { ColumnMetadata, ExecuteStatementRequest } from "aws-sdk/clients/rdsdata
 import { DriverBuilder, Logger, RdsDriver } from "data-migration";
 import { QueryOptions } from "data-migration/lib/DriverTypes/RDS";
 import { Observable } from "rxjs";
+import { AuroraParameters } from "aws-sdk/clients/quicksight";
 
 function convertResultsToObject<T>(
   metadata?: AWS.RDSDataService.ColumnMetadata[]
@@ -33,8 +34,16 @@ interface AuroraRdsParameters {
   databaseSchema: string | undefined;
 }
 
-const rdsDriver: DriverBuilder<AuroraRdsParameters> = (params, logger: Logger): RdsDriver => {
-  let dataService: AWS.RDSDataService;
+export type AuroraRdsDriver = RdsDriver<AuroraRdsParameters, AWS.RDSDataService>;
+
+const rdsDriver: DriverBuilder<AuroraRdsParameters, AuroraRdsDriver> = (
+  params,
+  logger: Logger
+): AuroraRdsDriver => {
+  let dataService = new AWS.RDSDataService({
+    apiVersion: "2018-08-01",
+    region: params.region,
+  });
   let transactionId: string | undefined;
   let paramsBase = {
     resourceArn: params.resourceArn,
@@ -42,6 +51,8 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters> = (params, logger: Logger): 
   };
 
   return {
+    parameters: params,
+    resource: dataService,
     query<T>(
       query: string,
       parameters: Array<AWS.RDSDataService.SqlParameter>,
@@ -77,11 +88,6 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters> = (params, logger: Logger): 
     },
 
     async init() {
-      dataService = new AWS.RDSDataService({
-        apiVersion: "2018-08-01",
-        region: params.region,
-      });
-
       const transactionParams = {
         ...paramsBase,
         database: params.databaseSchema,
@@ -104,7 +110,7 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters> = (params, logger: Logger): 
         await dataService.commitTransaction(transactionParams).promise();
       }
     },
-  };
+  } as AuroraRdsDriver;
 };
 
-export = rdsDriver;
+export default rdsDriver;

@@ -63,7 +63,7 @@ module.exports = {
 
 ### query
 
-> Executes a query against the database, returning an `Observable`
+> Executes a query against the database, returning a rxjs `Observable`
 
 #### Arguments
 

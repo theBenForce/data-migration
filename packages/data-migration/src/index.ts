@@ -18,7 +18,7 @@ import { ExecutionTrackerParams } from "./ExecutionTracker";
 import Configuration from "./Config";
 
 export interface ConfigDriverEntry<T> {
-  driver: DriverBuilder<any>;
+  driver: DriverBuilder<any, any>;
   params: Record<string, T>;
 }
 

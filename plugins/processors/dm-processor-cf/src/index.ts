@@ -76,7 +76,6 @@ const processor: Processor<GetOutputParameters | GetResourceParameters> = async 
   log: Logger
 ) => {
   checkParameters(pkgName, [REGION_KEY, STACK_KEY], params);
-  const stack = params[STACK_KEY];
 
   if (isOutputParameters(params)) {
     return getOutputValue(log, params);
@@ -149,4 +148,4 @@ async function getOutputValue(log: Logger, params: GetOutputParameters): Promise
   return output.OutputValue;
 }
 
-export = processor;
+export default processor;

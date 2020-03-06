@@ -9,12 +9,8 @@ export interface User {
   Status?: string;
 }
 
-export default interface UserPoolDriver extends Driver {
-  addUser: (
-    username: string,
-    password: string,
-    attributes?: any
-  ) => Promise<User>;
+export default interface UserPoolDriver<P, R> extends Driver<P, R> {
+  addUser: (username: string, password: string, attributes?: any) => Promise<User>;
 
   deleteUser: (username: string) => Promise<void>;
 

@@ -38,6 +38,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
     async wasExecuted(script: string): Promise<ExecutionInformation | undefined> {
       let result: ExecutionInformation | undefined;
 
+      log(`Getting all migration records`);
+
       const resultDetails = await DocumentDb.query({
         TableName,
         KeyConditionExpression: "#primaryKey = :primaryKey and #sortKey = :sortKey",
@@ -50,6 +52,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
           ":sortKey": script,
         },
       }).promise();
+
+      log(`Found ${resultDetails.Count} migration records`);
 
       resultDetails.Items?.forEach((item) => {
         result = {
@@ -70,6 +74,8 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
       Item[params.partitionKeyName] = prefix;
       Item[params.sortKeyName] = script;
 
+      log(`Marking script ${script} as done`);
+
       await DocumentDb.put({
         TableName,
         Item,
@@ -81,6 +87,7 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
       Key[params.partitionKeyName] = prefix;
       Key[params.sortKeyName] = script;
 
+      log(`Removing record of ${script}`);
       await DocumentDb.delete({
         TableName,
         Key,
@@ -89,4 +96,4 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
   } as ExecutionTrackerInstance;
 };
 
-export = tracker;
+export default tracker;
