@@ -2,6 +2,7 @@
   "name": "dm-tracker-dynamodb",
   "version": "1.2.7",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "author": "Ben Force",
   "homepage": "https://github.com/theBenForce/data-migration/tree/master/plugins/trackers/dynamo",
