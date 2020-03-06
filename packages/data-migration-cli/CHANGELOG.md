@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.1...data-migration-cli@2.4.2) (2020-03-06)
+
+
+### Bug Fixes
+
+* add header to default config ([effe2e4](https://github.com/theBenForce/data-migration/commit/effe2e4ac309625df845a7828076db27fb369052))
+* update readme on prepublish ([3147f69](https://github.com/theBenForce/data-migration/commit/3147f699abc7c3ff5af4356b22a7d3d8644bf109))
+
+
+
+
+
 ## [2.4.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.0...data-migration-cli@2.4.1) (2020-03-06)
 
 
