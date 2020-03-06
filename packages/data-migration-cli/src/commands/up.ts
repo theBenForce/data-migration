@@ -24,8 +24,6 @@ export default class Up extends Command {
     let scripts: Array<InitializedMigrationScript>;
     let context: ScriptContext;
 
-    appendFileSync(logFile, `\n\nStarting migration at ${new Date().toISOString()}`);
-
     const tasks = new Listr([
       {
         title: `Load configuration`,
