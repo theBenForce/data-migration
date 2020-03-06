@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.3.0...dm-tracker-dynamodb@1.3.1) (2020-03-06)
+
+
+### Bug Fixes
+
+* standardize badges ([3f5fee0](https://github.com/theBenForce/data-migration/commit/3f5fee0c5228d38b3ab456a19b12dbb7fe7bcc34))
+
+
+
+
+
 # [1.3.0](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.2.8...dm-tracker-dynamodb@1.3.0) (2020-03-06)
 
 
