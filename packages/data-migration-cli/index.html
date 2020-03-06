@@ -29,17 +29,17 @@
               </li>
               <li class="menu-item -level-1 -parent"><a class="link title -active link-packagesdata-migration-cli" href="../../packages/data-migration-cli/index.html">CLI</a>
                 <ul class="headings heading-list">
-                  <li class="heading-item -depth-2"><a class="hlink link-migrate-down-config" href="#migrate-down-config">`migrate down [CONFIG]`</a>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-down" href="#migrate-down">`migrate down`</a>
                   </li>
                   <li class="heading-item -depth-2"><a class="hlink link-migrate-help-command" href="#migrate-help-command">`migrate help [COMMAND]`</a>
                   </li>
                   <li class="heading-item -depth-2"><a class="hlink link-migrate-init" href="#migrate-init">`migrate init`</a>
                   </li>
-                  <li class="heading-item -depth-2"><a class="hlink link-migrate-list-config" href="#migrate-list-config">`migrate list [CONFIG]`</a>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-list" href="#migrate-list">`migrate list`</a>
                   </li>
                   <li class="heading-item -depth-2"><a class="hlink link-migrate-new-name" href="#migrate-new-name">`migrate new NAME`</a>
                   </li>
-                  <li class="heading-item -depth-2"><a class="hlink link-migrate-up-config" href="#migrate-up-config">`migrate up [CONFIG]`</a>
+                  <li class="heading-item -depth-2"><a class="hlink link-migrate-up" href="#migrate-up">`migrate up`</a>
                   </li>
                 </ul>
                 <ul class="submenu">
@@ -114,25 +114,16 @@
 <ul>
 <li><a href="#data-migration-cli">data-migration-cli</a></li>
 <li><a href="#usage">Usage</a></li>
-<li><a href="#commands">Commands</a>
-<ul>
-<li><a href="#migrate-down-config"><code>migrate down [CONFIG]</code></a></li>
-<li><a href="#migrate-help-command"><code>migrate help [COMMAND]</code></a></li>
-<li><a href="#migrate-init"><code>migrate init</code></a></li>
-<li><a href="#migrate-list-config"><code>migrate list [CONFIG]</code></a></li>
-<li><a href="#migrate-new-name"><code>migrate new NAME</code></a></li>
-<li><a href="#migrate-up-config"><code>migrate up [CONFIG]</code></a></li>
+<li><a href="#commands">Commands</a></li>
 </ul>
 <!-- tocstop -->
-</li>
-</ul>
 <h1 id="usage">Usage</h1>
 <!-- usage -->
 <pre><code class="lang-sh-session">$ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.3.3 darwin-x64 node-v12.13.1
+data-migration-cli/2.4.0 linux-x64 node-v12.16.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -142,29 +133,24 @@ USAGE
 <h1 id="commands">Commands</h1>
 <!-- commands -->
 <ul>
-<li><a href="#data-migration-cli">data-migration-cli</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#commands">Commands</a>
-<ul>
-<li><a href="#migrate-down-config"><code>migrate down [CONFIG]</code></a></li>
+<li><a href="#migrate-down"><code>migrate down</code></a></li>
 <li><a href="#migrate-help-command"><code>migrate help [COMMAND]</code></a></li>
 <li><a href="#migrate-init"><code>migrate init</code></a></li>
-<li><a href="#migrate-list-config"><code>migrate list [CONFIG]</code></a></li>
+<li><a href="#migrate-list"><code>migrate list</code></a></li>
 <li><a href="#migrate-new-name"><code>migrate new NAME</code></a></li>
-<li><a href="#migrate-up-config"><code>migrate up [CONFIG]</code></a></li>
+<li><a href="#migrate-up"><code>migrate up</code></a></li>
 </ul>
-</li>
-</ul>
-<h2 id="migrate-down-config"><code>migrate down [CONFIG]</code></h2>
+<h2 id="migrate-down"><code>migrate down</code></h2>
 <p>run all down migration scripts</p>
 <pre><code>USAGE
-  $ migrate down [CONFIG]
+  $ migrate down
 
 OPTIONS
-  -h, --help     show CLI help
-  --stage=stage  Stage that will be used when loading config values
+  -h, --help       show CLI help
+  --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
+  --stage=stage    [default: migrations] Stage that will be used when loading config values
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.3.3/src/commands/down.ts">src/commands/down.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.0/src/commands/down.ts">src/commands/down.ts</a></em></p>
 <h2 id="migrate-help-command"><code>migrate help [COMMAND]</code></h2>
 <p>display help for migrate</p>
 <pre><code>USAGE
@@ -183,27 +169,31 @@ OPTIONS
   $ migrate init
 
 OPTIONS
-  -h, --help  show CLI help
+  -d, --directory=directory  [default: migrations] Path to migration directory
+  -h, --help                 show CLI help
+  --config=config            [default: ./.dm.config.ts] Path to the configuration file to use
+  --stage=stage              [default: migrations] Stage that will be used when loading config values
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.3.3/src/commands/init.ts">src/commands/init.ts</a></em></p>
-<h2 id="migrate-list-config"><code>migrate list [CONFIG]</code></h2>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.0/src/commands/init.ts">src/commands/init.ts</a></em></p>
+<h2 id="migrate-list"><code>migrate list</code></h2>
 <p>list all migration scripts and their status</p>
 <pre><code>USAGE
-  $ migrate list [CONFIG]
+  $ migrate list
 
 OPTIONS
   -h, --help              show CLI help
   -x, --extended          show extra columns
   --columns=columns       only show provided columns (comma-separated)
+  --config=config         [default: ./.dm.config.ts] Path to the configuration file to use
   --csv                   output is csv format [alias: --output=csv]
   --filter=filter         filter property by partial string matching, ex: name=foo
   --no-header             hide table header from output
   --no-truncate           do not truncate output to fit screen
   --output=csv|json|yaml  output in a more machine friendly format
   --sort=sort             property to sort by (prepend &apos;-&apos; for descending)
-  --stage=stage           Stage that will be used when loading config values
+  --stage=stage           [default: migrations] Stage that will be used when loading config values
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.3.3/src/commands/list.ts">src/commands/list.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.0/src/commands/list.ts">src/commands/list.ts</a></em></p>
 <h2 id="migrate-new-name"><code>migrate new NAME</code></h2>
 <p>Create a new migration script</p>
 <pre><code>USAGE
@@ -211,19 +201,20 @@ OPTIONS
 
 OPTIONS
   -h, --help       show CLI help
-  --config=config  [default: ./.dm.config.js]
+  --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.3.3/src/commands/new.ts">src/commands/new.ts</a></em></p>
-<h2 id="migrate-up-config"><code>migrate up [CONFIG]</code></h2>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.0/src/commands/new.ts">src/commands/new.ts</a></em></p>
+<h2 id="migrate-up"><code>migrate up</code></h2>
 <p>run all migration scripts</p>
 <pre><code>USAGE
-  $ migrate up [CONFIG]
+  $ migrate up
 
 OPTIONS
-  -h, --help     show CLI help
-  --stage=stage  Stage that will be used when loading config values
+  -h, --help       show CLI help
+  --config=config  [default: ./.dm.config.ts] Path to the configuration file to use
+  --stage=stage    [default: migrations] Stage that will be used when loading config values
 </code></pre>
-<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.3.3/src/commands/up.ts">src/commands/up.ts</a></em></p>
+<p><em>See code: <a href="https://github.com/theBenForce/data-migration/blob/v2.4.0/src/commands/up.ts">src/commands/up.ts</a></em></p>
 <!-- commandsstop -->
 
         </div>
