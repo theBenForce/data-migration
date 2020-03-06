@@ -11,7 +11,6 @@ export const DefaultFlags = {
     description: "Path to the configuration file to use",
   }),
   stage: flags.string({
-    default: "migrations",
     description: "Stage that will be used when loading config values",
   }),
 };
