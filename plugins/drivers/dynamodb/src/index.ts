@@ -107,6 +107,39 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters, DynamoDbDriver> = (
 
       return records;
     },
+
+    async deleteRecord<T>(key: T) {
+      const result = await DocumentDb.delete({
+        TableName,
+        Key: key,
+      }).promise();
+
+      return result;
+    },
+
+    async deleteRecordsBulk<T>(keys: Array<T>) {
+      const writeItems = keys.map(
+        (Key) =>
+          ({
+            DeleteRequest: { Key },
+          } as AWS.DynamoDB.DocumentClient.WriteRequest)
+      );
+
+      for (let index = 0; index < writeItems.length; index += 25) {
+        const deleteRequest = {
+          RequestItems: {},
+        } as AWS.DynamoDB.DocumentClient.BatchWriteItemInput;
+
+        deleteRequest.RequestItems[TableName] = writeItems.slice(
+          index,
+          Math.min(index + 25, writeItems.length)
+        );
+
+        logger(`Deleting with request ${JSON.stringify(deleteRequest)}`);
+
+        await DocumentDb.batchWrite(deleteRequest).promise();
+      }
+    },
   } as DynamoDbDriver;
 };
 
