@@ -1,7 +1,7 @@
 {
   "name": "data-migration-cli",
   "description": "A migration utility for AWS resources",
-  "version": "2.4.14",
+  "version": "2.4.15",
   "author": "Ben Force",
   "bin": {
     "migrate": "./bin/run"
