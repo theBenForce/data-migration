@@ -1,11 +1,15 @@
-import DataMigrationProcessor, { Configuration, Driver, ScriptContext } from "data-migration";
+import DataMigrationProcessor, {
+  Configuration,
+  Driver,
+  ScriptContext,
+  loadConfiguration,
+} from "data-migration";
 import { appendFileSync } from "fs";
 import * as path from "path";
 
 import createLogger, { logFile } from "../utils/createLogger";
 import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
 import { Subscriber } from "rxjs";
-import { loadConfiguration } from "data-migration/src";
 import { DefaultFlagParameters } from "../default-flags";
 
 interface LoadScriptsResult {
