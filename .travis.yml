@@ -19,14 +19,11 @@ jobs:
     - stage: publish
       name: "Deploy Packages"
       before_install: .travis/before_install.sh
-      script: yarn build
+      script: yarn release
+      skip_cleanup: true
+      on:
+        branch: master
       deploy:
-        - provider: script
-          script: yarn release
-          skip_cleanup: true
-          on:
-            branch: master
-
         - provider: script
           script: yarn npm:publish
           skip_cleanup: true
