@@ -8,9 +8,9 @@ export interface DefaultFlagParameters {
 export const DefaultFlags = {
   config: flags.string({
     default: "./.dm.config.ts",
-    description: "Path to the configuration file to use",
+    description: "Path to the configuration file",
   }),
   stage: flags.string({
-    description: "Stage that will be used when loading config values",
+    description: "Stage name to use",
   }),
 };
