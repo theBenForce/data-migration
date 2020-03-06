@@ -59,11 +59,11 @@
   },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
-    "prepublish": "yarn build",
+    "prepublish": "yarn build && oclif-dev readme",
     "prepack": "yarn build",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
-    "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "build": "rm -rf lib && tsc -b && oclif-dev manifest",
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "types": "lib/index.d.ts",
