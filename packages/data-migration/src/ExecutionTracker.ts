@@ -1,9 +1,8 @@
-import { LoadConfigParameters, ProcessorParams } from ".";
 import { Logger } from "./Logger";
 
-export interface ExecutionTrackerParams {
+export interface ExecutionTrackerParams<T = any> {
   executionTracker: ExecutionTracker;
-  params: Record<string, string | ProcessorParams>;
+  params: T;
 }
 
 export interface ExecutionInformation {
@@ -18,7 +17,4 @@ export interface ExecutionTrackerInstance {
   remove(script: string): Promise<void>;
 }
 
-export type ExecutionTracker<T = Record<string, string>> = (
-  params: T,
-  logger: Logger
-) => ExecutionTrackerInstance;
+export type ExecutionTracker<T = any> = (params: T, logger: Logger) => ExecutionTrackerInstance;
