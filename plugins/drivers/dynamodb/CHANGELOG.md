@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.4.0...dm-driver-dynamodb@1.4.1) (2020-03-09)
+
+**Note:** Version bump only for package dm-driver-dynamodb
+
+
+
+
+
 # [1.4.0](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.3.9...dm-driver-dynamodb@1.4.0) (2020-03-06)
 
 
