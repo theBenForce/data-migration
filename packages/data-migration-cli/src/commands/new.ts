@@ -12,6 +12,7 @@ export default class New extends Command {
   static flags = {
     help: flags.help({ char: "h" }),
     config: DefaultFlags.config,
+    scope: DefaultFlags.scope,
   };
 
   static args = [{ name: "name", required: true }];
@@ -20,7 +21,7 @@ export default class New extends Command {
     const { args, flags } = this.parse(New);
 
     let config = await loadConfiguration(path.resolve(flags.config));
-    const prefix = DataMigrationProcessor.getMigrationsPath(config);
+    const prefix = DataMigrationProcessor.getMigrationsPath(config, flags.scope);
 
     if (!fs.existsSync(prefix)) {
       fs.mkdirSync(prefix);

@@ -61,14 +61,15 @@ export default async function loadScripts(
   );
 
   logger("Finding scripts");
-  scripts = await DataMigrationProcessor.getScripts(
+  scripts = await DataMigrationProcessor.getScripts({
     config,
+    scope: flags.scope,
     context,
-    logger,
-    (scriptName: string, subsriber?: Subscriber<string>) =>
+    log: logger,
+    createLogger: (scriptName: string, subsriber?: Subscriber<string>) =>
       createLogger(["SCRIPT", scriptName], subsriber),
-    tracker
-  );
+    tracker,
+  });
 
   logger(`Found ${scripts.length} scripts`);
 

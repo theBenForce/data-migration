@@ -3,6 +3,7 @@ import { flags } from "@oclif/command";
 export interface DefaultFlagParameters {
   config: string;
   stage?: string;
+  scope?: string;
 }
 
 export const DefaultFlags = {
@@ -12,5 +13,8 @@ export const DefaultFlags = {
   }),
   stage: flags.string({
     description: "Stage name to use",
+  }),
+  scope: flags.string({
+    description: "Script scope to use",
   }),
 };
