@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.2](https://github.com/theBenForce/data-migration/compare/data-migration@2.7.1...data-migration@2.7.2) (2020-03-10)
+
+
+### Bug Fixes
+
+* update DriverBuilder ([82609c5](https://github.com/theBenForce/data-migration/commit/82609c556a645bde0251f3de6fb4116810cf5c3a))
+
+
+
+
+
 ## [2.7.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.7.0...data-migration@2.7.1) (2020-03-09)
 
 
