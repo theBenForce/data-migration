@@ -13,28 +13,29 @@
 
 ## Parameters
 
-The DynamoDB driver accepts the following parameters as part of its configuration:
+The Lambda driver accepts the following parameters as part of its configuration:
 
 | Name            | Type   | Required | Description                                                                            |
 | --------------- | ------ | -------- | -------------------------------------------------------------------------------------- |
 | region          | string | Yes      | The AWS Region where this table exists                                                 |
-| TableName       | string | Yes      | The name of the DynamoDB table to connect to                                           |
+| FunctionName    | string | Yes      | The name (or ARN) of the function to modify                                            |
 | accessKeyId     | string | No       | AWS Credentials, if not provided data-migration will use the default AWS configuration |
 | secretAccessKey | string | No       |
+| endpoint        | string | No       | The http endpoint to connect to, useful when using something like localstack           |
 
 ## Sample Configuration
 
-```javascript
-module.exports = {
+```typescript
+export default {
   defaultStage: "prod",
   migrationDirectory: "migrations",
   stages: {
     prod: {
       users: {
-        driver: require("dm-driver-dynamodb"),
+        driver: require("dm-driver-lambda"),
         params: {
           region: "us-east-1",
-          TableName: {
+          FunctionName: {
             // Use this processor to get values from CloudFormation
             processor: require("dm-processor-cf"),
             params: {
@@ -47,5 +48,5 @@ module.exports = {
       },
     },
   },
-};
+} as Configuration;
 ```
