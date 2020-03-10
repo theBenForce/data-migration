@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.5.0 (2020-03-10)
+
+
+### Bug Fixes
+
+* add documentation to aurora driver ([b12c465](https://github.com/theBenForce/data-migration/commit/b12c4650313135d8bf81e332f8810c7a05b1227f))
+* reference actual main file ([59b54a8](https://github.com/theBenForce/data-migration/commit/59b54a87dceda032761bcdc39ff4f3ae19eb968c))
+* rename all dependencies ([852962b](https://github.com/theBenForce/data-migration/commit/852962b38478a0c9bcf3d9a356bdbbab7959e95f))
+* rename aurora package ([448279e](https://github.com/theBenForce/data-migration/commit/448279ed3e7b863e410be7f1fe365f0b5f7acb80))
+* standardize badges ([3f5fee0](https://github.com/theBenForce/data-migration/commit/3f5fee0c5228d38b3ab456a19b12dbb7fe7bcc34))
+* update documentation url ([3861917](https://github.com/theBenForce/data-migration/commit/386191733fed17e28e12bc2efb1ce180b9a84fe4))
+* update driver type names ([1907689](https://github.com/theBenForce/data-migration/commit/19076899a0124527973006d53ea6d8ec677472c6))
+* update DriverBuilder ([82609c5](https://github.com/theBenForce/data-migration/commit/82609c556a645bde0251f3de6fb4116810cf5c3a))
+* update homepage ([a84eadf](https://github.com/theBenForce/data-migration/commit/a84eadf4f6aedb777ca686a524b9ce1851bf4b15))
+* **build:** fix the build process ([44a1dee](https://github.com/theBenForce/data-migration/commit/44a1dee9335b7d291ec7f82250c49836f80e8873))
+
+
+### Features
+
+* add documentation ([865e37a](https://github.com/theBenForce/data-migration/commit/865e37ad495a345dc839f857628234a207747534))
+* allow queries to be excluded from transaction ([209ac1f](https://github.com/theBenForce/data-migration/commit/209ac1fc98a98f065354e7397c858701ea322c8d))
+* initial working version of dynamodb driver ([6cad955](https://github.com/theBenForce/data-migration/commit/6cad955c73e9e100fff99e54110fd20b7d38c335))
+* use export default ([44e0998](https://github.com/theBenForce/data-migration/commit/44e0998215dad652a980ab14e4e82dff69c41740))
+* **data-migration:** create nosql driver interface ([2f93eda](https://github.com/theBenForce/data-migration/commit/2f93edae8e5812e28fd998a876068e61b94b3df3))
+
+
+
+## 1.0.18 (2019-10-01)
+
+
+
+## 1.0.16 (2019-09-23)
+
+
+### Features
+
+* **drivers:** add an RDS driver ([d4bbdd4](https://github.com/theBenForce/data-migration/commit/d4bbdd49fa83061fd3aaf50eff060f57a6c4a08d))
+
+
+
+
+
 ## [1.4.12](https://github.com/theBenForce/data-migration/compare/dm-aurora-rds@1.4.11...dm-aurora-rds@1.4.12) (2020-03-10)
 
 
