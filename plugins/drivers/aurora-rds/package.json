@@ -1,6 +1,6 @@
 {
   "name": "dm-driver-aurora",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.632.0",
-    "data-migration": "^2.7.2",
+    "data-migration": "^2.8.0",
     "rxjs": "^6.5.4"
   },
   "scripts": {

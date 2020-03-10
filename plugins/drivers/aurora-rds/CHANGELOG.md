@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.5.0...dm-driver-aurora@1.5.1) (2020-03-10)
+
+**Note:** Version bump only for package dm-driver-aurora
+
+
+
+
+
 # 1.5.0 (2020-03-10)
 
 

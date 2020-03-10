@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.20...data-migration-cli@2.5.0) (2020-03-10)
+
+
+### Features
+
+* add scope parameter ([ecd1567](https://github.com/theBenForce/data-migration/commit/ecd156708067f3adb09f41bda59b4f491c397433))
+
+
+
+
+
 ## [2.4.20](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.4.19...data-migration-cli@2.4.20) (2020-03-10)
 
 **Note:** Version bump only for package data-migration-cli

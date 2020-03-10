@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.7.2...data-migration@2.8.0) (2020-03-10)
+
+
+### Features
+
+* add scope parameter ([ecd1567](https://github.com/theBenForce/data-migration/commit/ecd156708067f3adb09f41bda59b4f491c397433))
+
+
+
+
+
 ## [2.7.2](https://github.com/theBenForce/data-migration/compare/data-migration@2.7.1...data-migration@2.7.2) (2020-03-10)
 
 
