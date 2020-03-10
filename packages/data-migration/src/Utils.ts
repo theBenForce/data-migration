@@ -58,18 +58,25 @@ export async function loadScript<T>(filename: string): Promise<T> {
   return script;
 }
 
-export async function getAllScripts(
-  config: Configuration,
-  log: Logger
-): Promise<Map<string, MigrationScript>> {
+export interface GetAllScripts {
+  config: Configuration;
+  scope?: string;
+  log: Logger;
+}
+export async function getAllScripts({
+  config,
+  scope,
+  log,
+}: GetAllScripts): Promise<Map<string, MigrationScript>> {
   let scripts = new Map<string, MigrationScript>();
+  const migrationsPath = getMigrationsPath(config, scope);
   let scriptFiles = fs
-    .readdirSync(getMigrationsPath(config))
+    .readdirSync(migrationsPath)
     .filter((fname: string) => /\.(t|j)s$/gi.test(fname));
 
   for (const fname of scriptFiles) {
     try {
-      const filename = path.join(getMigrationsPath(config), fname);
+      const filename = path.join(migrationsPath, fname);
       const script = await loadScript<MigrationScript>(filename);
 
       scripts.set(fname, script);

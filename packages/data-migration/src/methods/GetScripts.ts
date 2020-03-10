@@ -5,16 +5,25 @@ import { Logger } from "../Logger";
 import { ExecutionTrackerInstance, ExecutionInformation } from "../ExecutionTracker";
 import { Observable, Subscriber } from "rxjs";
 
-export default async function getScripts(
-  config: Configuration,
-  context: ScriptContext,
-  log: Logger,
-  createLogger: (scriptName: string, subscriber?: Subscriber<string>) => Logger,
-  tracker?: ExecutionTrackerInstance
-): Promise<Array<InitializedMigrationScript>> {
+export interface GetScriptsParameters {
+  config: Configuration;
+  scope?: string;
+  context: ScriptContext;
+  log: Logger;
+  createLogger: (scriptName: string, subscriber?: Subscriber<string>) => Logger;
+  tracker?: ExecutionTrackerInstance;
+}
+export default async function getScripts({
+  config,
+  scope,
+  context,
+  log,
+  createLogger,
+  tracker,
+}: GetScriptsParameters): Promise<Array<InitializedMigrationScript>> {
   let result = new Array<InitializedMigrationScript>();
 
-  let scripts = await getAllScripts(config, log);
+  let scripts = await getAllScripts({ config, scope, log });
 
   for (const fname of scripts.keys()) {
     const script = scripts.get(fname) as MigrationScript;
