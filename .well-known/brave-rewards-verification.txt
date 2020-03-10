@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: data-migration.js.org
+Token: 5b3a2ffe11b61c7dfb52e8d4a3a188eaaecc8874b6f5b9c573d037a935261422
