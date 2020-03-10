@@ -17,7 +17,6 @@
     - [DynamoDB](/plugins/drivers/dynamodb/README.md)
       - [Changes](/plugins/drivers/dynamodb/CHANGELOG.md)
     - [Lambda](/plugins/drivers/lambda/README.md)
-      - [Changes](/plugins/drivers/lambda/CHANGELOG.md)
   - Trackers
     - [DynamoDB](/plugins/trackers/dynamo/README.md)
       - [Changes](/plugins/trackers/dynamo/CHANGELOG.md)
