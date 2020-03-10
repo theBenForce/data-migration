@@ -1,4 +1,4 @@
-# Welcome to dm-driver-dynamodb 👋
+# <img src="images/aws-dynamodb.png" width="32px"> Welcome to dm-driver-dynamodb 👋
 
 [![Build Status](https://travis-ci.org/theBenForce/data-migration.svg?branch=master)](https://travis-ci.org/theBenForce/data-migration)
 [![NPM Package](https://img.shields.io/npm/v/dm-driver-dynamodb)](https://www.npmjs.com/package/dm-driver-dynamodb)
