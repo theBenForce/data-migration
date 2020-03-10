@@ -30,7 +30,7 @@ interface CognitoDriverParams {
 
 export type CognitoDriver = UserPoolDriver<CognitoDriverParams, AWS.CognitoIdentityServiceProvider>;
 
-const cognitoDriver: DriverBuilder<CognitoDriverParams, CognitoDriver> = (
+const cognitoDriver: DriverBuilder<CognitoDriverParams, AWS.CognitoIdentityServiceProvider> = (
   params,
   logger: Logger
 ): CognitoDriver => {

@@ -12,7 +12,7 @@ interface DynamoDbParameters {
 
 export type DynamoDbDriver = NoSqlDriver<DynamoDbParameters, AWS.DynamoDB.DocumentClient>;
 
-const dynamoDbDriver: DriverBuilder<DynamoDbParameters, DynamoDbDriver> = (
+const dynamoDbDriver: DriverBuilder<DynamoDbParameters, AWS.DynamoDB.DocumentClient> = (
   params,
   logger: Logger
 ): DynamoDbDriver => {
