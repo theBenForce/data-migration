@@ -1,10 +1,10 @@
-# Welcome to dm-aurora-rds 👋
+# Welcome to dm-driver-aurora 👋
 
 [![Build Status](https://travis-ci.org/theBenForce/data-migration.svg?branch=master)](https://travis-ci.org/theBenForce/data-migration)
-[![NPM Package](https://img.shields.io/npm/v/dm-aurora-rds)](https://www.npmjs.com/package/dm-aurora-rds)
+[![NPM Package](https://img.shields.io/npm/v/dm-driver-aurora)](https://www.npmjs.com/package/dm-driver-aurora)
 [![Maintainability](https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability)](https://codeclimate.com/github/theBenForce/data-migration/maintainability)
 [![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://data-migration.js.org/)
-[![Downloads/week](https://img.shields.io/npm/dw/dm-aurora-rds.svg)](https://npmjs.org/package/dm-aurora-rds)
+[![Downloads/week](https://img.shields.io/npm/dw/dm-driver-aurora.svg)](https://npmjs.org/package/dm-driver-aurora)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 > A [Data Migration](https://www.npmjs.com/package/data-migration) driver to run queries on an Aurora RDS instance.
@@ -38,7 +38,7 @@ module.exports = {
       },
       drivers: {
         auroraDriver: {
-          driver: require("dm-aurora-rds"),
+          driver: require("dm-driver-aurora"),
           params: {
             databaseSchema: "some-schema",
             resourceArn: {

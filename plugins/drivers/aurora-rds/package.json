@@ -1,5 +1,5 @@
 {
-  "name": "dm-aurora-rds",
+  "name": "dm-driver-aurora",
   "version": "1.4.12",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
