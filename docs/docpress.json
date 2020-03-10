@@ -3,6 +3,7 @@
   "github": "theBenForce/data-migration",
   "lang": "en",
   "googleAnalytics": {
-    "id": "UA-159860241-1"
+    "id": "UA-159860241-1",
+    "domain": "data-migration.js.org"
   }
 }
