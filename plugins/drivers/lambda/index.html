@@ -109,7 +109,7 @@
 </blockquote>
 <h1 id="configuration">Configuration</h1>
 <h2 id="parameters">Parameters</h2>
-<p>The DynamoDB driver accepts the following parameters as part of its configuration:</p>
+<p>The Lambda driver accepts the following parameters as part of its configuration:</p>
 <table>
 <thead>
 <tr>
@@ -127,10 +127,10 @@
 <td>The AWS Region where this table exists</td>
 </tr>
 <tr>
-<td>TableName</td>
+<td>FunctionName</td>
 <td>string</td>
 <td>Yes</td>
-<td>The name of the DynamoDB table to connect to</td>
+<td>The name (or ARN) of the function to modify</td>
 </tr>
 <tr>
 <td>accessKeyId</td>
@@ -144,32 +144,38 @@
 <td>No</td>
 <td></td>
 </tr>
+<tr>
+<td>endpoint</td>
+<td>string</td>
+<td>No</td>
+<td>The http endpoint to connect to, useful when using something like localstack</td>
+</tr>
 </tbody>
 </table>
 <h2 id="sample-configuration">Sample Configuration</h2>
-<pre><code class="lang-javascript"><span class="pl-c1">module</span>.exports = {
-  <span class="hljs-attr">defaultStage</span>: <span class="pl-s">&quot;prod&quot;</span>,
-  <span class="hljs-attr">migrationDirectory</span>: <span class="pl-s">&quot;migrations&quot;</span>,
-  <span class="hljs-attr">stages</span>: {
-    <span class="hljs-attr">prod</span>: {
-      <span class="hljs-attr">users</span>: {
-        <span class="hljs-attr">driver</span>: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-driver-dynamodb&quot;</span>),
-        <span class="hljs-attr">params</span>: {
-          <span class="hljs-attr">region</span>: <span class="pl-s">&quot;us-east-1&quot;</span>,
-          <span class="hljs-attr">TableName</span>: {
+<pre><code class="lang-typescript"><span class="pl-k">export</span> <span class="pl-k">default</span> {
+  defaultStage: <span class="pl-s">&quot;prod&quot;</span>,
+  migrationDirectory: <span class="pl-s">&quot;migrations&quot;</span>,
+  stages: {
+    prod: {
+      users: {
+        driver: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-driver-lambda&quot;</span>),
+        params: {
+          region: <span class="pl-s">&quot;us-east-1&quot;</span>,
+          FunctionName: {
             <span class="pl-c">// Use this processor to get values from CloudFormation</span>
-            <span class="hljs-attr">processor</span>: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-processor-cf&quot;</span>),
-            <span class="hljs-attr">params</span>: {
-              <span class="hljs-attr">stack</span>: <span class="pl-s">&quot;some-stack-name&quot;</span>,
-              <span class="hljs-attr">output</span>: <span class="pl-s">&quot;SomeOutputName&quot;</span>,
-              <span class="hljs-attr">region</span>: <span class="pl-s">&quot;us-east-1&quot;</span>,
+            processor: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-processor-cf&quot;</span>),
+            params: {
+              stack: <span class="pl-s">&quot;some-stack-name&quot;</span>,
+              output: <span class="pl-s">&quot;SomeOutputName&quot;</span>,
+              region: <span class="pl-s">&quot;us-east-1&quot;</span>,
             },
           },
         },
       },
     },
   },
-};
+} <span class="pl-k">as</span> Configuration;
 </code></pre>
 
         </div>
