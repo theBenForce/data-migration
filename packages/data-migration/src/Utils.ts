@@ -42,6 +42,12 @@ export function createErrorLogger(observer?: ZenObservable.Observer<any>) {
   };
 }
 
+export class CompileScriptError extends Error {
+  constructor(public filename: string) {
+    super(`Error while compiling ${filename}`);
+  }
+}
+
 export async function loadScript<T>(filename: string): Promise<T> {
   const transformResult = await babel.transformFileAsync(filename, {
     presets: ["@babel/preset-typescript", ["@babel/preset-env", { targets: { node: true } }]],
@@ -49,9 +55,12 @@ export async function loadScript<T>(filename: string): Promise<T> {
   });
 
   let script: T;
-  if (transformResult && transformResult.code) {
+
+  if (transformResult?.code) {
     // tslint:disable-next-line:no-eval
     script = eval(transformResult.code);
+  } else {
+    throw new CompileScriptError(filename);
   }
 
   // @ts-ignore
@@ -82,6 +91,7 @@ export async function getAllScripts({
       scripts.set(fname, script);
     } catch (ex) {
       log(ex.message);
+      break;
     }
   }
 
