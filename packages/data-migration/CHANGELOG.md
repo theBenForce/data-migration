@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.2](https://github.com/theBenForce/data-migration/compare/data-migration@2.8.1...data-migration@2.8.2) (2020-04-08)
+
+
+### Bug Fixes
+
+* log error message when loading fails ([315a0a0](https://github.com/theBenForce/data-migration/commit/315a0a01720730d0ebd6961ca2e27a16571eca3b))
+
+
+
+
+
 ## [2.8.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.8.0...data-migration@2.8.1) (2020-04-08)
 
 
