@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.5.1...dm-driver-aurora@1.5.2) (2020-04-08)
+
+
+### Bug Fixes
+
+* **data-migration:** log script compilation errors ([ecc9ec5](https://github.com/theBenForce/data-migration/commit/ecc9ec5e7802f3cf63ddd8fafc0d132dc558065a)), closes [#22](https://github.com/theBenForce/data-migration/issues/22)
+
+
+
+
+
 ## [1.5.1](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.5.0...dm-driver-aurora@1.5.1) (2020-03-10)
 
 **Note:** Version bump only for package dm-driver-aurora

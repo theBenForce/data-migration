@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.5](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.4.4...dm-driver-dynamodb@1.4.5) (2020-04-08)
+
+
+### Bug Fixes
+
+* **data-migration:** log script compilation errors ([ecc9ec5](https://github.com/theBenForce/data-migration/commit/ecc9ec5e7802f3cf63ddd8fafc0d132dc558065a)), closes [#22](https://github.com/theBenForce/data-migration/issues/22)
+
+
+
+
+
 ## [1.4.4](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.4.3...dm-driver-dynamodb@1.4.4) (2020-03-10)
 
 **Note:** Version bump only for package dm-driver-dynamodb
