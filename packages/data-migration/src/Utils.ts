@@ -2,7 +2,7 @@ import * as babel from "@babel/core";
 import * as fs from "fs";
 import * as path from "path";
 
-import { MigrationScript } from "./";
+import { MigrationScript, ScriptContext } from "./";
 
 import Configuration from "./Config";
 import { MissingParameters } from "./Errors";
@@ -21,7 +21,7 @@ export function checkParameters(
 }
 
 export function createLogger(observer?: ZenObservable.Observer<any>) {
-  return function(message: string) {
+  return function (message: string) {
     if (observer && observer.next) {
       observer.next(message);
     } else {
@@ -84,15 +84,26 @@ export async function getAllScripts({
     .filter((fname: string) => /\.(t|j)s$/gi.test(fname));
 
   for (const fname of scriptFiles) {
+    let script: MigrationScript;
     try {
       const filename = path.join(migrationsPath, fname);
-      const script = await loadScript<MigrationScript>(filename);
-
-      scripts.set(fname, script);
+      script = await loadScript<MigrationScript>(filename);
     } catch (ex) {
       log(ex.message);
-      break;
+      const errorMessage = ex.message;
+      script = {
+        async up(context: ScriptContext, log: Logger) {
+          log(errorMessage);
+          throw new Error(errorMessage);
+        },
+        async down(context: ScriptContext, log: Logger) {
+          log(errorMessage);
+          throw new Error(errorMessage);
+        },
+      };
     }
+
+    scripts.set(fname, script);
   }
 
   return scripts;
