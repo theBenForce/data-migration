@@ -10,9 +10,9 @@
     "url": "git+https://github.com/theBenForce/data-migration.git"
   },
   "dependencies": {
-    "aws-sdk": "^2.632.0",
+    "aws-sdk": "^2.655.0",
     "data-migration": "^2.8.0",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.5"
   },
   "scripts": {
     "build": "tsc",

@@ -13,9 +13,9 @@
     "lint": "eslint src/**/*.*"
   },
   "dependencies": {
-    "aws-sdk": "^2.636.0",
+    "aws-sdk": "^2.655.0",
     "data-migration": "^2.8.0",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.5"
   },
   "files": [
     "/lib"

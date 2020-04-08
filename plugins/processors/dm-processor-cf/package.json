@@ -15,7 +15,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "aws-sdk": "^2.632.0",
+    "aws-sdk": "^2.655.0",
     "data-migration": "^2.8.0"
   },
   "scripts": {
