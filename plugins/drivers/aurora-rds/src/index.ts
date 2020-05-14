@@ -76,7 +76,8 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
         const result = await dataService.executeStatement(queryParameters).promise();
 
         if (result.records === undefined) {
-          return [];
+          subscriber.complete();
+          return;
         }
 
         result.records
