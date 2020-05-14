@@ -60,30 +60,32 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
     ): Observable<T> {
       // @ts-ignore
       return new Observable<T>(async (subscriber) => {
-        const queryParameters: ExecuteStatementRequest = {
-          ...paramsBase,
-          sql: query,
-          database: params.databaseSchema,
-          schema: params.databaseSchema,
-          includeResultMetadata: true,
-          parameters,
-        };
+        try {
+          const queryParameters: ExecuteStatementRequest = {
+            ...paramsBase,
+            sql: query,
+            database: params.databaseSchema,
+            schema: params.databaseSchema,
+            includeResultMetadata: true,
+            parameters,
+          };
+  
+          if (!options?.excludeFromTransaction) {
+            queryParameters.transactionId = transactionId;
+          }
+  
+          const result = await dataService.executeStatement(queryParameters).promise();
+  
+          if (result.records !== undefined) {
+            result.records
+              .map(convertResultsToObject<T>(result.columnMetadata))
+              .forEach((record) => subscriber.next(record));
+          }
 
-        if (!options?.excludeFromTransaction) {
-          queryParameters.transactionId = transactionId;
+          subscriber.complete();  
+        } catch(x) {
+          subscriber.error(x);
         }
-
-        const result = await dataService.executeStatement(queryParameters).promise();
-
-        if (result.records === undefined) {
-          return [];
-        }
-
-        result.records
-          .map(convertResultsToObject<T>(result.columnMetadata))
-          .forEach((record) => subscriber.next(record));
-
-        subscriber.complete();
       });
     },
 
