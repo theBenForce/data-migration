@@ -1,4 +1,5 @@
-const output = require("semantic-release-monorepo-hooks").hookBeforeEach();
+const hooks = require("semantic-release-monorepo-hooks");
+const output = hooks();
 
 module.exports = {
   extends: "semantic-release-monorepo",
