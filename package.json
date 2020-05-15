@@ -4,6 +4,11 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/github": "^7.0.6",
+    "@semantic-release/npm": "^7.0.5",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "commitizen": "^4.0.4",
@@ -17,14 +22,15 @@
     "husky": "^4.2.3",
     "jest": "^25.3.0",
     "lerna": "^3.20.2",
+    "semantic-release": "^17.0.7",
+    "semantic-release-monorepo": "^7.0.2",
     "ts-jest": "^25.3.1"
   },
   "scripts": {
     "build": "lerna run build --stream",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint --parallel",
-    "release": "lerna version --conventional-commits --yes",
-    "npm:publish": "lerna publish from-package --yes",
+    "npm:publish": "semantic-release",
     "docs:preview": "yarn docpress serve",
     "docs:build": "yarn docpress build"
   },
@@ -43,7 +49,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn build",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
