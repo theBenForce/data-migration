@@ -21,7 +21,7 @@
   "scripts": {
     "build": "tsc",
     "prepublish": "yarn build",
-    "release": "semantic-release -e semantic-release-monorepo"
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='dm-tracker-dynamodb@${version}'"
   },
   "files": [
     "/lib"

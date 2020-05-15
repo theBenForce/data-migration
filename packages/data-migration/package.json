@@ -21,7 +21,7 @@
     "prepublish": "yarn build",
     "build": "tsc",
     "prerelease": "yarn prepublish",
-    "release": "semantic-release -e semantic-release-monorepo"
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='data-migration@${version}'"
   },
   "dependencies": {
     "@babel/core": "^7.9.0",

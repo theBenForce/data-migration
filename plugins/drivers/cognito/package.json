@@ -17,7 +17,7 @@
   "scripts": {
     "build": "tsc",
     "prepublish": "yarn build",
-    "release": "semantic-release -e semantic-release-monorepo"
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='dm-driver-cognito@${version}'"
   },
   "devDependencies": {
     "typescript": "^3.8.3"

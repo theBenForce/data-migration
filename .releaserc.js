@@ -1,30 +1,26 @@
-const hooks = require("semantic-release-monorepo-hooks");
-const output = hooks();
-
 module.exports = {
   extends: "semantic-release-monorepo",
-  tagFormat: output.package + "@${version}",
-  branches: ["master", "switch-to-github-workflows"],
+  branches: ["master"],
   plugins: [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    "@semantic-release/npm",
     [
       "@semantic-release/github",
       {
         assets: [
           {
-            path: "**/dist/**",
+            path: `${process.cwd()}/dist/**`,
             label: "Distribution",
           },
           {
-            path: "**/CHANGELOG.md",
+            path: `${process.cwd()}/CHANGELOG.md`,
             label: "Changelog",
           },
         ],
       },
     ],
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/npm",
   ],
   monorepo: {
     analyzeCommits: ["@semantic-release/commit-analyzer"],

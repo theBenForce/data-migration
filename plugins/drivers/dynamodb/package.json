@@ -13,7 +13,7 @@
     "build": "tsc",
     "test": "jest",
     "prepublish": "yarn build",
-    "release": "semantic-release -e semantic-release-monorepo",
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='dm-driver-dynamodb@${version}'",
     "lint": "eslint src/**/*.*"
   },
   "files": [
