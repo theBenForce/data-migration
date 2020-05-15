@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "semantic-release": "semantic-release -e semantic-release-monorepo",
+    "prepublish": "yarn build",
+    "release": "semantic-release -e semantic-release-monorepo",
     "lint": "eslint src/**/*.*"
   },
   "files": [

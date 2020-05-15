@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "prepublish": "yarn build",
+    "release": "semantic-release -e semantic-release-monorepo"
   },
   "files": [
     "/lib"

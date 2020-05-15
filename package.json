@@ -31,7 +31,7 @@
     "build": "lerna run build --stream",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint --parallel",
-    "publish:all": "lerna exec --concurrency 1 \"yarn semantic-release -e semantic-release-monorepo\"",
+    "publish:all": "lerna run release --stream",
     "postpublish:all": "node -e \"require('semantic-release-monorepo-hooks').hookAfterAll()\"",
     "docs:preview": "yarn docpress serve",
     "docs:build": "yarn docpress build"

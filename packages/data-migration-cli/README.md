@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.5.2 linux-x64 node-v12.16.1
+data-migration-cli/2.5.2 darwin-x64 node-v12.13.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND

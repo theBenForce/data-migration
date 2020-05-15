@@ -64,7 +64,8 @@
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
     "build": "rm -rf lib && tsc -b && oclif-dev manifest",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "prerelease": "yarn prepublish",
+    "release": "semantic-release -e semantic-release-monorepo"
   },
   "types": "lib/index.d.ts",
   "directories": {

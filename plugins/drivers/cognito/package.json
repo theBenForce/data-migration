@@ -16,7 +16,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "prepublish": "yarn build",
+    "release": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
     "typescript": "^3.8.3"
