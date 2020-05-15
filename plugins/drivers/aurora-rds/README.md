@@ -79,10 +79,11 @@ module.exports = {
 
 ```typescript
 import { toArray } from "rxjs/operators";
+import { AuroraRdsDriver } from "dm-driver-aurora";
 
 export default {
   async up(context: ScriptContext, log: Logger) {
-    const aurora = await context.getDriver<RdsDriver>("auroraDriver");
+    const aurora = await context.getDriver<AuroraRdsDriver>("auroraDriver");
     const someTableResults = await aurora
       .query<SomeDataType>(`SELECT * FROM some_table`)
       .pipe(toArray())
