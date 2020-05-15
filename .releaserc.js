@@ -1,17 +1,17 @@
 module.exports = {
   extends: "semantic-release-monorepo",
-  branches: ["master"],
+  branch: "master",
   plugins: [
     [
       "@semantic-release/github",
       {
         assets: [
           {
-            path: `${process.cwd()}/dist/**`,
+            path: `./lib/**`,
             label: "Distribution",
           },
           {
-            path: `${process.cwd()}/CHANGELOG.md`,
+            path: `./CHANGELOG.md`,
             label: "Changelog",
           },
         ],
@@ -25,6 +25,21 @@ module.exports = {
   monorepo: {
     analyzeCommits: ["@semantic-release/commit-analyzer"],
     generateNotes: ["@semantic-release/release-notes-generator"],
+    release: [
+      "@semantic-release/github",
+      {
+        assets: [
+          {
+            path: `./lib/**`,
+            label: "Distribution",
+          },
+          {
+            path: `./CHANGELOG.md`,
+            label: "Changelog",
+          },
+        ],
+      },
+    ],
   },
   verifyConditions: [],
   verifyRelease: ["@semantic-release/npm", "@semantic-release/github"]
