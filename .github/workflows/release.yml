@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
-        run: yarn npm:publish
+        run: yarn publish:all
 
       - name: Update Pages
         run: ./build/deploy_pages.sh
