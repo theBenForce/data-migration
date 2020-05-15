@@ -1,5 +1,4 @@
-const hooks = require("semantic-release-monorepo-hooks");
-const output = hooks();
+const output = require("semantic-release-monorepo-hooks").hookBeforeEach();
 
 module.exports = {
   extends: "semantic-release-monorepo",
@@ -30,4 +29,8 @@ module.exports = {
     analyzeCommits: ["@semantic-release/commit-analyzer"],
     generateNotes: ["@semantic-release/release-notes-generator"],
   },
+  verifyConditions: [],
+  verifyRelease: ["@semantic-release/npm", "@semantic-release/github"]
+    .map(require)
+    .map((x) => x.verifyConditions),
 };
