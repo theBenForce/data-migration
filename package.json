@@ -24,13 +24,15 @@
     "lerna": "^3.20.2",
     "semantic-release": "^17.0.7",
     "semantic-release-monorepo": "^7.0.2",
+    "semantic-release-monorepo-hooks": "^2.9.5",
     "ts-jest": "^25.3.1"
   },
   "scripts": {
     "build": "lerna run build --stream",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint --parallel",
-    "npm:publish": "semantic-release",
+    "publish:all": "lerna exec --concurrency 1 \"yarn semantic-release -e semantic-release-monorepo\"",
+    "postpublish:all": "node -e \"require('semantic-release-monorepo-hooks').hookAfterAll()\"",
     "docs:preview": "yarn docpress serve",
     "docs:build": "yarn docpress build"
   },
