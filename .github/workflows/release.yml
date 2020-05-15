@@ -27,7 +27,7 @@ jobs:
         run: yarn publish:all
 
       - name: Update Pages
-        run: ./build/deploy_pages.sh
+        run: ./.build/deploy_pages.sh
         env:
           GITHUB_REPO: theBenForce/data-migration
           GIT_SOURCE: _docpress
