@@ -48,11 +48,31 @@ export class CompileScriptError extends Error {
   }
 }
 
-export async function loadScript<T>(filename: string): Promise<T> {
-  const transformResult = await babel.transformFileAsync(filename, {
+export async function loadScript<T>(filename: string, log: Logger): Promise<T> {
+  const babelConfig = {
     presets: ["@babel/preset-typescript", ["@babel/preset-env", { targets: { node: true } }]],
-    cwd: process.cwd(),
-  });
+    plugins: [
+      [
+        "module-resolver",
+        {
+          root: [path.dirname(filename)],
+          extensions: [".js", ".json", ".ts"],
+          resolvePath(source: string, currentFile: string, opts: object) {
+            log(`Resolving "${source}" from "${currentFile}"`);
+
+            if (source.startsWith("./")) return path.resolve(path.dirname(currentFile), source);
+            return source;
+          },
+        },
+      ],
+    ],
+    cwd: path.dirname(filename),
+  };
+
+  log(`Loading file "${filename}"`);
+  log(`Babel Params:\n${JSON.stringify(babelConfig)}`);
+
+  const transformResult = await babel.transformFileAsync(filename, babelConfig);
 
   let script: T;
 
@@ -60,6 +80,8 @@ export async function loadScript<T>(filename: string): Promise<T> {
     // tslint:disable-next-line:no-eval
     script = eval(transformResult.code);
   } else {
+    log(`Failed to compile "${filename}"`);
+    log(JSON.stringify(transformResult));
     throw new CompileScriptError(filename);
   }
 
@@ -87,7 +109,7 @@ export async function getAllScripts({
     let script: MigrationScript;
     try {
       const filename = path.join(migrationsPath, fname);
-      script = await loadScript<MigrationScript>(filename);
+      script = await loadScript<MigrationScript>(filename, log);
     } catch (ex) {
       log(ex.message);
       const errorMessage = ex.message;

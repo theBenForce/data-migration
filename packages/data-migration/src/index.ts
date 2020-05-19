@@ -30,6 +30,6 @@ export type LoadConfigParameters<T> = {
 };
 
 export const loadConfiguration = (configFile: string): Promise<Configuration> =>
-  UtilsImport.loadScript<Configuration>(configFile);
+  UtilsImport.loadScript<Configuration>(configFile, () => {});
 
 export default methods;
