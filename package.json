@@ -27,6 +27,7 @@
     "ts-jest": "^25.3.1"
   },
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint --parallel",

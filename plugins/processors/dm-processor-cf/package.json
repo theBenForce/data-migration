@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.655.0",
-    "data-migration": "^2.8.2"
+    "data-migration": "2.9.2"
   },
   "scripts": {
     "build": "tsc",
