@@ -2,21 +2,7 @@ module.exports = {
   extends: "semantic-release-monorepo",
   branch: "master",
   plugins: [
-    [
-      "@semantic-release/github",
-      {
-        assets: [
-          {
-            path: `./lib`,
-            label: "Distribution",
-          },
-          {
-            path: `./CHANGELOG.md`,
-            label: "Changelog",
-          },
-        ],
-      },
-    ],
+    "@semantic-release/github",
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
