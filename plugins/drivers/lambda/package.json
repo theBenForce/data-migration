@@ -1,6 +1,6 @@
 {
   "name": "dm-driver-lambda",
-  "version": "1.1.5",
+  "version": "1.2.1",
   "description": "Data Migration driver to update lambda properties like environment variables",
   "main": "lib/index.js",
   "repository": "git@github.com:theBenForce/data-migration.git",
