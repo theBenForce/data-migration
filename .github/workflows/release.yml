@@ -8,10 +8,10 @@ jobs:
     name: Release
     runs-on: ubuntu-18.04
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v2
-      #   with:
-      #     ref: master
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
