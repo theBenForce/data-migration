@@ -16,16 +16,15 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install dependencies
-        run: yarn install; yarn bootstrap
+      - name: Setup Publishing
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+        run: ./.build/setup_release.sh
 
       - name: Update Versions
         run: yarn publish:version
-
-      - name: Setup NPM Auth
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc 2> /dev/null
 
       - name: Release
         env:
