@@ -9,8 +9,8 @@ set -e
 # git init
 # git clean -dfx
 
-# git config user.email "travis@travis-ci.org"
-# git config user.name "Travis CI"
+git config user.email "lerna@lerna.js.org"
+git config user.name "Lerna"
 # git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 # git fetch
 # git checkout -b master origin/master
