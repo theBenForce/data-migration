@@ -5,15 +5,15 @@ set -e
 
 # git checkout -b master origin/master
 
-# rm -rf .git
-# git init
-# git clean -dfx
+rm -rf .git
+git init
+git clean -dfx
 
 git config user.email "lerna@lerna.js.org"
 git config user.name "Lerna"
-# git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-# git fetch
-# git checkout -b master origin/master
+git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+git fetch
+git checkout -b master origin/master
 
 echo "Installing Packages"
 yarn install
