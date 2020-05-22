@@ -3,7 +3,7 @@ set -e
 # Note: do not do set -x or the passwords will leak!
 
 
-git checkout -b master origin/master
+# git checkout -b master origin/master
 
 # rm -rf .git
 # git init
