@@ -2,9 +2,8 @@
 set -e
 # Note: do not do set -x or the passwords will leak!
 
-echo Branch: $TRAVIS_BRANCH
 
-git switch -
+git checkout -b master origin/master
 
 # rm -rf .git
 # git init
