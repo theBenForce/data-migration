@@ -23,6 +23,9 @@ jobs:
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
         run: ./.build/setup_release.sh
 
+      - name: Build
+        run: yarn build
+
       - name: Update Versions
         run: yarn publish:version
 

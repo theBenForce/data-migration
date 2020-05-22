@@ -4,15 +4,17 @@ set -e
 
 echo Branch: $TRAVIS_BRANCH
 
-rm -rf .git
-git init
-git clean -dfx
+git switch -
 
-git config user.email "travis@travis-ci.org"
-git config user.name "Travis CI"
-git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-git fetch
-git checkout -b master origin/master
+# rm -rf .git
+# git init
+# git clean -dfx
+
+# git config user.email "travis@travis-ci.org"
+# git config user.name "Travis CI"
+# git remote add origin https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+# git fetch
+# git checkout -b master origin/master
 
 echo "Installing Packages"
 yarn install
