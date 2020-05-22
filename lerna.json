@@ -8,7 +8,9 @@
     "publish": {
       "npmClient": "npm",
       "allowBranch": "master",
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "gitRemote": "origin",
+      "message": "chore(release): %s"
     },
     "version": {
       "message": "chore(release): release [skip ci]"

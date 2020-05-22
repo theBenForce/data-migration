@@ -31,7 +31,8 @@
     "build": "lerna run build --stream",
     "test": "lerna run test --parallel",
     "lint": "lerna run lint --parallel",
-    "publish:all": "lerna run release --stream",
+    "publish:version": "lerna version --conventional-commits --yes",
+    "publish:packages": "lerna publish from-package --yes",
     "docs:preview": "yarn docpress serve",
     "docs:build": "yarn docpress build"
   },
