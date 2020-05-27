@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.5](https://github.com/theBenForce/data-migration/compare/data-migration@2.9.4...data-migration@2.9.5) (2020-05-27)
+
+
+### Bug Fixes
+
+* update data-migration version ([a8818db](https://github.com/theBenForce/data-migration/commit/a8818db1c6c1425c6dc15943158289b4359b8aec))
+
+
+
+
+
 ## [2.8.2](https://github.com/theBenForce/data-migration/compare/data-migration@2.8.1...data-migration@2.8.2) (2020-04-08)
 
 

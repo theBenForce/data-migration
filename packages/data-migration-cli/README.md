@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.5.2 darwin-x64 node-v12.13.1
+data-migration-cli/2.6.3 linux-x64 node-v12.16.3
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -55,7 +55,7 @@ OPTIONS
   --stage=stage    Stage name to use
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.5.2/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -90,7 +90,7 @@ OPTIONS
   --stage=stage              Stage name to use
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.5.2/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/init.ts)_
 
 ## `migrate list`
 
@@ -115,7 +115,7 @@ OPTIONS
   --stage=stage           Stage name to use
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.5.2/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -131,7 +131,7 @@ OPTIONS
   --scope=scope    Script scope to use
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.5.2/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/new.ts)_
 
 ## `migrate up`
 
@@ -148,5 +148,5 @@ OPTIONS
   --stage=stage    Stage name to use
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.5.2/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/up.ts)_
 <!-- commandsstop -->
