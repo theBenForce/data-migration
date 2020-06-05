@@ -9,6 +9,7 @@ import { parseISO } from "date-fns";
 
 interface DynamoTrackerParams {
   region: string;
+  profile?: string;
   TableName: string;
   partitionKeyName: string;
   sortKeyName: string;
@@ -31,6 +32,9 @@ const tracker: ExecutionTracker<DynamoTrackerParams> = (params, log: Logger) => 
     accessKeyId: params.accessKeyId,
     secretAccessKey: params.secretAccessKey,
     endpoint: params.endpoint,
+    credentials: params.profile
+      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+      : undefined,
   });
   const prefix = params.prefix ?? DEFAULT_MIGRATION_PREFIX;
 

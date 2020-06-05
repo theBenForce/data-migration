@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 
 interface LambdaParameters {
   region: string;
+  profile?: string;
   FunctionName: string;
   accessKeyId?: string;
   secretAccessKey?: string;
@@ -20,24 +21,27 @@ export interface LambdaDriver extends Driver<LambdaParameters, AWS.Lambda> {
 }
 
 const lambdaDriverBuilder: DriverBuilder<LambdaParameters, AWS.Lambda> = (
-  parameters,
+  params,
   logger: Logger
 ): LambdaDriver => {
-  const { FunctionName } = parameters;
+  const { FunctionName } = params;
 
   const resource = new AWS.Lambda({
     apiVersion: "2015-03-31",
-    region: parameters.region,
-    accessKeyId: parameters.accessKeyId,
-    secretAccessKey: parameters.secretAccessKey,
-    endpoint: parameters.endpoint,
+    region: params.region,
+    accessKeyId: params.accessKeyId,
+    secretAccessKey: params.secretAccessKey,
+    endpoint: params.endpoint,
+    credentials: params.profile
+      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+      : undefined,
   });
 
   const updatedVariables: Record<string, string> = {};
 
   return {
     resource,
-    parameters,
+    parameters: params,
 
     setVariable(key: string, value: string) {
       updatedVariables[key] = value;
@@ -63,7 +67,7 @@ const lambdaDriverBuilder: DriverBuilder<LambdaParameters, AWS.Lambda> = (
       }
 
       logger(
-        `Updating ${Object.keys(updatedVariables).length} variables on ${parameters.FunctionName}`
+        `Updating ${Object.keys(updatedVariables).length} variables on ${params.FunctionName}`
       );
 
       const oldConfig = await resource

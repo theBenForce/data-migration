@@ -29,6 +29,9 @@ async function getStackOutput(
     const cloudformation = new AWS.CloudFormation({
       apiVersion: "2010-05-15",
       region,
+      credentials: params.profile
+        ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+        : undefined,
     });
 
     data = await cloudformation
@@ -55,6 +58,7 @@ async function getStackOutput(
 interface ProcessorParameters {
   stack: string;
   region: string;
+  profile?: string;
 }
 
 function isOutputParameters(value: any): value is GetOutputParameters {

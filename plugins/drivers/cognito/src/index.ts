@@ -26,6 +26,7 @@ function convertToStandardUser(input: CognitoIdentityServiceProvider.UserType): 
 interface CognitoDriverParams {
   userPool: string;
   region: string;
+  profile?: string;
 }
 
 export type CognitoDriver = UserPoolDriver<CognitoDriverParams, AWS.CognitoIdentityServiceProvider>;
@@ -37,6 +38,9 @@ const cognitoDriver: DriverBuilder<CognitoDriverParams, AWS.CognitoIdentityServi
   const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
     apiVersion: "2016-04-18",
     region: params.region,
+    credentials: params.profile
+      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+      : undefined,
   });
   let userPool: { UserPoolId: string };
 
