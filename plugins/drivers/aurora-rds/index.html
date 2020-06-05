@@ -108,7 +108,7 @@
           </div>
         </div>
         <div class="markdown-body"><h1 id="welcome-to-dm-driver-aurora">Welcome to dm-driver-aurora &#x1F44B;</h1>
-<p><a href="https://travis-ci.org/theBenForce/data-migration"><img src="https://travis-ci.org/theBenForce/data-migration.svg?branch=master" alt="Build Status"></a>
+<p><a href="https://github.com/theBenForce/data-migration/actions"><img src="https://github.com/theBenForce/data-migration/workflows/Release/badge.svg?branch=master" alt="Build Status"></a>
 <a href="https://www.npmjs.com/package/dm-driver-aurora"><img src="https://img.shields.io/npm/v/dm-driver-aurora" alt="NPM Package"></a>
 <a href="https://codeclimate.com/github/theBenForce/data-migration/maintainability"><img src="https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability" alt="Maintainability"></a>
 <a href="https://data-migration.js.org/"><img src="https://img.shields.io/badge/documentation-view-blue" alt="Documentation"></a>
@@ -147,6 +147,12 @@
 <td>string</td>
 <td>Yes</td>
 <td>ARN of the secret manager secret to use for database credentials</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>string</td>
+<td>No</td>
+<td>Name of the AWS profile to use</td>
 </tr>
 <tr>
 <td>databaseSchema</td>
@@ -222,10 +228,11 @@
 </table>
 <h4 id="example">Example</h4>
 <pre><code class="lang-typescript"><span class="pl-k">import</span> { toArray } <span class="pl-k">from</span> <span class="pl-s">&quot;rxjs/operators&quot;</span>;
+<span class="pl-k">import</span> { AuroraRdsDriver } <span class="pl-k">from</span> <span class="pl-s">&quot;dm-driver-aurora&quot;</span>;
 
 <span class="pl-k">export</span> <span class="pl-k">default</span> {
   <span class="pl-k">async</span> up(context: ScriptContext, log: Logger) {
-    <span class="pl-k">const</span> aurora = <span class="pl-k">await</span> context.getDriver&lt;RdsDriver&gt;(<span class="pl-s">&quot;auroraDriver&quot;</span>);
+    <span class="pl-k">const</span> aurora = <span class="pl-k">await</span> context.getDriver&lt;AuroraRdsDriver&gt;(<span class="pl-s">&quot;auroraDriver&quot;</span>);
     <span class="pl-k">const</span> someTableResults = <span class="pl-k">await</span> aurora
       .query&lt;SomeDataType&gt;(<span class="pl-s">`SELECT * FROM some_table`</span>)
       .pipe(toArray())
