@@ -1,8 +1,4 @@
 
-
-git config user.email "lerna@lerna.js.org"
-git config user.name "Lerna"
-
 yarn docs:build
 echo "data-migration.js.org" > _docpress/CNAME
 mkdir _docpress/.well-known
