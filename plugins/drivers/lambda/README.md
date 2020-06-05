@@ -1,6 +1,6 @@
 # Welcome to dm-driver-lambda 👋
 
-[![Build Status](https://travis-ci.org/theBenForce/data-migration.svg?branch=master)](https://travis-ci.org/theBenForce/data-migration)
+[![Build Status](https://github.com/theBenForce/data-migration/workflows/Release/badge.svg?branch=master)](https://github.com/theBenForce/data-migration/actions)
 [![NPM Package](https://img.shields.io/npm/v/dm-driver-lambda)](https://www.npmjs.com/package/dm-driver-lambda)
 [![Maintainability](https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability)](https://codeclimate.com/github/theBenForce/data-migration/maintainability)
 [![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://data-migration.js.org/)
