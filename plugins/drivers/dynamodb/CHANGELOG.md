@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.6.0...dm-driver-dynamodb@1.6.1) (2020-06-05)
+
+
+### Bug Fixes
+
+* update build status badge ([fca3016](https://github.com/theBenForce/data-migration/commit/fca30163298966032970a8d55e4513fe3f37e351))
+
+
+
+
+
 # [1.6.0](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.5.2...dm-driver-dynamodb@1.6.0) (2020-06-05)
 
 
