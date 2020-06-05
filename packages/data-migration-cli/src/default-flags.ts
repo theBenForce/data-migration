@@ -17,4 +17,8 @@ export const DefaultFlags = {
   scope: flags.string({
     description: "Script scope to use",
   }),
+  awsProfile: flags.string({
+    description: "AWS Profile to use",
+    default: process.env.AWS_PROFILE,
+  }),
 };

@@ -29,6 +29,7 @@ function convertResultsToObject<T>(
 
 interface AuroraRdsParameters {
   region: string;
+  profile?: string;
   resourceArn: string;
   secretArn: string;
   databaseSchema: string | undefined;
@@ -43,6 +44,9 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
   let dataService = new AWS.RDSDataService({
     apiVersion: "2018-08-01",
     region: params.region,
+    credentials: params.profile
+      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+      : undefined,
   });
   let transactionId: string | undefined;
   let paramsBase = {
@@ -69,21 +73,21 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
             includeResultMetadata: true,
             parameters,
           };
-  
+
           if (!options?.excludeFromTransaction) {
             queryParameters.transactionId = transactionId;
           }
-  
+
           const result = await dataService.executeStatement(queryParameters).promise();
-  
+
           if (result.records !== undefined) {
             result.records
               .map(convertResultsToObject<T>(result.columnMetadata))
               .forEach((record) => subscriber.next(record));
           }
 
-          subscriber.complete();  
-        } catch(x) {
+          subscriber.complete();
+        } catch (x) {
           subscriber.error(x);
         }
       });

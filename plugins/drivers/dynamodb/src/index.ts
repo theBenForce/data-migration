@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 
 interface DynamoDbParameters {
   region: string;
+  profile?: string;
   TableName: string;
   accessKeyId?: string;
   secretAccessKey?: string;
@@ -23,6 +24,9 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters, AWS.DynamoDB.DocumentCli
     accessKeyId: params.accessKeyId,
     secretAccessKey: params.secretAccessKey,
     endpoint: params.endpoint,
+    credentials: params.profile
+      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+      : undefined,
   });
 
   return {
