@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.9.5...data-migration@2.10.0) (2020-06-05)
+
+
+### Features
+
+* pass cli flags to configuration ([f2def84](https://github.com/theBenForce/data-migration/commit/f2def847571d5cd28b4c70d4f5600a0e37c40756))
+
+
+
+
+
 ## [2.9.5](https://github.com/theBenForce/data-migration/compare/data-migration@2.9.4...data-migration@2.9.5) (2020-05-27)
 
 

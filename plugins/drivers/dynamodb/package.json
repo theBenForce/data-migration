@@ -1,6 +1,6 @@
 {
   "name": "dm-driver-dynamodb",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "aws-sdk": "^2.655.0",
-    "data-migration": "^2.9.5",
+    "data-migration": "^2.10.0",
     "rxjs": "^6.5.5"
   },
   "devDependencies": {

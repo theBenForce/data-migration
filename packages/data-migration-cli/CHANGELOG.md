@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.6.3...data-migration-cli@2.7.0) (2020-06-05)
+
+
+### Features
+
+* add aws profile support ([623ad99](https://github.com/theBenForce/data-migration/commit/623ad9970d9b38396079711e965c45b4f79d21e9))
+* pass cli flags to configuration ([f2def84](https://github.com/theBenForce/data-migration/commit/f2def847571d5cd28b4c70d4f5600a0e37c40756))
+
+
+
+
+
 ## [2.6.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.6.2...data-migration-cli@2.6.3) (2020-05-27)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/theBenForce/data-migration/compare/dm-driver-lambda@1.2.2...dm-driver-lambda@1.3.0) (2020-06-05)
+
+
+### Features
+
+* add aws profile support ([623ad99](https://github.com/theBenForce/data-migration/commit/623ad9970d9b38396079711e965c45b4f79d21e9))
+
+
+
+
+
 ## [1.2.2](https://github.com/theBenForce/data-migration/compare/dm-driver-lambda@1.2.1...dm-driver-lambda@1.2.2) (2020-05-27)
 
 

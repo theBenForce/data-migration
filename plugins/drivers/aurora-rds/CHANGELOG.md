@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.6.4...dm-driver-aurora@1.7.0) (2020-06-05)
+
+
+### Features
+
+* add aws profile support ([623ad99](https://github.com/theBenForce/data-migration/commit/623ad9970d9b38396079711e965c45b4f79d21e9))
+
+
+
+
+
 ## [1.6.4](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.6.3...dm-driver-aurora@1.6.4) (2020-05-27)
 
 

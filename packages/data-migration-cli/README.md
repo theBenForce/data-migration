@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.6.3 linux-x64 node-v12.16.3
+data-migration-cli/2.7.0 linux-x64 node-v12.16.3
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -49,13 +49,14 @@ USAGE
   $ migrate down
 
 OPTIONS
-  -h, --help       show CLI help
-  --config=config  [default: ./.dm.config.ts] Path to the configuration file
-  --scope=scope    Script scope to use
-  --stage=stage    Stage name to use
+  -h, --help               show CLI help
+  --awsProfile=awsProfile  AWS Profile to use
+  --config=config          [default: ./.dm.config.ts] Path to the configuration file
+  --scope=scope            Script scope to use
+  --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.7.0/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -85,12 +86,13 @@ USAGE
 OPTIONS
   -d, --directory=directory  [default: migrations] Path to migration directory
   -h, --help                 show CLI help
+  --awsProfile=awsProfile    AWS Profile to use
   --config=config            [default: ./.dm.config.ts] Path to the configuration file
   --scope=scope              Script scope to use
   --stage=stage              Stage name to use
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.7.0/src/commands/init.ts)_
 
 ## `migrate list`
 
@@ -101,21 +103,22 @@ USAGE
   $ migrate list
 
 OPTIONS
-  -h, --help              show CLI help
-  -x, --extended          show extra columns
-  --columns=columns       only show provided columns (comma-separated)
-  --config=config         [default: ./.dm.config.ts] Path to the configuration file
-  --csv                   output is csv format [alias: --output=csv]
-  --filter=filter         filter property by partial string matching, ex: name=foo
-  --no-header             hide table header from output
-  --no-truncate           do not truncate output to fit screen
-  --output=csv|json|yaml  output in a more machine friendly format
-  --scope=scope           Script scope to use
-  --sort=sort             property to sort by (prepend '-' for descending)
-  --stage=stage           Stage name to use
+  -h, --help               show CLI help
+  -x, --extended           show extra columns
+  --awsProfile=awsProfile  AWS Profile to use
+  --columns=columns        only show provided columns (comma-separated)
+  --config=config          [default: ./.dm.config.ts] Path to the configuration file
+  --csv                    output is csv format [alias: --output=csv]
+  --filter=filter          filter property by partial string matching, ex: name=foo
+  --no-header              hide table header from output
+  --no-truncate            do not truncate output to fit screen
+  --output=csv|json|yaml   output in a more machine friendly format
+  --scope=scope            Script scope to use
+  --sort=sort              property to sort by (prepend '-' for descending)
+  --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.7.0/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -131,7 +134,7 @@ OPTIONS
   --scope=scope    Script scope to use
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.7.0/src/commands/new.ts)_
 
 ## `migrate up`
 
@@ -142,11 +145,12 @@ USAGE
   $ migrate up
 
 OPTIONS
-  -h, --help       show CLI help
-  --config=config  [default: ./.dm.config.ts] Path to the configuration file
-  --scope=scope    Script scope to use
-  --stage=stage    Stage name to use
+  -h, --help               show CLI help
+  --awsProfile=awsProfile  AWS Profile to use
+  --config=config          [default: ./.dm.config.ts] Path to the configuration file
+  --scope=scope            Script scope to use
+  --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.6.3/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.7.0/src/commands/up.ts)_
 <!-- commandsstop -->
