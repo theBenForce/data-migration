@@ -16,7 +16,7 @@ interface LoadScriptsResult {
 export default async function loadScripts(
   flags: DefaultFlagParameters
 ): Promise<LoadScriptsResult> {
-  let config = await loadConfiguration(path.resolve(flags.config));
+  let config = await loadConfiguration(path.resolve(flags.config), { flags });
   let stage = "prod";
 
   if (flags.stage) {
