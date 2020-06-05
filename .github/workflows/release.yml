@@ -54,14 +54,7 @@ jobs:
         with:
           node-version: 12
 
-      - name: Setup Publishing
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
-        run: ./.build/setup_release.sh
-
-      - name: Update Pages
+      - name: Build Pages 📄
         run: ./.build/deploy_pages.sh
         env:
           GITHUB_REPO: theBenForce/data-migration
