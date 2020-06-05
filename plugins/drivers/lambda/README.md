@@ -19,6 +19,7 @@ The Lambda driver accepts the following parameters as part of its configuration:
 | --------------- | ------ | -------- | -------------------------------------------------------------------------------------- |
 | region          | string | Yes      | The AWS Region where this table exists                                                 |
 | FunctionName    | string | Yes      | The name (or ARN) of the function to modify                                            |
+| profile         | string | No       | Name of the AWS profile to use                                                         |
 | accessKeyId     | string | No       | AWS Credentials, if not provided data-migration will use the default AWS configuration |
 | secretAccessKey | string | No       |
 | endpoint        | string | No       | The http endpoint to connect to, useful when using something like localstack           |

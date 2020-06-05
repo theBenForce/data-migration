@@ -21,6 +21,7 @@ The CloudFormation processor accepts the following parameters as part of its con
 | stack     | string | Yes      | The name of the stack to get values from                                                                               |
 | output    | string | Maybe    | Name of the output that should be loaded. Required if `logicalId` is not provided                                      |
 | logicalId | string | Maybe    | Logical ID of a resource in the stack. The processor will return the Physical ID. Required if `output` is not provided |
+| profile   | string | No       | Name of the AWS profile to use                                                                                         |
 
 ## Sample Configuration
 

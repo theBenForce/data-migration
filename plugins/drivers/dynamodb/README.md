@@ -19,6 +19,7 @@ The DynamoDB driver accepts the following parameters as part of its configuratio
 | --------------- | ------ | -------- | -------------------------------------------------------------------------------------- |
 | region          | string | Yes      | The AWS Region where this table exists                                                 |
 | TableName       | string | Yes      | The name of the DynamoDB table to connect to                                           |
+| profile         | string | No       | Name of the AWS profile to use                                                         |
 | accessKeyId     | string | No       | AWS Credentials, if not provided data-migration will use the default AWS configuration |
 | secretAccessKey | string | No       |
 

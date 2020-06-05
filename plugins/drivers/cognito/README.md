@@ -19,6 +19,7 @@ The DynamoDB driver accepts the following parameters as part of its configuratio
 | -------- | ------ | -------- | ------------------------------------------ |
 | region   | string | Yes      | The AWS Region where this user pool exists |
 | userPool | string | Yes      | ID of the user pool to connect to          |
+| profile  | string | No       | Name of the AWS profile to use             |
 
 ### Example
 

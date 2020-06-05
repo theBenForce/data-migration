@@ -20,6 +20,7 @@ The Aurora RDS driver accepts the following parameters as part of its configurat
 | region         | string | Yes      | The AWS Region where this table exists                           |
 | resourceArn    | string | Yes      | ARN of the Aruora RDS cluster                                    |
 | secretArn      | string | Yes      | ARN of the secret manager secret to use for database credentials |
+| profile        | string | No       | Name of the AWS profile to use                                   |
 | databaseSchema | string | No       | The database schema to connect to by default                     |
 
 ### Example
