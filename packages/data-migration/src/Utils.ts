@@ -48,7 +48,11 @@ export class CompileScriptError extends Error {
   }
 }
 
-export async function loadScript<T>(filename: string, log: Logger): Promise<T> {
+export async function loadScript<T>(
+  filename: string,
+  log: Logger,
+  scriptGlobals?: any
+): Promise<T> {
   const babelConfig = {
     presets: ["@babel/preset-typescript", ["@babel/preset-env", { targets: { node: true } }]],
     plugins: [
@@ -67,12 +71,17 @@ export async function loadScript<T>(filename: string, log: Logger): Promise<T> {
       ],
     ],
     cwd: path.dirname(filename),
+    filename,
   };
 
   log(`Loading file "${filename}"`);
   log(`Babel Params:\n${JSON.stringify(babelConfig)}`);
 
-  const transformResult = await babel.transformFileAsync(filename, babelConfig);
+  const fileContent = fs.readFileSync(filename, "utf-8");
+
+  const prefix = `const context = ${JSON.stringify(scriptGlobals ?? {})};\n`;
+
+  const transformResult = await babel.transformAsync(prefix + fileContent, babelConfig);
 
   let script: T;
 

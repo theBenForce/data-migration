@@ -29,7 +29,7 @@ export type LoadConfigParameters<T> = {
   drivers?: Record<string, ConfigDriverEntry<T>>;
 };
 
-export const loadConfiguration = (configFile: string): Promise<Configuration> =>
-  UtilsImport.loadScript<Configuration>(configFile, () => {});
+export const loadConfiguration = (configFile: string, context?: any): Promise<Configuration> =>
+  UtilsImport.loadScript<Configuration>(configFile, () => {}, context);
 
 export default methods;
