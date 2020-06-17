@@ -39,7 +39,7 @@ interface AuroraRdsParameters {
 export type AuroraRdsDriver = RdsDriver<AuroraRdsParameters, AWS.RDSDataService>;
 
 const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
-  params: AuroraRdsDriver,
+  params: AuroraRdsParameters,
   logger: Logger
 ): AuroraRdsDriver => {
   let dataService = new AWS.RDSDataService({
