@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.7.3...dm-driver-aurora@1.8.0) (2020-06-17)
+
+
+### Bug Fixes
+
+* make parameters optional ([dc43cf1](https://github.com/theBenForce/data-migration/commit/dc43cf145c9f88056604dd971f8ed7fb11f2cd70))
+* update params type ([42c258f](https://github.com/theBenForce/data-migration/commit/42c258f7e81ae001fe1156924acafa7fe7681bb5))
+
+
+### Features
+
+* add insert method ([010ddfd](https://github.com/theBenForce/data-migration/commit/010ddfd863e108c5e8a6be7865662d346975a6c4))
+
+
+
+
+
 ## [1.7.3](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.7.2...dm-driver-aurora@1.7.3) (2020-06-05)
 
 **Note:** Version bump only for package dm-driver-aurora

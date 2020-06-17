@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.10.0...data-migration@2.11.0) (2020-06-17)
+
+
+### Bug Fixes
+
+* make parameters optional ([dc43cf1](https://github.com/theBenForce/data-migration/commit/dc43cf145c9f88056604dd971f8ed7fb11f2cd70))
+
+
+### Features
+
+* add insert method ([010ddfd](https://github.com/theBenForce/data-migration/commit/010ddfd863e108c5e8a6be7865662d346975a6c4))
+
+
+
+
+
 # [2.10.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.9.5...data-migration@2.10.0) (2020-06-05)
 
 
