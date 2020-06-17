@@ -11,6 +11,7 @@ function convertResultsToObject<T>(
   if (!metadata) {
     throw new Error(`No metadata defined!`);
   }
+
   return (record: AWS.RDSDataService.Field[]) => {
     const result: { [key: string]: any } = {};
 
@@ -38,7 +39,7 @@ interface AuroraRdsParameters {
 export type AuroraRdsDriver = RdsDriver<AuroraRdsParameters, AWS.RDSDataService>;
 
 const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
-  params,
+  params: AuroraRdsDriver,
   logger: Logger
 ): AuroraRdsDriver => {
   let dataService = new AWS.RDSDataService({
@@ -91,6 +92,27 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
           subscriber.error(x);
         }
       });
+    },
+
+    async insert<T>(
+      query: string,
+      parameters?: Array<AWS.RDSDataService.SqlParameter>
+    ): Promise<T | undefined> {
+      const queryParameters: ExecuteStatementRequest = {
+        ...paramsBase,
+        sql: query,
+        database: params.databaseSchema,
+        schema: params.databaseSchema,
+        includeResultMetadata: true,
+        parameters,
+        transactionId,
+      };
+
+      const result = await dataService.executeStatement(queryParameters).promise();
+
+      if (result?.records?.length) {
+        return convertResultsToObject<T>(result.columnMetadata)(result.records?.[0]);
+      }
     },
 
     async init() {

@@ -7,4 +7,5 @@ export interface QueryOptions {
 
 export default interface RdsDriver<P, D> extends Driver<P, D> {
   query<T>(query: string, params?: Array<any>, options?: QueryOptions): Observable<T>;
+  insert<T>(query: string, params?: Array<any>): Promise<T | undefined>;
 }
