@@ -59,7 +59,7 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
     resource: dataService,
     query<T>(
       query: string,
-      parameters: Array<AWS.RDSDataService.SqlParameter>,
+      parameters?: Array<AWS.RDSDataService.SqlParameter>,
       options?: QueryOptions
     ): Observable<T> {
       // @ts-ignore
