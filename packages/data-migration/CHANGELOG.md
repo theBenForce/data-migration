@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.11.0...data-migration@2.12.0) (2020-06-24)
+
+
+### Features
+
+* add sql file task ([00d2aa2](https://github.com/theBenForce/data-migration/commit/00d2aa247b5d422ebabc10a81341e903262e1f7f))
+
+
+
+
+
 # [2.11.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.10.0...data-migration@2.11.0) (2020-06-17)
 
 
