@@ -21,6 +21,7 @@ export default {
   ...SqlFile({
     driverName: "SomeSqlDriver",
     upFile: path.resolve(__dirname, "./sql/script-up.sql"),
+    downFile: path.resolve(__dirname, "./sql/script-down.sql"),
   }),
 } as MigrationScript;
 ```
