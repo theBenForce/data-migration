@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.12.0...data-migration@2.12.1) (2020-06-25)
+
+
+### Bug Fixes
+
+* set __dirname and __filename to proper values ([9eb3005](https://github.com/theBenForce/data-migration/commit/9eb300589aaa085d481b05050911b1946005d9fc))
+* set __filename and __dirname ([a6a86f5](https://github.com/theBenForce/data-migration/commit/a6a86f56e65317060abdd4198996ead2d897c83e))
+* undo adding parameters ([77cbd24](https://github.com/theBenForce/data-migration/commit/77cbd2471e60268761ec15fb1fe4c3a2fa2b2f01))
+
+
+
+
+
 # [2.12.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.11.0...data-migration@2.12.0) (2020-06-24)
 
 
