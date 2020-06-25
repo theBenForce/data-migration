@@ -90,9 +90,21 @@
             "slug": "packagesdata-migration-clichangelog",
             "headings": [
               {
-                "title": "Features",
-                "depth": 3,
-                "id": "features"
+                "title": "[2.8.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.0...data-migration-cli@2.8.1) (2020-06-25)",
+                "depth": 2,
+                "id": "2.8.1(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.8.0...data-migration-cli@2.8.1)-(2020-06-25)",
+                "headings": [
+                  {
+                    "title": "Bug Fixes",
+                    "depth": 3,
+                    "id": "bug-fixes"
+                  },
+                  {
+                    "title": "Features",
+                    "depth": 3,
+                    "id": "features"
+                  }
+                ]
               },
               {
                 "title": "[2.7.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.2...data-migration-cli@2.7.3) (2020-06-25)",
@@ -2305,9 +2317,21 @@
       "slug": "packagesdata-migration-clichangelog",
       "headings": [
         {
-          "title": "Features",
-          "depth": 3,
-          "id": "features"
+          "title": "[2.8.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.0...data-migration-cli@2.8.1) (2020-06-25)",
+          "depth": 2,
+          "id": "2.8.1(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.8.0...data-migration-cli@2.8.1)-(2020-06-25)",
+          "headings": [
+            {
+              "title": "Bug Fixes",
+              "depth": 3,
+              "id": "bug-fixes"
+            },
+            {
+              "title": "Features",
+              "depth": 3,
+              "id": "features"
+            }
+          ]
         },
         {
           "title": "[2.7.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.2...data-migration-cli@2.7.3) (2020-06-25)",
