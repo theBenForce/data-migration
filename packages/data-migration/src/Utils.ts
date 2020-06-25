@@ -85,9 +85,14 @@ export async function loadScript<T>(
 
   let script: T;
 
+  function evaluateScript(code: string): T {
+    const __dirname = path.dirname(filename);
+    const __filename = filename;
+    return eval(code);
+  }
+
   if (transformResult?.code) {
-    // tslint:disable-next-line:no-eval
-    script = eval(transformResult.code);
+    script = evaluateScript(transformResult.code);
   } else {
     log(`Failed to compile "${filename}"`);
     log(JSON.stringify(transformResult));
