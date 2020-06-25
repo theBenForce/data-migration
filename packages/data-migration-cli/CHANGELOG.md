@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.0...data-migration-cli@2.8.1) (2020-06-25)
+
+
+### Bug Fixes
+
+* use proper import for listr ([614e005](https://github.com/theBenForce/data-migration/commit/614e005cac3959cd9927d8174d328eeb7eb03046))
+
+
+
+
+
 # [2.8.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.3...data-migration-cli@2.8.0) (2020-06-25)
 
 
