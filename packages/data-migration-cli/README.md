@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.7.3 linux-x64 node-v12.18.1
+data-migration-cli/2.8.0 linux-x64 node-v12.18.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -33,20 +33,24 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`migrate down`](#migrate-down)
+* [`migrate down [NUMBERTORUN]`](#migrate-down-numbertorun)
 * [`migrate help [COMMAND]`](#migrate-help-command)
 * [`migrate init`](#migrate-init)
 * [`migrate list`](#migrate-list)
 * [`migrate new NAME`](#migrate-new-name)
+* [`migrate reset`](#migrate-reset)
 * [`migrate up`](#migrate-up)
 
-## `migrate down`
+## `migrate down [NUMBERTORUN]`
 
-run all down migration scripts
+run down migration scripts
 
 ```
 USAGE
-  $ migrate down
+  $ migrate down [NUMBERTORUN]
+
+ARGUMENTS
+  NUMBERTORUN  [default: 1] number of down scripts to execute
 
 OPTIONS
   -h, --help               show CLI help
@@ -56,7 +60,7 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.7.3/src/commands/down.ts)_
+_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.8.0/src/commands/down.ts)_
 
 ## `migrate help [COMMAND]`
 
@@ -92,7 +96,7 @@ OPTIONS
   --stage=stage              Stage name to use
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.7.3/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.8.0/src/commands/init.ts)_
 
 ## `migrate list`
 
@@ -118,7 +122,7 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.7.3/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.8.0/src/commands/list.ts)_
 
 ## `migrate new NAME`
 
@@ -134,7 +138,25 @@ OPTIONS
   --scope=scope    Script scope to use
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.7.3/src/commands/new.ts)_
+_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.8.0/src/commands/new.ts)_
+
+## `migrate reset`
+
+run all down migration scripts
+
+```
+USAGE
+  $ migrate reset
+
+OPTIONS
+  -h, --help               show CLI help
+  --awsProfile=awsProfile  AWS Profile to use
+  --config=config          [default: ./.dm.config.ts] Path to the configuration file
+  --scope=scope            Script scope to use
+  --stage=stage            Stage name to use
+```
+
+_See code: [src/commands/reset.ts](https://github.com/theBenForce/data-migration/blob/v2.8.0/src/commands/reset.ts)_
 
 ## `migrate up`
 
@@ -152,5 +174,5 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.7.3/src/commands/up.ts)_
+_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.8.0/src/commands/up.ts)_
 <!-- commandsstop -->

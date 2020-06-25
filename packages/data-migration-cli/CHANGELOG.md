@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.3...data-migration-cli@2.8.0) (2020-06-25)
+
+
+### Features
+
+* add reset command ([9625838](https://github.com/theBenForce/data-migration/commit/96258381501760acc4d086ab548bad1734386a34))
+
+
+
+
+
 ## [2.7.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.2...data-migration-cli@2.7.3) (2020-06-25)
 
 **Note:** Version bump only for package data-migration-cli
