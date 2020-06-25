@@ -47,9 +47,9 @@
         "slug": "packagesdata-migration-cli",
         "headings": [
           {
-            "title": "`migrate down`",
+            "title": "`migrate down [NUMBERTORUN]`",
             "depth": 2,
-            "id": "migrate-down"
+            "id": "migrate-down-numbertorun"
           },
           {
             "title": "`migrate help [COMMAND]`",
@@ -72,6 +72,11 @@
             "id": "migrate-new-name"
           },
           {
+            "title": "`migrate reset`",
+            "depth": 2,
+            "id": "migrate-reset"
+          },
+          {
             "title": "`migrate up`",
             "depth": 2,
             "id": "migrate-up"
@@ -84,6 +89,11 @@
             "url": "packages/data-migration-cli/CHANGELOG.html",
             "slug": "packagesdata-migration-clichangelog",
             "headings": [
+              {
+                "title": "Features",
+                "depth": 3,
+                "id": "features"
+              },
               {
                 "title": "[2.7.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.2...data-migration-cli@2.7.3) (2020-06-25)",
                 "depth": 2,
@@ -2252,9 +2262,9 @@
       "slug": "packagesdata-migration-cli",
       "headings": [
         {
-          "title": "`migrate down`",
+          "title": "`migrate down [NUMBERTORUN]`",
           "depth": 2,
-          "id": "migrate-down"
+          "id": "migrate-down-numbertorun"
         },
         {
           "title": "`migrate help [COMMAND]`",
@@ -2277,6 +2287,11 @@
           "id": "migrate-new-name"
         },
         {
+          "title": "`migrate reset`",
+          "depth": 2,
+          "id": "migrate-reset"
+        },
+        {
           "title": "`migrate up`",
           "depth": 2,
           "id": "migrate-up"
@@ -2289,6 +2304,11 @@
       "pageTitle": "Changes",
       "slug": "packagesdata-migration-clichangelog",
       "headings": [
+        {
+          "title": "Features",
+          "depth": 3,
+          "id": "features"
+        },
         {
           "title": "[2.7.3](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.7.2...data-migration-cli@2.7.3) (2020-06-25)",
           "depth": 2,
