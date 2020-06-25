@@ -1,5 +1,5 @@
 import { DefaultFlagParameters } from "../default-flags";
-import Listr from "listr";
+import Listr = require("listr");
 import loadScripts from "./loadScripts";
 import createLogger from "./createLogger";
 import { ScriptContext } from "data-migration";
