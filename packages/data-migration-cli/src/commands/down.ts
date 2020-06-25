@@ -1,12 +1,6 @@
 import { Command, flags } from "@oclif/command";
-import DataMigrationProcessor, { Configuration, Driver, ScriptContext } from "data-migration";
-import { appendFileSync } from "fs";
-import Listr = require("listr");
-import * as path from "path";
 
-import createLogger, { logFile } from "../utils/createLogger";
-import { InitializedMigrationScript } from "data-migration/lib/MigrationScript";
-import loadScripts from "../utils/loadScripts";
+import createLogger from "../utils/createLogger";
 import { DefaultFlags } from "../default-flags";
 import createDownMigrationTasks from "../utils/createDownMigrationTasks";
 
