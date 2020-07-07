@@ -111,8 +111,14 @@ export interface GetAllScripts {
   log: Logger;
 }
 
-async function getScriptFiles(config: Configuration, scope?: string): Promise<Array<string>> {
+async function getScriptFiles(
+  config: Configuration,
+  log: Logger,
+  scope?: string
+): Promise<Array<string>> {
   const migrationsPath = getMigrationsPath(config);
+
+  log(`Looking for scripts in path "${migrationsPath}", with scope "${scope}"`);
 
   const entries = await glob(scope ? path.join(scope, "*.ts") : "*.ts", {
     cwd: migrationsPath,
@@ -120,6 +126,8 @@ async function getScriptFiles(config: Configuration, scope?: string): Promise<Ar
     deep: 1,
     absolute: true,
   });
+
+  log(`Found ${entries.length} scripts: ${JSON.stringify(entries)}`);
 
   return entries;
 }
@@ -130,7 +138,7 @@ export async function getAllScripts({
   log,
 }: GetAllScripts): Promise<Map<string, MigrationScript>> {
   let scripts = new Map<string, MigrationScript>();
-  let scriptFiles = await getScriptFiles(config, scope);
+  let scriptFiles = await getScriptFiles(config, log, scope);
 
   for (const filename of scriptFiles) {
     let script: MigrationScript;
