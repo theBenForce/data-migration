@@ -41,18 +41,11 @@ export default function (flags: DefaultFlagParameters, numberToRun: number = Inf
                 },
                 {
                   title: `Cleanup`,
-                  task: () => {
+                  async task() {
                     const logger = createLogger(["Cleanup"]);
-                    return new Listr(
-                      context.getDriversUsed().map((driverName: string) => ({
-                        title: driverName,
-                        async task() {
-                          logger(`Cleaning up driver ${driverName}`);
-                          const driver = await context.getDriver(driverName);
-                          if (driver.cleanup) await driver.cleanup();
-                        },
-                      }))
-                    );
+                    const driversUsed = await context.cleanupDrivers(logger);
+
+                    logger(`${driversUsed.length} drivers used ${driversUsed}`);
                   },
                 },
               ]),

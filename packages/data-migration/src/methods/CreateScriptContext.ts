@@ -5,7 +5,7 @@ export default function createScriptContext(
   drivers: Map<string, Driver<any, any>>,
   config: { [key: string]: string }
 ): ScriptContext {
-  const driversUsed: Array<string> = [];
+  let driversUsed: Array<string> = [];
   return {
     async getDriver<T extends Driver<any, any>>(driverName: string): Promise<T> {
       if (!drivers.has(driverName)) {
@@ -35,5 +35,20 @@ export default function createScriptContext(
     getConfigValue: (key: string) => config[key],
 
     getDriversUsed: () => driversUsed,
+
+    async cleanupDrivers(log): Promise<Array<string>> {
+      const drivers = [...driversUsed];
+
+      for (const driverName of drivers) {
+        const driver = await this.getDriver(driverName);
+        if (!driver.cleanup) continue;
+
+        await driver.cleanup();
+      }
+
+      driversUsed = [];
+
+      return drivers;
+    },
   };
 }
