@@ -127,6 +127,16 @@ async function getScriptFiles(
     absolute: true,
   });
 
+  entries.sort((a, b) => {
+    const first = path.basename(a);
+    const second = path.basename(b);
+
+    if (first < second) return -1;
+    if (first == second) return 0;
+
+    return 1;
+  });
+
   log(`Found ${entries.length} scripts: ${JSON.stringify(entries)}`);
 
   return entries;
