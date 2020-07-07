@@ -28,8 +28,7 @@
     "@types/listr": "^0.14.2",
     "@types/zen-observable": "^0.8.0",
     "globby": "^11.0.0",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.8.3"
+    "ts-node": "^8.6.2"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -63,9 +62,7 @@
     "prepack": "yarn build",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
-    "build": "rm -rf lib && tsc -b && oclif-dev manifest",
-    "prerelease": "yarn prepublish",
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='data-migration-cli@${version}'"
+    "build": "rm -rf lib && tsc -b && oclif-dev manifest"
   },
   "types": "lib/index.d.ts",
   "directories": {

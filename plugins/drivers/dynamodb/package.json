@@ -12,8 +12,6 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepublish": "yarn build",
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='dm-driver-dynamodb@${version}'",
     "lint": "eslint src/**/*.*"
   },
   "files": [
@@ -24,11 +22,5 @@
     "data-migration": "^2.12.1",
     "rxjs": "^6.5.5"
   },
-  "devDependencies": {
-    "@types/jest": "^25.2.1",
-    "aws-sdk-mock": "^5.1.0",
-    "jest": "^25.3.0",
-    "ts-jest": "^25.3.1",
-    "typescript": "^3.8.3"
-  }
+  "devDependencies": {}
 }

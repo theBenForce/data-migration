@@ -11,17 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/theBenForce/data-migration.git"
   },
-  "devDependencies": {
-    "typescript": "^3.8.3"
-  },
+  "devDependencies": {},
   "dependencies": {
     "aws-sdk": "^2.655.0",
     "data-migration": "^2.12.1"
   },
   "scripts": {
-    "build": "tsc",
-    "prepublish": "yarn build",
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='dm-processor-cf@${version}'"
+    "build": "tsc"
   },
   "files": [
     "/lib"

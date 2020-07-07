@@ -9,8 +9,6 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepublish": "yarn build",
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='dm-driver-lambda@${version}'",
     "lint": "eslint src/**/*.*"
   },
   "dependencies": {
@@ -21,7 +19,5 @@
   "files": [
     "/lib"
   ],
-  "devDependencies": {
-    "typescript": "^3.8.3"
-  }
+  "devDependencies": {}
 }
