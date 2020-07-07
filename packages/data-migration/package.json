@@ -1,6 +1,6 @@
 {
   "name": "data-migration",
-  "version": "2.15.0",
+  "version": "2.15.1",
   "description": "Interfaces to create new drivers/processors for data-migration",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

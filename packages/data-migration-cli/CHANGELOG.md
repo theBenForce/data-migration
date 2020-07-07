@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.9.0...data-migration-cli@2.9.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* clear drivers used list after every script ([2083364](https://github.com/theBenForce/data-migration/commit/2083364b6ff9446a8c726807749b5e486e0d0146))
+
+
+
+
+
 # [2.9.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.5...data-migration-cli@2.9.0) (2020-07-07)
 
 
