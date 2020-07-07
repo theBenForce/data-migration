@@ -9,6 +9,8 @@ import { MissingParameters } from "./Errors";
 import { getMigrationsPath } from "./methods";
 import { Logger } from "./Logger";
 
+import * as glob from "fast-glob";
+
 export function checkParameters(
   label: string,
   requiredParams: Array<string>,
@@ -108,21 +110,31 @@ export interface GetAllScripts {
   scope?: string;
   log: Logger;
 }
+
+async function getScriptFiles(config: Configuration, scope?: string): Promise<Array<string>> {
+  const migrationsPath = getMigrationsPath(config);
+
+  const entries = await glob(scope ? path.join(scope, "*.ts") : "*.ts", {
+    cwd: migrationsPath,
+    onlyFiles: true,
+    deep: 1,
+    absolute: true,
+  });
+
+  return entries;
+}
+
 export async function getAllScripts({
   config,
   scope,
   log,
 }: GetAllScripts): Promise<Map<string, MigrationScript>> {
   let scripts = new Map<string, MigrationScript>();
-  const migrationsPath = getMigrationsPath(config, scope);
-  let scriptFiles = fs
-    .readdirSync(migrationsPath)
-    .filter((fname: string) => /\.(t|j)s$/gi.test(fname));
+  let scriptFiles = await getScriptFiles(config, scope);
 
-  for (const fname of scriptFiles) {
+  for (const filename of scriptFiles) {
     let script: MigrationScript;
     try {
-      const filename = path.join(migrationsPath, fname);
       script = await loadScript<MigrationScript>(filename, log);
     } catch (ex) {
       log(ex.message);
@@ -139,7 +151,7 @@ export async function getAllScripts({
       };
     }
 
-    scripts.set(fname, script);
+    scripts.set(path.basename(filename), script);
   }
 
   return scripts;
