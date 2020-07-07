@@ -1,6 +1,6 @@
 {
   "name": "dm-tracker-dynamodb",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.655.0",
-    "data-migration": "^2.13.0",
+    "data-migration": "^2.14.0",
     "date-fns": "^2.11.1"
   },
   "scripts": {
