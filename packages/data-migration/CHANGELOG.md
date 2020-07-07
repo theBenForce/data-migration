@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.14.1...data-migration@2.15.0) (2020-07-07)
+
+
+### Features
+
+* sort scripts ([411125a](https://github.com/theBenForce/data-migration/commit/411125aacc31a8d3dbf599e370a4bad4e151dcab))
+
+
+
+
+
 ## [2.14.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.14.0...data-migration@2.14.1) (2020-07-07)
 
 
