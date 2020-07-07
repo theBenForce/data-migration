@@ -33,23 +33,29 @@ export default function (flags: DefaultFlagParameters, numberToRun: number = Inf
         return new Listr(
           filteredScripts.map((script) => ({
             title: script.description ?? script.name,
-            task: script.down,
-          }))
-        );
-      },
-    },
-    {
-      title: `Cleanup`,
-      task: () => {
-        const logger = createLogger(["Cleanup"]);
-        return new Listr(
-          context.getDriversUsed().map((driverName: string) => ({
-            title: driverName,
-            async task() {
-              logger(`Cleaning up driver ${driverName}`);
-              const driver = await context.getDriver(driverName);
-              if (driver.cleanup) await driver.cleanup();
-            },
+            task: () =>
+              new Listr([
+                {
+                  title: `Running script`,
+                  task: script.down,
+                },
+                {
+                  title: `Cleanup`,
+                  task: () => {
+                    const logger = createLogger(["Cleanup"]);
+                    return new Listr(
+                      context.getDriversUsed().map((driverName: string) => ({
+                        title: driverName,
+                        async task() {
+                          logger(`Cleaning up driver ${driverName}`);
+                          const driver = await context.getDriver(driverName);
+                          if (driver.cleanup) await driver.cleanup();
+                        },
+                      }))
+                    );
+                  },
+                },
+              ]),
           }))
         );
       },

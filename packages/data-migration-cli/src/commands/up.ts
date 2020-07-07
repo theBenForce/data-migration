@@ -35,7 +35,7 @@ export default class Up extends Command {
       },
       {
         title: `Running Up Migrations`,
-        task(context, task) {
+        task(_, task) {
           const filteredScripts = scripts.filter((script) => !script.hasRun);
 
           task.title = `Running ${filteredScripts.length} Up Migrations on ${stage}`;
@@ -43,23 +43,29 @@ export default class Up extends Command {
           return new Listr(
             filteredScripts.map((script) => ({
               title: script.description ?? script.name,
-              task: script.up,
-            }))
-          );
-        },
-      },
-      {
-        title: `Cleanup`,
-        task: () => {
-          const logger = createLogger(["Cleanup"]);
-          return new Listr(
-            context.getDriversUsed().map((driverName: string) => ({
-              title: driverName,
-              async task() {
-                logger(`Cleaning up driver ${driverName}`);
-                const driver = await context.getDriver(driverName);
-                if (driver.cleanup) await driver.cleanup();
-              },
+              task: () =>
+                new Listr([
+                  {
+                    title: `Running script`,
+                    task: script.up,
+                  },
+                  {
+                    title: `Cleanup`,
+                    task: () => {
+                      const logger = createLogger(["Cleanup"]);
+                      return new Listr(
+                        context.getDriversUsed().map((driverName: string) => ({
+                          title: driverName,
+                          async task() {
+                            logger(`Cleaning up driver ${driverName}`);
+                            const driver = await context.getDriver(driverName);
+                            if (driver.cleanup) await driver.cleanup();
+                          },
+                        }))
+                      );
+                    },
+                  },
+                ]),
             }))
           );
         },
