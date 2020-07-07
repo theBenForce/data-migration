@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.14.0...data-migration@2.14.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* search for scripts on 2 levels deep ([8cebe72](https://github.com/theBenForce/data-migration/commit/8cebe726fa41e8df8ef31e9a5070ccf6538c6c51))
+
+
+
+
+
 # [2.14.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.13.0...data-migration@2.14.0) (2020-07-07)
 
 
