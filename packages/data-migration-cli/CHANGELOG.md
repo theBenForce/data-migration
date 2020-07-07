@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.5...data-migration-cli@2.9.0) (2020-07-07)
+
+
+### Features
+
+* close transactions after every script ([d9a25e3](https://github.com/theBenForce/data-migration/commit/d9a25e3638ff39fbf8c11e5cade69d7985edc5ea))
+
+
+
+
+
 ## [2.8.5](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.4...data-migration-cli@2.8.5) (2020-07-07)
 
 **Note:** Version bump only for package data-migration-cli
