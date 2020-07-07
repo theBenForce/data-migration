@@ -90,6 +90,11 @@
             "slug": "packagesdata-migration-clichangelog",
             "headings": [
               {
+                "title": "Features",
+                "depth": 3,
+                "id": "features"
+              },
+              {
                 "title": "[2.8.5](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.4...data-migration-cli@2.8.5) (2020-07-07)",
                 "depth": 2,
                 "id": "2.8.5(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.8.4...data-migration-cli@2.8.5)-(2020-07-07)"
@@ -2436,6 +2441,11 @@
       "pageTitle": "Changes",
       "slug": "packagesdata-migration-clichangelog",
       "headings": [
+        {
+          "title": "Features",
+          "depth": 3,
+          "id": "features"
+        },
         {
           "title": "[2.8.5](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.8.4...data-migration-cli@2.8.5) (2020-07-07)",
           "depth": 2,
