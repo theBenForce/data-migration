@@ -1,6 +1,6 @@
 {
   "name": "dm-driver-cognito",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -12,12 +12,11 @@
   "dependencies": {
     "aws-sdk": "^2.655.0",
     "cuid": "^2.1.8",
-    "data-migration": "^2.12.1"
+    "data-migration": "^2.13.0"
   },
   "scripts": {
     "build": "tsc"
   },
-  "devDependencies": {},
   "files": [
     "/lib"
   ],

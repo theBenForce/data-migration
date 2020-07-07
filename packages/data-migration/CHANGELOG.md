@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.12.1...data-migration@2.13.0) (2020-07-07)
+
+
+### Features
+
+* convert scope flag to a glob ([38df3dd](https://github.com/theBenForce/data-migration/commit/38df3dd88fc05cb4ab3f772a9dedfcabb1970cd8))
+
+
+
+
+
 ## [2.12.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.12.0...data-migration@2.12.1) (2020-06-25)
 
 

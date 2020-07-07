@@ -22,7 +22,7 @@ $ npm install -g data-migration-cli
 $ migrate COMMAND
 running command...
 $ migrate (-v|--version|version)
-data-migration-cli/2.8.1 linux-x64 node-v12.18.1
+data-migration-cli/2.8.2 linux-x64 node-v12.18.1
 $ migrate --help [COMMAND]
 USAGE
   $ migrate COMMAND
@@ -60,7 +60,7 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/down.ts](https://github.com/theBenForce/data-migration/blob/v2.8.1/src/commands/down.ts)_
+_See code: [lib/commands/down.js](https://github.com/theBenForce/data-migration/blob/v2.8.2/lib/commands/down.js)_
 
 ## `migrate help [COMMAND]`
 
@@ -96,7 +96,7 @@ OPTIONS
   --stage=stage              Stage name to use
 ```
 
-_See code: [src/commands/init.ts](https://github.com/theBenForce/data-migration/blob/v2.8.1/src/commands/init.ts)_
+_See code: [lib/commands/init.js](https://github.com/theBenForce/data-migration/blob/v2.8.2/lib/commands/init.js)_
 
 ## `migrate list`
 
@@ -122,7 +122,7 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/list.ts](https://github.com/theBenForce/data-migration/blob/v2.8.1/src/commands/list.ts)_
+_See code: [lib/commands/list.js](https://github.com/theBenForce/data-migration/blob/v2.8.2/lib/commands/list.js)_
 
 ## `migrate new NAME`
 
@@ -138,7 +138,7 @@ OPTIONS
   --scope=scope    Script scope to use
 ```
 
-_See code: [src/commands/new.ts](https://github.com/theBenForce/data-migration/blob/v2.8.1/src/commands/new.ts)_
+_See code: [lib/commands/new.js](https://github.com/theBenForce/data-migration/blob/v2.8.2/lib/commands/new.js)_
 
 ## `migrate reset`
 
@@ -156,7 +156,7 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/reset.ts](https://github.com/theBenForce/data-migration/blob/v2.8.1/src/commands/reset.ts)_
+_See code: [lib/commands/reset.js](https://github.com/theBenForce/data-migration/blob/v2.8.2/lib/commands/reset.js)_
 
 ## `migrate up`
 
@@ -174,5 +174,5 @@ OPTIONS
   --stage=stage            Stage name to use
 ```
 
-_See code: [src/commands/up.ts](https://github.com/theBenForce/data-migration/blob/v2.8.1/src/commands/up.ts)_
+_See code: [lib/commands/up.js](https://github.com/theBenForce/data-migration/blob/v2.8.2/lib/commands/up.js)_
 <!-- commandsstop -->
