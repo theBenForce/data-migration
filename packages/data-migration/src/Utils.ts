@@ -123,7 +123,7 @@ async function getScriptFiles(
   const entries = await glob(scope ? path.join(scope, "*.ts") : "*.ts", {
     cwd: migrationsPath,
     onlyFiles: true,
-    deep: 1,
+    deep: 2,
     absolute: true,
   });
 
