@@ -19,7 +19,7 @@
     "jest": "^25.3.0",
     "lerna": "^3.20.2",
     "ts-jest": "^26.1.1",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -48,5 +48,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "core-js": "^2.5.7"
   }
 }
