@@ -1,0 +1,21 @@
+{
+  "name": "dm-driver-s3",
+  "version": "1.0.0",
+  "description": "A data-migration driver to upload files to S3",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "homepage": "https://data-migration.js.org/plugins/drivers/aurora-rds",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBenForce/data-migration.git"
+  },
+  "author": "Ben Force",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.655.0",
+    "data-migration": "^2.15.1"
+  }
+}
