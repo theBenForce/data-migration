@@ -1,6 +1,5 @@
 import * as AWS from "aws-sdk";
-import { DriverBuilder, NoSqlDriver, Logger, Driver } from "data-migration";
-import { Observable } from "rxjs";
+import { DriverBuilder, Logger, Driver } from "data-migration";
 
 interface LambdaParameters {
   region: string;
