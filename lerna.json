@@ -1,6 +1,6 @@
 {
   "packages": ["packages/*", "plugins/drivers/*", "plugins/processors/*", "plugins/trackers/*"],
-  "ignoreChanges": ["**/CHANGELOG.md", "packages/data-migration-cli/README.md"],
+  "ignoreChanges": ["**/CHANGELOG.md", "packages/data-migration-cli/README.md", "yarn.lock"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
