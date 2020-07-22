@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "aws-sdk": "^2.655.0",
-    "data-migration": "^2.15.1"
+    "data-migration": "2.15.1"
   }
 }
