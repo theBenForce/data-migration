@@ -13,7 +13,11 @@ interface S3DriverParameters {
 
 export interface S3Driver extends Driver<S3DriverParameters, AWS.S3> {
   /** Uploads a local file to the bucket. The observable gives progress updates. */
-  uploadFile(key: string, filename: string, encoding: BufferEncoding): Observable<number>;
+  uploadFile(
+    key: string,
+    filename: string,
+    onProgress?: (progress: number) => void
+  ): Promise<AWS.S3.ManagedUpload.SendData>;
 
   /** Lists all objects in the bucket, optionally filtered. */
   listObjects(prefix?: string): Observable<AWS.S3.Object>;
@@ -41,31 +45,37 @@ const s3DriverBuilder: DriverBuilder<S3DriverParameters, AWS.S3> = (
   return {
     resource,
     parameters,
-    uploadFile(key: string, filename: string, encoding: BufferEncoding): Observable<number> {
-      return new Observable<number>((subscriber) => {
+    uploadFile(
+      key: string,
+      filename: string,
+      onProgress?: (progress: number) => void
+    ): Promise<AWS.S3.ManagedUpload.SendData> {
+      return new Promise((resolve, reject) => {
         const managedUpload = new AWS.S3.ManagedUpload({
           service: resource,
           params: {
             Bucket: bucketName,
             Key: key,
-            Body: fs.createReadStream(filename, encoding),
+            Body: fs.readFileSync(filename),
           },
         });
 
-        managedUpload.on(`httpUploadProgress`, (progress) => {
-          logger(`Uploaded ${progress.loaded} / ${progress.total} to ${bucketName}/${key}`);
-          if (progress.total == undefined) return;
-          subscriber.next(Math.round((progress.loaded / progress.total) * 100));
-        });
+        if (onProgress) {
+          managedUpload.on(`httpUploadProgress`, (progress) => {
+            logger(`Uploaded ${progress.loaded} / ${progress.total} to ${bucketName}/${key}`);
+            if (progress.total == undefined) return;
+            onProgress(Math.round((progress.loaded / progress.total) * 100));
+          });
+        }
 
         managedUpload.send((err, data) => {
           if (err) {
             logger(`Error uploading ${filename} to ${bucketName}/${key}: ${JSON.stringify(err)}`);
-            subscriber.error(err.message);
+            reject(err.message);
             return;
           }
 
-          subscriber.complete();
+          resolve(data);
         });
       });
     },
