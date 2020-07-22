@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.12](https://github.com/theBenForce/data-migration/compare/dm-driver-lambda@1.3.11...dm-driver-lambda@1.3.12) (2020-07-22)
+
+**Note:** Version bump only for package dm-driver-lambda
+
+
+
+
+
 ## [1.3.11](https://github.com/theBenForce/data-migration/compare/dm-driver-lambda@1.3.10...dm-driver-lambda@1.3.11) (2020-07-07)
 
 **Note:** Version bump only for package dm-driver-lambda
