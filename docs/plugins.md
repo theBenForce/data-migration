@@ -7,6 +7,7 @@ changes. Finally, trackers keep track of which migration scripts have been execu
 
 - Processors
   - [Cloud Formation](/plugins/processors/dm-processor-cf/README.md)
+  - [Terraform](/plugins/processors/dm-processor-terraform/README.md)
 - Drivers
   - [Aurora RDS](/plugins/drivers/aurora-rds/README.md)
   - [Cognito](/plugins/drivers/cognito/README.md)

@@ -9,6 +9,8 @@
   - Processors
     - [Cloud Formation](/plugins/processors/dm-processor-cf/README.md)
       - [Changes](/plugins/processors/dm-processor-cf/CHANGELOG.md)
+    - [Terraform](/plugins/processors/dm-processor-terraform/README.md)
+      - [Changes](/plugins/processors/dm-processor-terraform/CHANGELOG.md)
   - Drivers
     - [Aurora RDS](/plugins/drivers/aurora-rds/README.md)
       - [Changes](/plugins/drivers/aurora-rds/CHANGELOG.md)
