@@ -918,6 +918,39 @@
                     ]
                   }
                 ]
+              },
+              {
+                "title": "Terraform",
+                "source": "plugins/processors/dm-processor-terraform/README.md",
+                "url": "plugins/processors/dm-processor-terraform/index.html",
+                "slug": "pluginsprocessorsdm-processor-terraform",
+                "headings": [
+                  {
+                    "title": "Parameters",
+                    "depth": 2,
+                    "id": "parameters"
+                  },
+                  {
+                    "title": "Sample Configuration",
+                    "depth": 2,
+                    "id": "sample-configuration"
+                  }
+                ],
+                "sections": [
+                  {
+                    "title": "Changes",
+                    "source": "plugins/processors/dm-processor-terraform/CHANGELOG.md",
+                    "url": "plugins/processors/dm-processor-terraform/CHANGELOG.html",
+                    "slug": "pluginsprocessorsdm-processor-terraformchangelog",
+                    "headings": [
+                      {
+                        "title": "Features",
+                        "depth": 3,
+                        "id": "features"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -3301,6 +3334,37 @@
         }
       ]
     },
+    "plugins/processors/dm-processor-terraform/index.html": {
+      "source": "plugins/processors/dm-processor-terraform/README.md",
+      "title": "Terraform - Data Migration",
+      "pageTitle": "Terraform",
+      "slug": "pluginsprocessorsdm-processor-terraform",
+      "headings": [
+        {
+          "title": "Parameters",
+          "depth": 2,
+          "id": "parameters"
+        },
+        {
+          "title": "Sample Configuration",
+          "depth": 2,
+          "id": "sample-configuration"
+        }
+      ]
+    },
+    "plugins/processors/dm-processor-terraform/CHANGELOG.html": {
+      "source": "plugins/processors/dm-processor-terraform/CHANGELOG.md",
+      "title": "Changes - Data Migration",
+      "pageTitle": "Changes",
+      "slug": "pluginsprocessorsdm-processor-terraformchangelog",
+      "headings": [
+        {
+          "title": "Features",
+          "depth": 3,
+          "id": "features"
+        }
+      ]
+    },
     "plugins/drivers/aurora-rds/index.html": {
       "source": "plugins/drivers/aurora-rds/README.md",
       "title": "Aurora RDS - Data Migration",
@@ -4761,6 +4825,8 @@
     "docs/plugins.md": "plugins.html",
     "plugins/processors/dm-processor-cf/README.md": "plugins/processors/dm-processor-cf/index.html",
     "plugins/processors/dm-processor-cf/CHANGELOG.md": "plugins/processors/dm-processor-cf/CHANGELOG.html",
+    "plugins/processors/dm-processor-terraform/README.md": "plugins/processors/dm-processor-terraform/index.html",
+    "plugins/processors/dm-processor-terraform/CHANGELOG.md": "plugins/processors/dm-processor-terraform/CHANGELOG.html",
     "plugins/drivers/aurora-rds/README.md": "plugins/drivers/aurora-rds/index.html",
     "plugins/drivers/aurora-rds/CHANGELOG.md": "plugins/drivers/aurora-rds/CHANGELOG.html",
     "plugins/drivers/cognito/README.md": "plugins/drivers/cognito/index.html",

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../assets/style.css?t=90051322">
     <script src="../../../assets/script.js?t=93f1a66c"></script>
-    <title>Lambda - Data Migration</title>
+    <title>Terraform - Data Migration</title>
     <meta name="viewport" content="width=device-width">
     <script>if (false || window.location.hostname.indexOf("data-migration.js.org") === window.location.hostname.length - 21) {
         (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
@@ -43,7 +43,13 @@
                           </li>
                         </ul>
                       </li>
-                      <li class="menu-item -level-3 -parent"><a class="link title  link-pluginsprocessorsdm-processor-terraform" href="../../../plugins/processors/dm-processor-terraform/index.html">Terraform</a>
+                      <li class="menu-item -level-3 -parent"><a class="link title -active link-pluginsprocessorsdm-processor-terraform" href="../../../plugins/processors/dm-processor-terraform/index.html">Terraform</a>
+                        <ul class="headings heading-list">
+                          <li class="heading-item -depth-2"><a class="hlink link-parameters" href="#parameters">Parameters</a>
+                          </li>
+                          <li class="heading-item -depth-2"><a class="hlink link-sample-configuration" href="#sample-configuration">Sample Configuration</a>
+                          </li>
+                        </ul>
                         <ul class="submenu">
                           <li class="menu-item -level-4"><a class="link title  link-pluginsprocessorsdm-processor-terraformchangelog" href="../../../plugins/processors/dm-processor-terraform/CHANGELOG.html">Changes</a>
                           </li>
@@ -71,13 +77,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li class="menu-item -level-3"><a class="link title -active link-pluginsdriverslambda" href="../../../plugins/drivers/lambda/index.html">Lambda</a>
-                        <ul class="headings heading-list">
-                          <li class="heading-item -depth-2"><a class="hlink link-parameters" href="#parameters">Parameters</a>
-                          </li>
-                          <li class="heading-item -depth-2"><a class="hlink link-sample-configuration" href="#sample-configuration">Sample Configuration</a>
-                          </li>
-                        </ul>
+                      <li class="menu-item -level-3"><a class="link title  link-pluginsdriverslambda" href="../../../plugins/drivers/lambda/index.html">Lambda</a>
                       </li>
                     </ul>
                   </li>
@@ -97,25 +97,25 @@
           </li>
         </ul>
       </div>
-      <div class="body page-pluginsdriverslambda">
+      <div class="body page-pluginsprocessorsdm-processor-terraform">
         <div class="header-nav">
           <div class="right"><a class="iconlink" href="https://github.com/theBenForce/data-migration" data-title="theBenForce/data-migration">
               <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
           </div>
         </div>
-        <div class="markdown-body"><h1 id="welcome-to-dm-driver-lambda">Welcome to dm-driver-lambda &#x1F44B;</h1>
+        <div class="markdown-body"><h1 id="welcome-to-dm-processor-terraform">Welcome to dm-processor-terraform &#x1F44B;</h1>
 <p><a href="https://github.com/theBenForce/data-migration/actions"><img src="https://github.com/theBenForce/data-migration/workflows/Release/badge.svg?branch=master" alt="Build Status"></a>
-<a href="https://www.npmjs.com/package/dm-driver-lambda"><img src="https://img.shields.io/npm/v/dm-driver-lambda" alt="NPM Package"></a>
+<a href="https://www.npmjs.com/package/dm-processor-cf"><img src="https://img.shields.io/npm/v/dm-processor-cf" alt="NPM Package"></a>
 <a href="https://codeclimate.com/github/theBenForce/data-migration/maintainability"><img src="https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability" alt="Maintainability"></a>
 <a href="https://data-migration.js.org/"><img src="https://img.shields.io/badge/documentation-view-blue" alt="Documentation"></a>
-<a href="https://npmjs.org/package/dm-driver-lambda"><img src="https://img.shields.io/npm/dw/dm-driver-lambda.svg" alt="Downloads/week"></a>
+<a href="https://npmjs.org/package/dm-processor-terraform"><img src="https://img.shields.io/npm/dw/dm-processor-terraform.svg" alt="Downloads/week"></a>
 <a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna"></a></p>
 <blockquote>
-<p>A <a href="https://www.npmjs.com/package/data-migration">Data Migration</a> driver to update lambda properties like environment variables.</p>
+<p>A <a href="https://www.npmjs.com/package/data-migration">Data Migration</a> processor to load values from Terraform outputs.</p>
 </blockquote>
 <h1 id="configuration">Configuration</h1>
 <h2 id="parameters">Parameters</h2>
-<p>The Lambda driver accepts the following parameters as part of its configuration:</p>
+<p>The Terraform processor accepts the following parameters as part of its configuration:</p>
 <table>
 <thead>
 <tr>
@@ -127,73 +127,55 @@
 </thead>
 <tbody>
 <tr>
-<td>region</td>
+<td>filename</td>
 <td>string</td>
 <td>Yes</td>
-<td>The AWS Region where this table exists</td>
+<td>Path to a terraform output file</td>
 </tr>
 <tr>
-<td>FunctionName</td>
+<td>output</td>
 <td>string</td>
 <td>Yes</td>
-<td>The name (or ARN) of the function to modify</td>
-</tr>
-<tr>
-<td>profile</td>
-<td>string</td>
-<td>No</td>
-<td>Name of the AWS profile to use</td>
-</tr>
-<tr>
-<td>accessKeyId</td>
-<td>string</td>
-<td>No</td>
-<td>AWS Credentials, if not provided data-migration will use the default AWS configuration</td>
-</tr>
-<tr>
-<td>secretAccessKey</td>
-<td>string</td>
-<td>No</td>
-<td></td>
-</tr>
-<tr>
-<td>endpoint</td>
-<td>string</td>
-<td>No</td>
-<td>The http endpoint to connect to, useful when using something like localstack</td>
+<td>The name of the terraform output to return</td>
 </tr>
 </tbody>
 </table>
 <h2 id="sample-configuration">Sample Configuration</h2>
-<pre><code class="lang-typescript"><span class="pl-k">export</span> <span class="pl-k">default</span> {
+<pre><code class="lang-typescript"><span class="pl-k">import</span> DynamoDbDriver <span class="pl-k">from</span> <span class="pl-s">&quot;dm-driver-dynamodb&quot;</span>;
+<span class="pl-k">import</span> TerraformProcessor <span class="pl-k">from</span> <span class="pl-s">&quot;dm-processor-terraform&quot;</span>;
+
+<span class="pl-k">export</span> <span class="pl-k">default</span> {
   defaultStage: <span class="pl-s">&quot;prod&quot;</span>,
   migrationDirectory: <span class="pl-s">&quot;migrations&quot;</span>,
   stages: {
     prod: {
-      users: {
-        driver: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-driver-lambda&quot;</span>),
-        params: {
-          region: <span class="pl-s">&quot;us-east-1&quot;</span>,
-          FunctionName: {
-            <span class="pl-c">// Use this processor to get values from CloudFormation</span>
-            processor: <span class="pl-c1">require</span>(<span class="pl-s">&quot;dm-processor-cf&quot;</span>),
-            params: {
-              stack: <span class="pl-s">&quot;some-stack-name&quot;</span>,
-              output: <span class="pl-s">&quot;SomeOutputName&quot;</span>,
-              region: <span class="pl-s">&quot;us-east-1&quot;</span>,
+      defaultParams: {
+        region: <span class="pl-s">&quot;us-east-1&quot;</span>,
+      },
+      drivers: {
+        users: {
+          driver: DynamoDbDriver,
+          params: {
+            TableName: {
+              <span class="pl-c">// Use this processor to get values from CloudFormation</span>
+              processor: TerraformProcessor,
+              params: {
+                filename: <span class="pl-s">&quot;some_output_file.terraform.json&quot;</span>,
+                output: <span class="pl-s">&quot;SomeOutputName&quot;</span>,
+              },
             },
           },
         },
       },
     },
   },
-} <span class="pl-k">as</span> Configuration;
+};
 </code></pre>
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="../../../plugins/drivers/dynamodb/CHANGELOG.html"><span class="title">Changes</span></a></div>
-          <div class="right"><a href="../../../plugins/trackers/dynamo/index.html"><span class="label">Next: </span><span class="title">DynamoDB</span></a></div>
+          <div class="left"><a href="../../../plugins/processors/dm-processor-cf/CHANGELOG.html"><span class="title">Changes</span></a></div>
+          <div class="right"><a href="../../../plugins/processors/dm-processor-terraform/CHANGELOG.html"><span class="label">Next: </span><span class="title">Changes</span></a></div>
         </div>
       </div>
     </div>
