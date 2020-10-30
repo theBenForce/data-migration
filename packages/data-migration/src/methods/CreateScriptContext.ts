@@ -6,6 +6,7 @@ export default function createScriptContext(
   drivers: Map<string, Driver<any, any>>,
   config: { [key: string]: string },
   log: Logger,
+  defaultParams?: Record<string, string>
 ): ScriptContext {
   let driversUsed: Array<string> = [];
   return {
@@ -28,7 +29,7 @@ export default function createScriptContext(
 
       if (driversUsed.indexOf(driverName) === -1) {
         log(`Processing ${driverName} parameters`);
-        result.parameters = await ProcessParams(result.parameters, log);
+        result.parameters = await ProcessParams(result.parameters, log, defaultParams);
         
         driversUsed.push(driverName);
         if (result.init) await result.init();
