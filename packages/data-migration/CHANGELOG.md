@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.15.1...data-migration@2.16.0) (2020-10-30)
+
+
+### Features
+
+* **context:** lazy load driver parameters ([6480456](https://github.com/theBenForce/data-migration/commit/6480456d76871fb990acc8d090f4369486029a29))
+
+
+
+
+
 ## [2.15.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.15.0...data-migration@2.15.1) (2020-07-07)
 
 

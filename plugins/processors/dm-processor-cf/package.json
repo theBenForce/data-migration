@@ -1,6 +1,6 @@
 {
   "name": "dm-processor-cf",
-  "version": "1.6.11",
+  "version": "1.6.12",
   "description": "Gets an output from cloudformation and returns the value",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.655.0",
-    "data-migration": "^2.15.1"
+    "data-migration": "^2.16.0"
   },
   "scripts": {
     "build": "tsc"
