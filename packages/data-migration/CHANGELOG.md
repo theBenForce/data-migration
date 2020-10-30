@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/theBenForce/data-migration/compare/data-migration@2.16.1...data-migration@2.17.0) (2020-10-30)
+
+
+### Features
+
+* pass parameters on driver load ([70b9193](https://github.com/theBenForce/data-migration/commit/70b91931cc3307cb90165e67994f7384dc23590c))
+
+
+
+
+
 ## [2.16.1](https://github.com/theBenForce/data-migration/compare/data-migration@2.16.0...data-migration@2.16.1) (2020-10-30)
 
 

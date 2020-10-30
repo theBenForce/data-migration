@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/theBenForce/data-migration/compare/dm-driver-s3@1.1.3...dm-driver-s3@1.2.0) (2020-10-30)
+
+
+### Features
+
+* pass parameters on driver load ([70b9193](https://github.com/theBenForce/data-migration/commit/70b91931cc3307cb90165e67994f7384dc23590c))
+
+
+
+
+
 ## [1.1.3](https://github.com/theBenForce/data-migration/compare/dm-driver-s3@1.1.2...dm-driver-s3@1.1.3) (2020-10-30)
 
 **Note:** Version bump only for package dm-driver-s3
