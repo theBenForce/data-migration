@@ -53,7 +53,7 @@ export default async function loadScripts(
   );
 
   logger("Creating script context");
-  context = DataMigrationProcessor.createScriptContext(drivers, stageParams);
+  context = DataMigrationProcessor.createScriptContext(drivers, stageParams, logger);
 
   logger("Creating migration tracker");
   const tracker = await DataMigrationProcessor.loadExecutionTracker(stageConfig, logger, () =>
