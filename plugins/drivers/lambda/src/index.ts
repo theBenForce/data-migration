@@ -23,24 +23,36 @@ const lambdaDriverBuilder: DriverBuilder<LambdaParameters, AWS.Lambda> = (
   params,
   logger: Logger
 ): LambdaDriver => {
-  const { FunctionName } = params;
-
-  const resource = new AWS.Lambda({
-    apiVersion: "2015-03-31",
-    region: params.region,
-    accessKeyId: params.accessKeyId,
-    secretAccessKey: params.secretAccessKey,
-    endpoint: params.endpoint,
-    credentials: params.profile
-      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
-      : undefined,
-  });
+  let FunctionName: string;
+  let parameters = params;
+  let resource: AWS.Lambda;
 
   const updatedVariables: Record<string, string> = {};
 
   return {
-    resource,
-    parameters: params,
+    get resource() {
+      return resource;
+    },
+    get parameters() {
+      return parameters;
+    },
+
+    async init(params) {
+      logger(`Initializing with parameters: ${JSON.stringify(params)}`);
+      parameters = params;
+      FunctionName = params.FunctionName;
+
+      resource = new AWS.Lambda({
+        apiVersion: "2015-03-31",
+        region: params.region,
+        accessKeyId: params.accessKeyId,
+        secretAccessKey: params.secretAccessKey,
+        endpoint: params.endpoint,
+        credentials: params.profile
+          ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+          : undefined,
+      });
+    },
 
     setVariable(key: string, value: string) {
       updatedVariables[key] = value;

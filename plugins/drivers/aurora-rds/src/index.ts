@@ -42,22 +42,50 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
   params: AuroraRdsParameters,
   logger: Logger
 ): AuroraRdsDriver => {
-  let dataService = new AWS.RDSDataService({
-    apiVersion: "2018-08-01",
-    region: params.region,
-    credentials: params.profile
-      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
-      : undefined,
-  });
+  let dataService: AWS.RDSDataService;
   let transactionId: string | undefined;
   let paramsBase = {
     resourceArn: params.resourceArn,
     secretArn: params.secretArn,
   };
+  let parameters = params;
 
   return {
-    parameters: params,
-    resource: dataService,
+    get parameters() {
+      return parameters;
+    },
+    get resource(): AWS.RDSDataService {
+      return dataService;
+    },
+
+    async init(params) {
+      logger(`Initializing with parameters: ${JSON.stringify(params)}`);
+      parameters = params;
+
+      paramsBase = {
+        resourceArn: params.resourceArn,
+        secretArn: params.secretArn,
+      };
+
+      const transactionParams = {
+        ...paramsBase,
+        database: params.databaseSchema,
+        schema: params.databaseSchema,
+      };
+
+      dataService = new AWS.RDSDataService({
+        apiVersion: "2018-08-01",
+        region: params.region,
+        credentials: params.profile
+          ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+          : undefined,
+      });
+
+      logger(`Creating transaction`);
+      const result = await dataService.beginTransaction(transactionParams).promise();
+      transactionId = result.transactionId;
+    },
+
     query<T>(
       query: string,
       parameters?: Array<AWS.RDSDataService.SqlParameter>,
@@ -113,18 +141,6 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
       if (result?.records?.length) {
         return convertResultsToObject<T>(result.columnMetadata)(result.records?.[0]);
       }
-    },
-
-    async init() {
-      const transactionParams = {
-        ...paramsBase,
-        database: params.databaseSchema,
-        schema: params.databaseSchema,
-      };
-
-      logger(`Creating transaction`);
-      const result = await dataService.beginTransaction(transactionParams).promise();
-      transactionId = result.transactionId;
     },
 
     async cleanup() {

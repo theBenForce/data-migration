@@ -25,14 +25,14 @@ export default function createScriptContext(
         );
       }
 
-      let result = drivers.get(driverName) as T;
+      const result = drivers.get(driverName) as T;
 
       if (driversUsed.indexOf(driverName) === -1) {
         log(`Processing ${driverName} parameters`);
-        result.parameters = await ProcessParams(result.parameters, log, defaultParams);
+        const parameters = await ProcessParams(result.parameters, log, defaultParams);
         
         driversUsed.push(driverName);
-        if (result.init) await result.init();
+        if (result.init) await result.init(parameters);
       }
 
       return result;

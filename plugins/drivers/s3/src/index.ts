@@ -27,24 +27,35 @@ export interface S3Driver extends Driver<S3DriverParameters, AWS.S3> {
 }
 
 const s3DriverBuilder: DriverBuilder<S3DriverParameters, AWS.S3> = (
-  parameters,
+  params,
   logger: Logger
 ): S3Driver => {
-  const { bucketName } = parameters;
-
-  const resource = new AWS.S3({
-    apiVersion: "2006-03-01",
-    region: parameters.region,
-    accessKeyId: parameters.accessKeyId,
-    secretAccessKey: parameters.secretAccessKey,
-    credentials: parameters.profile
-      ? new AWS.SharedIniFileCredentials({ profile: parameters.profile })
-      : undefined,
-  });
+  let bucketName: string;
+  let parameters = params;
+  let resource: AWS.S3;
 
   return {
-    resource,
-    parameters,
+    get resource() {
+      return resource;
+    },
+    get parameters() {
+      return parameters;
+    },
+    async init(params) {
+      logger(`Initializing with parameters: ${JSON.stringify(params)}`);
+      parameters = params;
+
+      resource = new AWS.S3({
+        apiVersion: "2006-03-01",
+        region: params.region,
+        accessKeyId: params.accessKeyId,
+        secretAccessKey: params.secretAccessKey,
+        credentials: params.profile
+          ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+          : undefined,
+      });
+
+    },
     uploadFile(
       key: string,
       filename: string,

@@ -35,16 +35,30 @@ const cognitoDriver: DriverBuilder<CognitoDriverParams, AWS.CognitoIdentityServi
   params,
   logger: Logger
 ): CognitoDriver => {
-  const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
-    apiVersion: "2016-04-18",
-    region: params.region,
-    credentials: params.profile
-      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
-      : undefined,
-  });
+  let cognitoidentityserviceprovider: AWS.CognitoIdentityServiceProvider;
   let userPool: { UserPoolId: string };
+  let parameters = params;
 
   return {
+    get parameters() {
+      return parameters;
+    },
+    get resource(): AWS.CognitoIdentityServiceProvider {
+      return cognitoidentityserviceprovider;
+    },
+    async init(params: CognitoDriverParams) {
+      logger(`Initializing with parameters: ${JSON.stringify(params)}`);
+      parameters = params;
+      
+      userPool = { UserPoolId: params.userPool };
+      cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider({
+        apiVersion: "2016-04-18",
+        region: params.region,
+        credentials: params.profile
+          ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+          : undefined,
+      });
+    },
     async addUser(username: string, password: string, attributes?: any): Promise<User> {
       logger(`Adding ${username}...`);
 
@@ -89,11 +103,6 @@ const cognitoDriver: DriverBuilder<CognitoDriverParams, AWS.CognitoIdentityServi
       };
 
       await cognitoidentityserviceprovider.adminDeleteUser(deleteUser).promise();
-    },
-    async init() {
-      logger("Initializing cognito");
-
-      userPool = { UserPoolId: params.userPool };
     },
     async cleanup() {
       logger("Cleaning up cognito driver");

@@ -17,22 +17,36 @@ const dynamoDbDriver: DriverBuilder<DynamoDbParameters, AWS.DynamoDB.DocumentCli
   params,
   logger: Logger
 ): DynamoDbDriver => {
-  const { TableName } = params;
-  const DocumentDb = new AWS.DynamoDB.DocumentClient({
-    region: params.region,
-    apiVersion: "2012-08-10",
-    accessKeyId: params.accessKeyId,
-    secretAccessKey: params.secretAccessKey,
-    endpoint: params.endpoint,
-    credentials: params.profile
-      ? new AWS.SharedIniFileCredentials({ profile: params.profile })
-      : undefined,
-  });
+  let { TableName } = params;
+  let DocumentDb: AWS.DynamoDB.DocumentClient;
+  let parameters = params;
 
   return {
-    parameters: params,
-    resource: DocumentDb,
+    get parameters() {
+      return parameters;
+    },
+    get resource(): AWS.DynamoDB.DocumentClient {
+      return DocumentDb;
+    },
 
+
+    async init(params: DynamoDbParameters) {
+      logger(`Initializing with parameters: ${JSON.stringify(params)}`);
+      parameters = params;
+
+      TableName = params.TableName;
+
+      DocumentDb = new AWS.DynamoDB.DocumentClient({
+        region: params.region,
+        apiVersion: "2012-08-10",
+        accessKeyId: params.accessKeyId,
+        secretAccessKey: params.secretAccessKey,
+        endpoint: params.endpoint,
+        credentials: params.profile
+          ? new AWS.SharedIniFileCredentials({ profile: params.profile })
+          : undefined,
+      });
+    },
     /**
      * Gets every record in the table
      */

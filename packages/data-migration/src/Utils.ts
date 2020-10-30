@@ -147,8 +147,8 @@ export async function getAllScripts({
   scope,
   log,
 }: GetAllScripts): Promise<Map<string, MigrationScript>> {
-  let scripts = new Map<string, MigrationScript>();
-  let scriptFiles = await getScriptFiles(config, log, scope);
+  const scripts = new Map<string, MigrationScript>();
+  const scriptFiles = await getScriptFiles(config, log, scope);
 
   for (const filename of scriptFiles) {
     let script: MigrationScript;
