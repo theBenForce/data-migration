@@ -1,9 +1,11 @@
-import { ScriptContext } from "../";
+import { Logger, ScriptContext } from "../";
 import { Driver } from "../DriverTypes";
+import ProcessParams from "./ProcessParams";
 
 export default function createScriptContext(
   drivers: Map<string, Driver<any, any>>,
-  config: { [key: string]: string }
+  config: { [key: string]: string },
+  log: Logger,
 ): ScriptContext {
   let driversUsed: Array<string> = [];
   return {
@@ -25,6 +27,9 @@ export default function createScriptContext(
       let result = drivers.get(driverName) as T;
 
       if (driversUsed.indexOf(driverName) === -1) {
+        log(`Processing ${driverName} parameters`);
+        result.parameters = await ProcessParams(result.parameters, log);
+        
         driversUsed.push(driverName);
         if (result.init) await result.init();
       }

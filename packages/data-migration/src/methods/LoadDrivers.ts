@@ -25,13 +25,9 @@ export default async function loadDrivers(
         ...sourceDrivers.drivers[driverName].params,
       };
 
-      log(`Processing ${driverName} parameters`);
-
-      const processedParams = await ProcessParams(params, log, sourceDrivers.defaultParams);
-
       resultDrivers.set(
         driverName,
-        sourceDrivers.drivers[driverName].driver(processedParams, createLogger(driverName))
+        sourceDrivers.drivers[driverName].driver(params, createLogger(driverName))
       );
     }
   }
