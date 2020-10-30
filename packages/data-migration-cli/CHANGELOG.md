@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.10.0...data-migration-cli@2.10.1) (2020-10-30)
+
+
+### Bug Fixes
+
+* **processor:** use stage default parameters ([7419835](https://github.com/theBenForce/data-migration/commit/741983578267a789019f96adcdd64131f0746cb3))
+
+
+
+
+
 # [2.10.0](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.9.1...data-migration-cli@2.10.0) (2020-10-30)
 
 
