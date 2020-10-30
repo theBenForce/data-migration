@@ -90,6 +90,11 @@
             "slug": "packagesdata-migration-clichangelog",
             "headings": [
               {
+                "title": "Features",
+                "depth": 3,
+                "id": "features"
+              },
+              {
                 "title": "[2.9.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.9.0...data-migration-cli@2.9.1) (2020-07-07)",
                 "depth": 2,
                 "id": "2.9.1(https:github.comthebenforcedata-migrationcomparedata-migration-cli@2.9.0...data-migration-cli@2.9.1)-(2020-07-07)",
@@ -621,6 +626,11 @@
                     "slug": "pluginsprocessorsdm-processor-cfchangelog",
                     "headings": [
                       {
+                        "title": "[1.6.12](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.6.11...dm-processor-cf@1.6.12) (2020-10-30)",
+                        "depth": 2,
+                        "id": "1.6.12(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.6.11...dm-processor-cf@1.6.12)-(2020-10-30)"
+                      },
+                      {
                         "title": "[1.6.11](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.6.10...dm-processor-cf@1.6.11) (2020-07-07)",
                         "depth": 2,
                         "id": "1.6.11(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.6.10...dm-processor-cf@1.6.11)-(2020-07-07)"
@@ -944,9 +954,16 @@
                     "slug": "pluginsprocessorsdm-processor-terraformchangelog",
                     "headings": [
                       {
-                        "title": "Features",
-                        "depth": 3,
-                        "id": "features"
+                        "title": "[1.1.1](https://github.com/theBenForce/data-migration/compare/dm-processor-terraform@1.1.0...dm-processor-terraform@1.1.1) (2020-10-30)",
+                        "depth": 2,
+                        "id": "1.1.1(https:github.comthebenforcedata-migrationcomparedm-processor-terraform@1.1.0...dm-processor-terraform@1.1.1)-(2020-10-30)",
+                        "headings": [
+                          {
+                            "title": "Features",
+                            "depth": 3,
+                            "id": "features"
+                          }
+                        ]
                       }
                     ]
                   }
@@ -1000,6 +1017,11 @@
                     "url": "plugins/drivers/aurora-rds/CHANGELOG.html",
                     "slug": "pluginsdriversaurora-rdschangelog",
                     "headings": [
+                      {
+                        "title": "[1.8.8](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.8.7...dm-driver-aurora@1.8.8) (2020-10-30)",
+                        "depth": 2,
+                        "id": "1.8.8(https:github.comthebenforcedata-migrationcomparedm-driver-aurora@1.8.7...dm-driver-aurora@1.8.8)-(2020-10-30)"
+                      },
                       {
                         "title": "[1.8.7](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.8.6...dm-driver-aurora@1.8.7) (2020-07-07)",
                         "depth": 2,
@@ -1437,6 +1459,11 @@
                     "slug": "pluginsdriverscognitochangelog",
                     "headings": [
                       {
+                        "title": "[1.5.12](https://github.com/theBenForce/data-migration/compare/dm-driver-cognito@1.5.11...dm-driver-cognito@1.5.12) (2020-10-30)",
+                        "depth": 2,
+                        "id": "1.5.12(https:github.comthebenforcedata-migrationcomparedm-driver-cognito@1.5.11...dm-driver-cognito@1.5.12)-(2020-10-30)"
+                      },
+                      {
                         "title": "[1.5.11](https://github.com/theBenForce/data-migration/compare/dm-driver-cognito@1.5.10...dm-driver-cognito@1.5.11) (2020-07-07)",
                         "depth": 2,
                         "id": "1.5.11(https:github.comthebenforcedata-migrationcomparedm-driver-cognito@1.5.10...dm-driver-cognito@1.5.11)-(2020-07-07)"
@@ -1776,6 +1803,11 @@
                     "url": "plugins/drivers/dynamodb/CHANGELOG.html",
                     "slug": "pluginsdriversdynamodbchangelog",
                     "headings": [
+                      {
+                        "title": "[1.6.12](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.6.11...dm-driver-dynamodb@1.6.12) (2020-10-30)",
+                        "depth": 2,
+                        "id": "1.6.12(https:github.comthebenforcedata-migrationcomparedm-driver-dynamodb@1.6.11...dm-driver-dynamodb@1.6.12)-(2020-10-30)"
+                      },
                       {
                         "title": "[1.6.11](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.6.10...dm-driver-dynamodb@1.6.11) (2020-07-07)",
                         "depth": 2,
@@ -2153,6 +2185,11 @@
                     "slug": "pluginstrackersdynamochangelog",
                     "headings": [
                       {
+                        "title": "[1.5.12](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.5.11...dm-tracker-dynamodb@1.5.12) (2020-10-30)",
+                        "depth": 2,
+                        "id": "1.5.12(https:github.comthebenforcedata-migrationcomparedm-tracker-dynamodb@1.5.11...dm-tracker-dynamodb@1.5.12)-(2020-10-30)"
+                      },
+                      {
                         "title": "[1.5.11](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.5.10...dm-tracker-dynamodb@1.5.11) (2020-07-07)",
                         "depth": 2,
                         "id": "1.5.11(https:github.comthebenforcedata-migrationcomparedm-tracker-dynamodb@1.5.10...dm-tracker-dynamodb@1.5.11)-(2020-07-07)"
@@ -2511,6 +2548,11 @@
       "pageTitle": "Changes",
       "slug": "packagesdata-migration-clichangelog",
       "headings": [
+        {
+          "title": "Features",
+          "depth": 3,
+          "id": "features"
+        },
         {
           "title": "[2.9.1](https://github.com/theBenForce/data-migration/compare/data-migration-cli@2.9.0...data-migration-cli@2.9.1) (2020-07-07)",
           "depth": 2,
@@ -3038,6 +3080,11 @@
       "slug": "pluginsprocessorsdm-processor-cfchangelog",
       "headings": [
         {
+          "title": "[1.6.12](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.6.11...dm-processor-cf@1.6.12) (2020-10-30)",
+          "depth": 2,
+          "id": "1.6.12(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.6.11...dm-processor-cf@1.6.12)-(2020-10-30)"
+        },
+        {
           "title": "[1.6.11](https://github.com/theBenForce/data-migration/compare/dm-processor-cf@1.6.10...dm-processor-cf@1.6.11) (2020-07-07)",
           "depth": 2,
           "id": "1.6.11(https:github.comthebenforcedata-migrationcomparedm-processor-cf@1.6.10...dm-processor-cf@1.6.11)-(2020-07-07)"
@@ -3359,9 +3406,16 @@
       "slug": "pluginsprocessorsdm-processor-terraformchangelog",
       "headings": [
         {
-          "title": "Features",
-          "depth": 3,
-          "id": "features"
+          "title": "[1.1.1](https://github.com/theBenForce/data-migration/compare/dm-processor-terraform@1.1.0...dm-processor-terraform@1.1.1) (2020-10-30)",
+          "depth": 2,
+          "id": "1.1.1(https:github.comthebenforcedata-migrationcomparedm-processor-terraform@1.1.0...dm-processor-terraform@1.1.1)-(2020-10-30)",
+          "headings": [
+            {
+              "title": "Features",
+              "depth": 3,
+              "id": "features"
+            }
+          ]
         }
       ]
     },
@@ -3408,6 +3462,11 @@
       "pageTitle": "Changes",
       "slug": "pluginsdriversaurora-rdschangelog",
       "headings": [
+        {
+          "title": "[1.8.8](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.8.7...dm-driver-aurora@1.8.8) (2020-10-30)",
+          "depth": 2,
+          "id": "1.8.8(https:github.comthebenforcedata-migrationcomparedm-driver-aurora@1.8.7...dm-driver-aurora@1.8.8)-(2020-10-30)"
+        },
         {
           "title": "[1.8.7](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.8.6...dm-driver-aurora@1.8.7) (2020-07-07)",
           "depth": 2,
@@ -3843,6 +3902,11 @@
       "slug": "pluginsdriverscognitochangelog",
       "headings": [
         {
+          "title": "[1.5.12](https://github.com/theBenForce/data-migration/compare/dm-driver-cognito@1.5.11...dm-driver-cognito@1.5.12) (2020-10-30)",
+          "depth": 2,
+          "id": "1.5.12(https:github.comthebenforcedata-migrationcomparedm-driver-cognito@1.5.11...dm-driver-cognito@1.5.12)-(2020-10-30)"
+        },
+        {
           "title": "[1.5.11](https://github.com/theBenForce/data-migration/compare/dm-driver-cognito@1.5.10...dm-driver-cognito@1.5.11) (2020-07-07)",
           "depth": 2,
           "id": "1.5.11(https:github.comthebenforcedata-migrationcomparedm-driver-cognito@1.5.10...dm-driver-cognito@1.5.11)-(2020-07-07)"
@@ -4180,6 +4244,11 @@
       "pageTitle": "Changes",
       "slug": "pluginsdriversdynamodbchangelog",
       "headings": [
+        {
+          "title": "[1.6.12](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.6.11...dm-driver-dynamodb@1.6.12) (2020-10-30)",
+          "depth": 2,
+          "id": "1.6.12(https:github.comthebenforcedata-migrationcomparedm-driver-dynamodb@1.6.11...dm-driver-dynamodb@1.6.12)-(2020-10-30)"
+        },
         {
           "title": "[1.6.11](https://github.com/theBenForce/data-migration/compare/dm-driver-dynamodb@1.6.10...dm-driver-dynamodb@1.6.11) (2020-07-07)",
           "depth": 2,
@@ -4549,6 +4618,11 @@
       "pageTitle": "Changes",
       "slug": "pluginstrackersdynamochangelog",
       "headings": [
+        {
+          "title": "[1.5.12](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.5.11...dm-tracker-dynamodb@1.5.12) (2020-10-30)",
+          "depth": 2,
+          "id": "1.5.12(https:github.comthebenforcedata-migrationcomparedm-tracker-dynamodb@1.5.11...dm-tracker-dynamodb@1.5.12)-(2020-10-30)"
+        },
         {
           "title": "[1.5.11](https://github.com/theBenForce/data-migration/compare/dm-tracker-dynamodb@1.5.10...dm-tracker-dynamodb@1.5.11) (2020-07-07)",
           "depth": 2,
