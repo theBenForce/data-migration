@@ -34,6 +34,7 @@ interface AuroraRdsParameters {
   resourceArn: string;
   secretArn: string;
   databaseSchema: string | undefined;
+  endpoint?: string;
 }
 
 export type AuroraRdsDriver = RdsDriver<AuroraRdsParameters, AWS.RDSDataService>;
@@ -58,7 +59,7 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
       return dataService;
     },
 
-    async init(params) {
+    async init(params: AuroraRdsParameters) {
       logger(`Initializing with parameters: ${JSON.stringify(params)}`);
       parameters = params;
 
@@ -76,6 +77,7 @@ const rdsDriver: DriverBuilder<AuroraRdsParameters, AWS.RDSDataService> = (
       dataService = new AWS.RDSDataService({
         apiVersion: "2018-08-01",
         region: params.region,
+        endpoint: params.endpoint,
         credentials: params.profile
           ? new AWS.SharedIniFileCredentials({ profile: params.profile })
           : undefined,
