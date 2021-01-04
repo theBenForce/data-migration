@@ -1060,6 +1060,11 @@
                         "id": "features"
                       },
                       {
+                        "title": "Features",
+                        "depth": 3,
+                        "id": "features"
+                      },
+                      {
                         "title": "[1.8.9](https://github.com/theBenForce/data-migration/compare/dm-driver-aurora@1.8.8...dm-driver-aurora@1.8.9) (2020-10-30)",
                         "depth": 2,
                         "id": "1.8.9(https:github.comthebenforcedata-migrationcomparedm-driver-aurora@1.8.8...dm-driver-aurora@1.8.9)-(2020-10-30)"
@@ -3576,6 +3581,11 @@
       "pageTitle": "Changes",
       "slug": "pluginsdriversaurora-rdschangelog",
       "headings": [
+        {
+          "title": "Features",
+          "depth": 3,
+          "id": "features"
+        },
         {
           "title": "Features",
           "depth": 3,
