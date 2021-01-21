@@ -1,0 +1,24 @@
+{
+  "name": "dm-driver-postgresql",
+  "version": "1.9.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "homepage": "https://data-migration.js.org/plugins/drivers/aurora-rds",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBenForce/data-migration.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.820.0",
+    "data-migration": "^2.17.0",
+    "pg-promise": "^10.8.6",
+    "rxjs": "^6.5.5"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "/lib"
+  ]
+}
