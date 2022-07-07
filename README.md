@@ -4,6 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/89a0c1976c9b89979635/maintainability)](https://codeclimate.com/github/theBenForce/data-migration/maintainability)
 [![Documentation](https://img.shields.io/badge/documentation-view-blue)](https://data-migration.js.org/)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Rate this package](https://badges.openbase.com/js/rating/data-migration.svg?token=FdpfCIkspk8Sc6VI7wU1KT3wqoAKWptHr+1B76UYXSg=)](https://openbase.com/js/data-migration?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 
 > A set of tools to create and run migration scripts against cloud resources
 
